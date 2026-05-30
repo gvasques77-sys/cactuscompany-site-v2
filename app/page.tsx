@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/section";
+import { CactusMark } from "@/components/cactus-mark";
 import { company } from "@/components/company-data";
 
 const capabilities = [
@@ -35,23 +35,25 @@ export default function Home() {
   return (
     <>
       <section
-        className="relative min-h-[calc(100svh-65px)] overflow-hidden border-b border-white/10"
+        className="hero-bg relative min-h-[calc(100svh-65px)] overflow-hidden border-b border-[#7fd8a8]/12"
         data-animate="hero"
       >
-        <Image
-          src="/images/cactus-hero.png"
-          alt="Cacto digital com interfaces de software em ambiente verde escuro"
-          fill
-          priority
-          className="object-cover object-center opacity-72 will-change-transform"
-          sizes="100vw"
-          data-animate="hero-media"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,#06130d_0%,rgba(6,19,13,0.88)_30%,rgba(6,19,13,0.34)_72%,rgba(6,19,13,0.58)_100%)]" />
-        <div className="relative z-10 container-shell flex min-h-[calc(100svh-65px)] items-center py-16">
-          <div className="max-w-3xl">
+        <div className="hero-dots" />
+        <svg
+          className="hero-horizon"
+          viewBox="0 0 1200 300"
+          preserveAspectRatio="none"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path d="M0 210 Q 300 158 600 200 T 1200 178" stroke="rgba(127,216,168,0.20)" strokeWidth="1.5" />
+          <path d="M0 250 Q 320 212 640 244 T 1200 232" stroke="rgba(127,216,168,0.12)" strokeWidth="1.5" />
+          <path d="M0 292 Q 280 262 600 286 T 1200 280" stroke="rgba(127,216,168,0.07)" strokeWidth="1.5" />
+        </svg>
+        <div className="relative z-10 container-shell grid min-h-[calc(100svh-65px)] items-center gap-12 py-16 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="max-w-2xl">
             <p
-              className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d6b56d]"
+              className="text-sm font-[var(--font-mono)] uppercase tracking-[0.22em] text-[#7fd8a8] text-xs"
               data-animate="hero-item"
             >
               Tecnologia brasileira para produtos digitais
@@ -63,7 +65,7 @@ export default function Home() {
               Cactus Company
             </h1>
             <p
-              className="mt-6 max-w-2xl text-lg leading-8 text-[#dce5d8] sm:text-xl"
+              className="mt-6 max-w-2xl text-lg leading-8 text-[#cdddd3] sm:text-xl"
               data-animate="hero-item"
             >
               Desenvolvemos aplicativos, jogos e soluções digitais para educação, saúde,
@@ -72,16 +74,54 @@ export default function Home() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row" data-animate="hero-item">
               <Link
                 href="/solucoes"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6b56d] px-6 text-sm font-semibold text-[#07130d] transition hover:bg-[#f0d58e]"
+                data-magnetic
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#7fd8a8] px-6 text-sm font-semibold text-[#0a1612] transition hover:bg-[#9be7bf]"
               >
                 Conheça as soluções
               </Link>
               <Link
                 href="/contato"
+                data-magnetic
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/18 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Contato empresarial
               </Link>
+            </div>
+          </div>
+
+          <div className="cluster" data-animate="hero-media">
+            <div className="ring r2" />
+            <div className="ring r1" />
+            <div className="glow" />
+            <div className="bigtile">
+              <span className="bigtile-sheen" />
+              <CactusMark size={118} body="#c8efd9" showBase={false} />
+            </div>
+            <div className="gtile t1" title="Jogos">
+              <svg width="32" height="32" viewBox="0 0 24 24">
+                <rect x="2" y="7" width="20" height="10.5" rx="5.25" />
+                <path d="M7 10.2v3.6M5.2 12h3.6" />
+                <circle cx="16.3" cy="11.3" r="1" fill="#7fd8a8" stroke="none" />
+                <circle cx="18.4" cy="13.6" r="1" fill="#7fd8a8" stroke="none" />
+              </svg>
+            </div>
+            <div className="gtile t2" title="Educação">
+              <svg width="32" height="32" viewBox="0 0 24 24">
+                <path d="M3 9l9-3.6L21 9l-9 3.6z" />
+                <path d="M6.5 10.7V15c0 1.4 2.7 2.6 5.5 2.6S17.5 16.4 17.5 15v-4.3" />
+                <path d="M21 9v4.2" />
+              </svg>
+            </div>
+            <div className="gtile t3" title="Saúde">
+              <svg width="32" height="32" viewBox="0 0 24 24">
+                <path d="M12 20s-7-4.4-7-9.4A3.5 3.5 0 0 1 12 7a3.5 3.5 0 0 1 7 3.6C19 15.6 12 20 12 20z" />
+              </svg>
+            </div>
+            <div className="gtile t4" title="Produtividade">
+              <svg width="32" height="32" viewBox="0 0 24 24">
+                <path d="M3 20h18" />
+                <path d="M6 20v-6M11 20V6M16 20v-9" />
+              </svg>
             </div>
           </div>
         </div>
@@ -95,17 +135,17 @@ export default function Home() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {capabilities.map((item) => (
             <div key={item} className="quiet-border soft-panel rounded-lg p-5" data-animate="card">
-              <span className="block h-1.5 w-10 rounded-full bg-[#d6b56d]" />
+              <span className="block h-1.5 w-10 rounded-full bg-[#7fd8a8]" data-dash />
               <p className="mt-5 font-[var(--font-display)] text-lg font-semibold">{item}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      <section className="border-y border-white/10 bg-[#0b1f16]/62 py-14 sm:py-20">
+      <section className="border-y border-white/10 bg-[#132a23]/62 py-14 sm:py-20">
         <div className="container-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div data-animate="fade-up">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#d6b56d]">
+            <p className="text-sm font-[var(--font-mono)] uppercase tracking-[0.22em] text-[#7fd8a8] text-xs">
               Áreas de atuação
             </p>
             <h2 className="mt-4 font-[var(--font-display)] text-3xl font-semibold leading-tight text-balance sm:text-4xl">
@@ -116,11 +156,11 @@ export default function Home() {
             {areas.map((area) => (
               <article
                 key={area.title}
-                className="quiet-border rounded-lg bg-[#06130d]/58 p-6"
+                className="quiet-border rounded-lg bg-[#0a1612]/58 p-6"
                 data-animate="card"
               >
                 <h3 className="font-[var(--font-display)] text-xl font-semibold">{area.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#a7b4a3]">{area.text}</p>
+                <p className="mt-3 text-sm leading-6 text-[#9fb8ab]">{area.text}</p>
               </article>
             ))}
           </div>
@@ -133,24 +173,18 @@ export default function Home() {
             className="quiet-border soft-panel relative grid gap-8 rounded-lg p-6 sm:p-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center"
             data-animate="fade-up"
           >
-            <div className="absolute right-6 top-6 hidden h-16 w-16 rounded-full bg-[#ff7a18]/20 blur-2xl sm:block" />
-            <div className="relative mx-auto grid size-32 place-items-center overflow-hidden rounded-full border border-[#d6b56d]/35 bg-white shadow-[0_0_42px_rgba(214,181,109,0.18)] lg:mx-0">
-              <Image
-                src="/images/cactus-logo.png"
-                alt="Logo da Cactus Company"
-                width={160}
-                height={160}
-                className="h-full w-full object-cover"
-              />
+            <div className="absolute right-6 top-6 hidden h-16 w-16 rounded-full bg-[#7fd8a8]/20 blur-2xl sm:block" />
+            <div className="relative mx-auto grid size-32 place-items-center rounded-[28px] border border-[#7fd8a8]/30 bg-[#1f6e54] shadow-[0_0_42px_rgba(127,216,168,0.22)] lg:mx-0" data-animate="iglogo">
+              <CactusMark size={74} body="#c8efd9" showBase={false} />
             </div>
             <div className="relative text-center lg:text-left">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#d6b56d]">
+              <p className="text-sm font-[var(--font-mono)] uppercase tracking-[0.22em] text-[#7fd8a8] text-xs">
                 Instagram oficial
               </p>
               <h2 className="mt-4 font-[var(--font-display)] text-3xl font-semibold leading-tight text-balance sm:text-4xl">
                 Acompanhe a Cactus Company
               </h2>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-[#c5d0c1] sm:text-lg">
+              <p className="mt-4 max-w-2xl text-base leading-7 text-[#bcd1c6] sm:text-lg">
                 Siga nossos bastidores de aplicativos, jogos e soluções digitais para acompanhar a
                 evolução dos produtos da marca.
               </p>
@@ -159,7 +193,8 @@ export default function Home() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Seguir a Cactus Company no Instagram"
-                className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#d6b56d] px-6 text-sm font-semibold text-[#07130d] transition hover:bg-[#f0d58e]"
+                data-magnetic
+                className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#7fd8a8] px-6 text-sm font-semibold text-[#0a1612] transition hover:bg-[#9be7bf]"
               >
                 Seguir no Instagram
               </a>
@@ -175,7 +210,8 @@ export default function Home() {
       >
         <Link
           href="/politica-de-privacidade"
-          className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d6b56d]/45 px-6 text-sm font-semibold text-[#f0d58e] transition hover:bg-[#d6b56d]/10"
+          data-magnetic
+          className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#7fd8a8]/45 px-6 text-sm font-semibold text-[#9be7bf] transition hover:bg-[#7fd8a8]/10"
         >
           Ver política de privacidade
         </Link>

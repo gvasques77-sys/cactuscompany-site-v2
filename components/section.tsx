@@ -11,7 +11,7 @@ export function Section({ eyebrow, title, description, children }: SectionProps)
       <div className="container-shell">
         <div className="max-w-3xl">
           {eyebrow ? (
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#d6b56d]">
+            <p className="text-sm font-[var(--font-mono)] uppercase tracking-[0.22em] text-[#7fd8a8] text-xs">
               {eyebrow}
             </p>
           ) : null}
@@ -19,7 +19,7 @@ export function Section({ eyebrow, title, description, children }: SectionProps)
             {title}
           </h2>
           {description ? (
-            <p className="mt-4 text-base leading-7 text-[#c5d0c1] sm:text-lg">{description}</p>
+            <p className="mt-4 text-base leading-7 text-[#bcd1c6] sm:text-lg">{description}</p>
           ) : null}
         </div>
         {children ? <div className="mt-9">{children}</div> : null}

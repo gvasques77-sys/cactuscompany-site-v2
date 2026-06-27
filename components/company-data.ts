@@ -11,7 +11,7 @@ export const company = {
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/sobre", label: "Sobre" },
-  { href: "/solucoes", label: "Soluções" },
+  { href: "/produtos", label: "Produtos" },
   { href: "/contato", label: "Contato" },
   { href: "/politica-de-privacidade", label: "Privacidade" },
 ];

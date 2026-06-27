@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -5,6 +6,9 @@
   --background: #0a1612;       /* ink — mais profundo */
   --surface: #132a23;          /* superfície elevada */
   --surface-strong: #18382e;   /* borda / superfície forte */
+
+  /* Cores adicionais do protótipo */
+  --forest: #0f1f1a;
 
   /* Texto */
   --foreground: #e8f0eb;
@@ -18,7 +22,19 @@
   --aloe-bright: #9be7bf;
   --aloe-soft: #c8efd9;
 
-  /* Tipografia sem fetch externo, para builds locais/Vercel robustos */
+  /* Neutros (UI Clara do App) */
+  --paper: #f4f7f4;
+  --card: #ffffff;
+  --line: #e2e9e4;
+  --text-dark: #11201b;
+
+  /* Semânticas (App) */
+  --presente: #1f6e54;
+  --atraso: #c9892b;
+  --falta: #c0463c;
+  --justif: #2f6db0;
+
+  /* Tipografia */
   --font-sans: Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: "Space Grotesk", Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, ui-monospace, monospace;
@@ -286,3 +302,107 @@ a {
     transform: none;
   }
 }
+
+/* ============================================================
+   IPHONE SIMULATOR STYLING
+   ============================================================ */
+.iphone-case {
+  position: relative;
+  width: 320px;
+  height: 650px;
+  background: #000000;
+  border-radius: 46px;
+  box-shadow: 
+    0 0 0 10px #1e201e,
+    0 0 0 11px #2a2c2a,
+    0 25px 50px -12px rgba(0, 0, 0, 0.75);
+  border: 4px solid #000000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.iphone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--paper);
+  border-radius: 38px;
+  overflow: hidden;
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  display: flex;
+  flex-direction: column;
+}
+
+.iphone-notch {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 24px;
+  background: #000000;
+  border-radius: 14px;
+  z-index: 50;
+  transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.iphone-notch.expanded {
+  width: 190px;
+  height: 32px;
+  border-radius: 16px;
+}
+
+.iphone-status-bar {
+  height: 38px;
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dark);
+  z-index: 40;
+  pointer-events: none;
+}
+
+.iphone-status-bar.dark-text {
+  color: var(--text-dark);
+}
+
+.iphone-status-bar.light-text {
+  color: #ffffff;
+}
+
+.iphone-home-indicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 4.5px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.iphone-home-indicator.light {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.simulator-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.simulator-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.simulator-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+}
+.simulator-scroll.dark-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+}
+

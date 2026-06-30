@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <rect width="48" height="48" rx="12" fill="#1f6e54"></rect>
-  <g fill="#7fd8a8">
-    <rect x="20.5" y="7" width="7" height="32" rx="3.5"></rect>
-    <rect x="10.5" y="21" width="6" height="15" rx="3"></rect>
-    <rect x="10.5" y="21" width="13" height="6" rx="3"></rect>
-    <rect x="31.5" y="16" width="6" height="20" rx="3"></rect>
-    <rect x="24.5" y="16" width="13" height="6" rx="3"></rect>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" rx="224" fill="#F6FBF8"/>
+  <path d="M768 704C704 768 616 804 512 804C344 804 208 668 208 500C208 332 344 196 512 196C616 196 704 232 768 296" fill="none" stroke="#102319" stroke-width="94" stroke-linecap="round"/>
+  <rect x="494" y="307" width="104" height="523" rx="52" fill="#24b83d"/>
+  <rect x="402" y="478" width="82" height="214" rx="41" fill="#24b83d"/>
+  <rect x="612" y="418" width="82" height="274" rx="41" fill="#24b83d"/>
+  <rect x="420" y="803" width="256" height="66" rx="33" fill="#24b83d"/>
 </svg>

@@ -9,9 +9,9 @@ export const company = {
 };
 
 export const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/sobre", label: "Sobre" },
-  { href: "/produtos", label: "Produtos" },
+  { href: "/#empresa", label: "Empresa" },
+  { href: "/#solucoes", label: "Soluções" },
+  { href: "/#produto", label: "Produto" },
+  { href: "/#seguranca", label: "Segurança" },
   { href: "/contato", label: "Contato" },
-  { href: "/politica-de-privacidade", label: "Privacidade" },
 ];

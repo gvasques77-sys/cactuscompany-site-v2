@@ -1,72 +1,37 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/page-hero";
-import { Section } from "@/components/section";
 import { company } from "@/components/company-data";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
-  description:
-    "Política de Privacidade da Cactus Company, marca operada pela GV TECNOLOGIA LTDA.",
+  description: "Política de Privacidade da Cactus Company.",
 };
 
 const topics = [
-  {
-    title: "Dados tratados",
-    text: "Podemos tratar dados fornecidos diretamente por usuários, clientes ou parceiros, como nome, email, telefone, informações empresariais e mensagens enviadas pelos canais de contato.",
-  },
-  {
-    title: "Finalidades",
-    text: "Os dados são utilizados para atendimento, suporte, comunicação empresarial, melhoria de produtos, segurança operacional e cumprimento de obrigações legais ou regulatórias.",
-  },
-  {
-    title: "Segurança",
-    text: "Adotamos medidas técnicas e organizacionais proporcionais para proteger informações contra acessos não autorizados, perda, alteração ou uso indevido.",
-  },
-  {
-    title: "Compartilhamento",
-    text: "Informações podem ser compartilhadas com fornecedores essenciais, plataformas, autoridades ou parceiros quando necessário para operação, cumprimento legal ou validação corporativa.",
-  },
-  {
-    title: "Direitos dos titulares",
-    text: "Titulares podem solicitar informações, correção, atualização ou exclusão de dados pessoais, observadas as bases legais e obrigações aplicáveis.",
-  },
-  {
-    title: "Contato sobre privacidade",
-    text: `Solicitações relacionadas a privacidade podem ser enviadas para ${company.email}.`,
-  },
+  "Tratamos dados necessários para atendimento, suporte, operação e segurança.",
+  "Aplicamos minimização, finalidade e controles de acesso proporcionais.",
+  "Solicitações sobre privacidade podem ser enviadas ao canal oficial de suporte.",
 ];
 
-export default function PrivacyPage() {
+export default function PrivacidadePage() {
   return (
-    <>
-      <PageHero
-        eyebrow="Privacidade"
-        title="Política de Privacidade"
-        description={`Esta política descreve como a ${company.brand}, marca operada pela ${company.legalName}, trata informações em seus canais, produtos e relações empresariais.`}
-      />
-
-      <Section title="Compromisso com privacidade e segurança">
-        <div className="grid gap-5 md:grid-cols-2">
+    <section className="apple-section">
+      <div className="container-shell">
+        <div className="section-heading" data-animate="fade-up">
+          <div className="eyebrow">Privacidade</div>
+          <h2>Política de Privacidade</h2>
+        </div>
+        <div className="capability-grid">
           {topics.map((topic) => (
-            <article key={topic.title} className="quiet-border soft-panel rounded-lg p-6">
-              <h2 className="font-[var(--font-display)] text-xl font-semibold">{topic.title}</h2>
-              <p className="mt-4 text-sm leading-6 text-[#c5d0c1]">{topic.text}</p>
+            <article className="glass-card" key={topic} data-animate="card">
+              <span className="card-line" />
+              <p>{topic}</p>
             </article>
           ))}
         </div>
-      </Section>
-
-      <section className="border-t border-white/10 py-12">
-        <div className="container-shell text-sm leading-7 text-[#a7b4a3]">
-          <p>
-            Esta política pode ser atualizada para refletir mudanças nos produtos, processos ou
-            exigências legais. A versão vigente será publicada neste endereço.
-          </p>
-          <p className="mt-4">
-            Controladora: {company.legalName} · CNPJ {company.cnpj} · {company.location}
-          </p>
-        </div>
-      </section>
-    </>
+        <p className="section-copy" style={{ marginTop: 36 }}>
+          Controladora: {company.legalName} • CNPJ {company.cnpj} • {company.email}
+        </p>
+      </div>
+    </section>
   );
 }

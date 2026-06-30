@@ -1,71 +1,40 @@
 import Link from "next/link";
 import { CactusMark } from "@/components/cactus-mark";
-import { company } from "@/components/company-data";
-
-const customNavItems = [
-  { href: "/#marca", label: "Marca" },
-  { href: "/#logo", label: "Logo" },
-  { href: "/#design-system", label: "Design System" },
-  { href: "/#o-app", label: "O App" },
-];
+import { company, navItems } from "@/components/company-data";
 
 export function Header() {
   return (
-    <header className="site-header sticky top-0 z-50 border-b border-[#7fd8a8]/12 bg-[#0a1612]/85 backdrop-blur-xl">
-      <div className="site-bar container-shell flex min-h-16 items-center justify-between gap-6 py-3">
-        <Link href="/" className="group flex items-center gap-3" aria-label="Cactus Company">
-          <span className="site-logo grid size-11 place-items-center rounded-2xl bg-[#1f6e54] shadow-[0_10px_24px_rgba(31,110,84,0.35)] transition group-hover:bg-[#1b6149]">
-            <CactusMark size={26} body="#c8efd9" showBase={false} />
+    <header className="site-header">
+      <div className="container-shell header-inner">
+        <Link href="/" className="brand-lockup" aria-label="Cactus Company">
+          <span className="brand-icon">
+            <CactusMark size={44} body="#24b83d" />
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-[var(--font-display)] text-base font-semibold tracking-[-0.01em]">
-              CACTUS
-            </span>
-            <span className="mt-1.5 font-[var(--font-mono)] text-[10px] uppercase tracking-[0.28em] text-[#7fd8a8]/75">
-              company
-            </span>
+          <span>
+            <strong>{company.brand}</strong>
+            <small>software studio</small>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
-          {customNavItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-full px-4 py-2 text-sm text-[#cdddd3] transition hover:bg-[#7fd8a8]/10 hover:text-white font-medium"
-            >
+        <nav className="desktop-nav" aria-label="Navegação principal">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <Link
-          href="/produtos"
-          data-magnetic
-          className="hidden rounded-full bg-[#7fd8a8] px-5 py-2 text-sm font-semibold text-[#0a1612] transition hover:bg-[#9be7bf] sm:inline-flex shadow-[0_4px_12px_rgba(127,216,168,0.2)]"
-        >
-          Ver o protótipo
+        <Link href="/contato" className="header-cta" data-magnetic>
+          Fale conosco
         </Link>
       </div>
-      <nav
-        className="container-shell flex gap-1 overflow-x-auto border-t border-[#7fd8a8]/10 py-2 md:hidden"
-        aria-label="Navegação principal"
-      >
-        {customNavItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="shrink-0 rounded-full px-3 py-2 text-sm text-[#cdddd3] transition hover:bg-[#7fd8a8]/10 hover:text-white font-medium"
-          >
+
+      <nav className="mobile-nav" aria-label="Navegação principal mobile">
+        {navItems.map((item) => (
+          <Link key={item.href} href={item.href}>
             {item.label}
           </Link>
         ))}
-        <Link
-          href="/produtos"
-          className="shrink-0 rounded-full bg-[#7fd8a8]/20 px-3 py-2 text-sm font-semibold text-[#7fd8a8] ml-auto"
-        >
-          Protótipo
-        </Link>
       </nav>
     </header>
   );

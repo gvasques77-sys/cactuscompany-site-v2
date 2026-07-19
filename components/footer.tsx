@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CactusMark } from "@/components/cactus-mark";
 import { company, navItems } from "@/components/company-data";
 import { AppleGlyph, PlayGlyph } from "@/components/icons";
+import { CookiePreferencesButton } from "@/components/cookie-consent";
 
 export function Footer() {
   return (
@@ -41,6 +42,8 @@ export function Footer() {
               <Link href="/produtos">Frequência Internato</Link>
               <Link href="/produtos#seguranca">Segurança</Link>
               <Link href="/politica-de-privacidade">Política de privacidade</Link>
+              <Link href="/politica-de-cookies">Política de cookies</Link>
+              <CookiePreferencesButton />
             </div>
             <div className="footer-col">
               <span className="ct">Contato</span>

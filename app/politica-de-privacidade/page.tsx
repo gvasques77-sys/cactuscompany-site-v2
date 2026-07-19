@@ -48,6 +48,15 @@ export default function PrivacidadePage() {
             ser enviadas ao canal oficial de suporte.
           </p>
 
+          <h3>Cookies</h3>
+          <p>
+            O site utiliza um cookie necessário para lembrar as preferências escolhidas no banner.
+            Quando autorizado, o Vercel Web Analytics mede visualizações de página de forma agregada
+            e sem cookies de terceiros. Não utilizamos cookies de publicidade ou criação de perfis.
+            Consulte a nossa <a href="/politica-de-cookies">Política de Cookies</a> para conhecer a
+            finalidade, os dados tratados e o prazo de retenção.
+          </p>
+
           <p style={{ marginTop: 28, color: "var(--muted-2)", fontSize: 14 }}>
             Controladora: {company.legalName} · CNPJ {company.cnpj} ·{" "}
             <a href={`mailto:${company.email}`}>{company.email}</a>

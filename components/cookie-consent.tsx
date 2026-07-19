@@ -95,7 +95,7 @@ export function CookieConsent() {
           <div className="cookie-consent__copy">
             <h2 id="cookie-consent-title">Sua privacidade, suas escolhas</h2>
             <p id="cookie-consent-description">
-              Usamos um cookie necessário para lembrar sua escolha. A medição anônima de desempenho
+              Usamos um cookie necessário para lembrar sua escolha. A medição opcional de desempenho
               permanece desativada até você autorizar. Saiba mais na nossa{" "}
               <Link href="/politica-de-cookies">Política de Cookies</Link>.
             </p>
@@ -139,7 +139,7 @@ export function CookieConsent() {
               <div>
                 <strong>Desempenho e análise</strong>
                 <span>
-                  Visitas agregadas com Vercel Web Analytics, sem cookies de terceiros.
+                  Visitas e navegação com Vercel Web Analytics e Google Analytics 4.
                 </span>
               </div>
               <span className="cookie-switch">

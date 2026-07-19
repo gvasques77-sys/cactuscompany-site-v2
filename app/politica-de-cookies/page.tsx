@@ -13,7 +13,7 @@ export default function CookiePolicyPage() {
         <div className="section-head" data-animate="fade-up">
           <span className="eyebrow">Privacidade</span>
           <h2>Política de Cookies</h2>
-          <p>Última atualização: 18 de julho de 2026.</p>
+          <p>Última atualização: 19 de julho de 2026.</p>
         </div>
 
         <div className="prose" data-animate="fade-up">
@@ -36,10 +36,22 @@ export default function CookiePolicyPage() {
               </thead>
               <tbody>
                 <tr>
-                  <td>cactus_cookie_consent_v1</td>
+                  <td>cactus_cookie_consent_v2</td>
                   <td>Lembrar a preferência de cookies escolhida no banner.</td>
                   <td>Necessário</td>
                   <td>180 dias</td>
+                </tr>
+                <tr>
+                  <td>_ga</td>
+                  <td>Distinguir visitantes e contabilizar o uso do site no Google Analytics 4.</td>
+                  <td>Desempenho e análise</td>
+                  <td>Até 2 anos</td>
+                </tr>
+                <tr>
+                  <td>_ga_2JX31FFR8W</td>
+                  <td>Manter o estado da sessão de medição do Google Analytics 4.</td>
+                  <td>Desempenho e análise</td>
+                  <td>Até 2 anos</td>
                 </tr>
               </tbody>
             </table>
@@ -48,17 +60,19 @@ export default function CookiePolicyPage() {
           <h3>Medição opcional de desempenho</h3>
           <p>
             Quando o visitante autoriza a categoria “Desempenho e análise”, ativamos o Vercel Web
-            Analytics para registrar visualizações de página de forma agregada. A ferramenta pode
-            tratar informações como página acessada, horário, origem da visita, país, navegador,
-            sistema operacional e tipo de dispositivo. Segundo a Vercel, esses registros não são
-            associados a uma pessoa ou endereço IP e a identificação temporária da sessão é
-            descartada após 24 horas.
+            Analytics e o Google Analytics 4 para compreender visualizações de página, navegação e
+            origem das visitas. As ferramentas podem tratar informações como página acessada,
+            horário, origem da visita, região aproximada, navegador, sistema operacional e tipo de
+            dispositivo. Não enviamos nomes, e-mails, conteúdo de formulários ou dados do aplicativo
+            Frequência Internato para essas ferramentas por meio do site.
           </p>
           <p>
-            O Vercel Web Analytics não utiliza cookies de terceiros. Ainda assim, adotamos uma
-            abordagem conservadora: o componente de medição só é carregado após a autorização no
-            banner e deixa de ser carregado quando a preferência é revogada. Não utilizamos cookies
-            de publicidade, marketing ou criação de perfis comportamentais.
+            O Vercel Web Analytics não utiliza cookies de terceiros. O Google Analytics 4 utiliza
+            cookies próprios para distinguir visitantes e sessões. Adotamos uma abordagem
+            conservadora: os componentes de medição só são carregados após a autorização no banner.
+            Se a preferência for revogada, o consentimento de análise é negado e os cookies do Google
+            Analytics são removidos. Os sinais de publicidade, dados para anúncios e personalização
+            permanecem desativados.
           </p>
 
           <h3>Como alterar ou revogar sua escolha</h3>

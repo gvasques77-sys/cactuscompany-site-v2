@@ -51,10 +51,11 @@ export default function PrivacidadePage() {
           <h3>Cookies</h3>
           <p>
             O site utiliza um cookie necessário para lembrar as preferências escolhidas no banner.
-            Quando autorizado, o Vercel Web Analytics mede visualizações de página de forma agregada
-            e sem cookies de terceiros. Não utilizamos cookies de publicidade ou criação de perfis.
-            Consulte a nossa <a href="/politica-de-cookies">Política de Cookies</a> para conhecer a
-            finalidade, os dados tratados e o prazo de retenção.
+            Quando autorizado, o Vercel Web Analytics e o Google Analytics 4 medem visualizações,
+            navegação e origem das visitas. O Google Analytics utiliza cookies próprios para
+            distinguir visitantes e sessões. Os sinais de publicidade e personalização permanecem
+            desativados. Consulte a nossa <a href="/politica-de-cookies">Política de Cookies</a> para
+            conhecer as ferramentas, finalidades, dados tratados e prazos de retenção.
           </p>
 
           <p style={{ marginTop: 28, color: "var(--muted-2)", fontSize: 14 }}>

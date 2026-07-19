@@ -2,15 +2,10 @@ import Image from "next/image";
 
 type CactusMarkProps = {
   size?: number;
-  body?: string;
-  showBase?: boolean;
   className?: string;
 };
 
-export function CactusMark({
-  size = 42,
-  className,
-}: CactusMarkProps) {
+export function CactusMark({ size = 42, className }: CactusMarkProps) {
   return (
     <Image
       src="/images/cactus-icon.png"
@@ -21,7 +16,7 @@ export function CactusMark({
       aria-hidden="true"
       draggable={false}
       sizes={`${size}px`}
-      style={{ width: size, height: size }}
+      style={{ width: size, height: size, borderRadius: Math.round(size * 0.27), display: "block" }}
     />
   );
 }

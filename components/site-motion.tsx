@@ -31,110 +31,100 @@ export function SiteMotion() {
         });
       }
 
+      // bar fills (dashboard) run regardless of reduced motion, but instant if reduced
+      gsap.utils.toArray<HTMLElement>(".bar-fill").forEach((el) => {
+        const target = el.dataset.w || "0%";
+        if (reduceMotion) {
+          el.style.width = target;
+          return;
+        }
+        gsap.fromTo(
+          el,
+          { width: "0%" },
+          {
+            width: target,
+            duration: 1.1,
+            ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 92%", once: true },
+          }
+        );
+      });
+
       if (reduceMotion) return;
 
       gsap.from('[data-animate="hero-item"]', {
         autoAlpha: 0,
-        y: 36,
-        duration: 0.95,
+        y: 30,
+        duration: 0.9,
         ease: "power3.out",
-        stagger: 0.13,
-        delay: 0.1,
+        stagger: 0.12,
+        delay: 0.08,
       });
 
       gsap.from('[data-animate="hero-media"]', {
         autoAlpha: 0,
-        y: 42,
-        scale: 0.94,
-        duration: 1.15,
+        y: 40,
+        scale: 0.95,
+        duration: 1.1,
         ease: "power3.out",
-        delay: 0.32,
-      });
-
-      gsap.to(".orbit-one", {
-        rotation: 360,
-        duration: 72,
-        repeat: -1,
-        ease: "none",
-        transformOrigin: "50% 50%",
-      });
-
-      gsap.to(".orbit-two", {
-        rotation: -360,
-        duration: 96,
-        repeat: -1,
-        ease: "none",
-        transformOrigin: "50% 50%",
-      });
-
-      gsap.to(".stage-chip", {
-        y: -14,
-        duration: 2.8,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-        stagger: 0.28,
-      });
-
-      gsap.to(".brand-stage", {
-        yPercent: -8,
-        ease: "none",
-        scrollTrigger: {
-          trigger: '[data-animate="hero"]',
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
+        delay: 0.28,
       });
 
       gsap.utils.toArray<HTMLElement>('[data-animate="fade-up"]').forEach((element) => {
         gsap.from(element, {
           autoAlpha: 0,
-          y: 42,
-          duration: 0.85,
+          y: 40,
+          duration: 0.82,
           ease: "power3.out",
-          scrollTrigger: { trigger: element, start: "top 82%", once: true },
+          scrollTrigger: { trigger: element, start: "top 84%", once: true },
         });
       });
 
       gsap.utils.toArray<HTMLElement>('[data-animate="card"]').forEach((element) => {
         gsap.from(element, {
           autoAlpha: 0,
-          y: 30,
+          y: 28,
           scale: 0.98,
-          duration: 0.72,
+          duration: 0.7,
           ease: "power3.out",
-          scrollTrigger: { trigger: element, start: "top 86%", once: true },
+          scrollTrigger: { trigger: element, start: "top 88%", once: true },
         });
       });
 
-      gsap.from('[data-animate="product-phone"]', {
-        autoAlpha: 0,
-        y: 64,
-        rotateX: -8,
-        scale: 0.94,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: { trigger: '[data-animate="product-phone"]', start: "top 78%", once: true },
+      gsap.utils.toArray<HTMLElement>('[data-animate="footer-item"]').forEach((element) => {
+        gsap.from(element, {
+          autoAlpha: 0,
+          y: 24,
+          duration: 0.7,
+          ease: "power3.out",
+          scrollTrigger: { trigger: element, start: "top 92%", once: true },
+        });
+      });
+
+      gsap.utils.toArray<HTMLElement>('[data-animate="product-phone"]').forEach((element) => {
+        gsap.from(element, {
+          autoAlpha: 0,
+          y: 60,
+          scale: 0.94,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: { trigger: element, start: "top 80%", once: true },
+        });
       });
 
       if (finePointer) {
-        const magneticItems = gsap.utils.toArray<HTMLElement>("[data-magnetic]");
-        magneticItems.forEach((item) => {
+        gsap.utils.toArray<HTMLElement>("[data-magnetic]").forEach((item) => {
           const moveX = gsap.quickTo(item, "x", { duration: 0.45, ease: "power3" });
           const moveY = gsap.quickTo(item, "y", { duration: 0.45, ease: "power3" });
-
           const onMove = (event: MouseEvent) => {
             const rect = item.getBoundingClientRect();
-            moveX((event.clientX - rect.left - rect.width / 2) * 0.18);
-            moveY((event.clientY - rect.top - rect.height / 2) * 0.18);
+            moveX((event.clientX - rect.left - rect.width / 2) * 0.15);
+            moveY((event.clientY - rect.top - rect.height / 2) * 0.15);
           };
-
           const onLeave = () => {
             moveX(0);
             moveY(0);
           };
-
           item.addEventListener("mousemove", onMove);
           item.addEventListener("mouseleave", onLeave);
         });

@@ -6,31 +6,53 @@ export const metadata: Metadata = {
   description: "Política de Privacidade da Cactus Company.",
 };
 
-const topics = [
-  "Tratamos dados necessários para atendimento, suporte, operação e segurança.",
-  "Aplicamos minimização, finalidade e controles de acesso proporcionais.",
-  "Solicitações sobre privacidade podem ser enviadas ao canal oficial de suporte.",
-];
-
 export default function PrivacidadePage() {
   return (
-    <section className="apple-section">
-      <div className="container-shell">
-        <div className="section-heading" data-animate="fade-up">
-          <div className="eyebrow">Privacidade</div>
+    <section className="section section-bg" style={{ paddingTop: "clamp(88px,10vw,128px)" }}>
+      <div className="container-shell" style={{ maxWidth: 820 }}>
+        <div className="section-head" data-animate="fade-up">
+          <span className="eyebrow">Privacidade</span>
           <h2>Política de Privacidade</h2>
         </div>
-        <div className="capability-grid">
-          {topics.map((topic) => (
-            <article className="glass-card" key={topic} data-animate="card">
-              <span className="card-line" />
-              <p>{topic}</p>
-            </article>
-          ))}
+        <div className="prose" data-animate="fade-up">
+          <p>
+            A {company.brand}, marca operada pela {company.legalName}, trata dados pessoais com
+            coleta mínima, finalidade definida e controles de acesso proporcionais, em conformidade
+            com a Lei Geral de Proteção de Dados (LGPD).
+          </p>
+
+          <h3>Dados que tratamos</h3>
+          <p>
+            Tratamos apenas os dados necessários para atendimento, suporte, operação e segurança dos
+            nossos produtos. No aplicativo Frequência Internato, a localização é lida somente no
+            instante do check-in, nunca em segundo plano.
+          </p>
+
+          <h3>Biometria</h3>
+          <p>
+            A confirmação biométrica é feita localmente pelo próprio sistema operacional do
+            aparelho. Nenhum dado biométrico é coletado, transmitido ou armazenado pela Cactus
+            Company.
+          </p>
+
+          <h3>Finalidade e acesso</h3>
+          <p>
+            Aplicamos minimização de dados, finalidade específica e controles de acesso por perfil.
+            Os dados de cada instituição ficam isolados dos dados de qualquer outra, e a
+            infraestrutura é hospedada no Brasil.
+          </p>
+
+          <h3>Seus direitos</h3>
+          <p>
+            Solicitações sobre privacidade, incluindo acesso, correção e exclusão de dados, podem
+            ser enviadas ao canal oficial de suporte.
+          </p>
+
+          <p style={{ marginTop: 28, color: "var(--muted-2)", fontSize: 14 }}>
+            Controladora: {company.legalName} · CNPJ {company.cnpj} ·{" "}
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+          </p>
         </div>
-        <p className="section-copy" style={{ marginTop: 36 }}>
-          Controladora: {company.legalName} • CNPJ {company.cnpj} • {company.email}
-        </p>
       </div>
     </section>
   );

@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { CactusMark } from "@/components/cactus-mark";
-import { company, navItems } from "@/components/company-data";
+import { company, navItems, demoMailto } from "@/components/company-data";
 
 export function Header() {
   return (
     <header className="site-header">
-      <div className="container-shell header-inner">
-        <Link href="/" className="brand-lockup" aria-label="Cactus Company">
+      <div className="container-wide header-inner">
+        <Link href="/" className="brand-lockup" aria-label="Cactus Company — início">
           <span className="brand-icon">
-            <CactusMark size={44} body="#24b83d" />
+            <CactusMark size={40} />
           </span>
           <span>
             <strong>{company.brand}</strong>
@@ -22,11 +22,10 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <a href={demoMailto} className="header-cta" data-magnetic style={{ marginLeft: 10 }}>
+            Agendar demonstração
+          </a>
         </nav>
-
-        <Link href="/contato" className="header-cta" data-magnetic>
-          Fale conosco
-        </Link>
       </div>
 
       <nav className="mobile-nav" aria-label="Navegação principal mobile">

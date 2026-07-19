@@ -8,32 +8,34 @@ export const metadata: Metadata = {
 
 export default function SobrePage() {
   return (
-    <section className="apple-section">
-      <div className="container-shell split-layout">
-        <div data-animate="fade-up">
-          <div className="eyebrow">Sobre</div>
+    <section className="section section-bg" style={{ paddingTop: "clamp(88px,10vw,128px)" }}>
+      <div className="container-shell">
+        <div className="section-head" data-animate="fade-up">
+          <span className="eyebrow">Sobre</span>
           <h2>Cactus Company</h2>
-        </div>
-        <div className="section-copy" data-animate="fade-up">
-          <p>
+          <p className="lead">
             A {company.brand} é uma marca operada pela {company.legalName}, empresa brasileira de
             tecnologia sediada em {company.location}. Desenvolvemos aplicativos, sistemas e produtos
             digitais para operações que precisam de confiança, clareza e evolução contínua.
           </p>
-          <dl className="company-facts">
-            <div>
-              <dt>Razão social</dt>
-              <dd>{company.legalName}</dd>
-            </div>
-            <div>
-              <dt>CNPJ</dt>
-              <dd>{company.cnpj}</dd>
-            </div>
-            <div>
-              <dt>Domínio</dt>
-              <dd>{company.domain}</dd>
-            </div>
-          </dl>
+        </div>
+        <div className="fact-grid" data-animate="fade-up">
+          <div className="fact-card">
+            <div className="k">Razão social</div>
+            <div className="v">{company.legalName}</div>
+          </div>
+          <div className="fact-card">
+            <div className="k">CNPJ</div>
+            <div className="v">{company.cnpj}</div>
+          </div>
+          <div className="fact-card">
+            <div className="k">Domínio</div>
+            <div className="v">{company.domain}</div>
+          </div>
+          <div className="fact-card">
+            <div className="k">Localização</div>
+            <div className="v">Cuiabá, Mato Grosso · Brasil</div>
+          </div>
         </div>
       </div>
     </section>

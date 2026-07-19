@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { SiteMotion } from "@/components/site-motion";
 import { WhatsappFloat } from "@/components/whatsapp-float";
+import { CookieConsent } from "@/components/cookie-consent";
+import { ConsentAwareAnalytics } from "@/components/consent-aware-analytics";
 import { company } from "@/components/company-data";
 
 const display = Space_Grotesk({
@@ -77,6 +79,8 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsappFloat />
+        <CookieConsent />
+        <ConsentAwareAnalytics />
       </body>
     </html>
   );

@@ -3,7 +3,14 @@ import type { MetadataRoute } from "next";
 const baseUrl = "https://cactuscompany.com.br";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/sobre", "/produtos", "/contato", "/politica-de-privacidade"];
+  const routes = [
+    "",
+    "/sobre",
+    "/produtos",
+    "/contato",
+    "/politica-de-privacidade",
+    "/politica-de-cookies",
+  ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

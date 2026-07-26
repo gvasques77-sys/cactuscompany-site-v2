@@ -12,6 +12,14 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/proposta-nilton-lins",
+        destination: "/proposta-nilton-lins/index.html",
+      },
+    ];
+  },
 };
 
 export default nextConfig;

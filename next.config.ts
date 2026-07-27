@@ -13,12 +13,21 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
-    return [
-      {
-        source: "/proposta-nilton-lins",
-        destination: "/proposta-nilton-lins/index.html",
-      },
-    ];
+    return {
+      beforeFiles: [
+        {
+          source: "/",
+          destination: "/site-institucional/index.html",
+        },
+      ],
+      afterFiles: [
+        {
+          source: "/proposta-nilton-lins",
+          destination: "/proposta-nilton-lins/index.html",
+        },
+      ],
+      fallback: [],
+    };
   },
 };
 

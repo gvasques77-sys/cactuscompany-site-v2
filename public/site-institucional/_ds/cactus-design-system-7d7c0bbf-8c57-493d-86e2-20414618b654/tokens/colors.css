@@ -1,0 +1,121 @@
+/* ─────────────────────────────────────────
+   Cactus Company — Color Tokens
+   ─────────────────────────────────────────
+   Primary palette derived from the Frequência
+   Internato logomark: vivid cactus green +
+   deep forest dark + airy mint backgrounds.
+───────────────────────────────────────── */
+:root {
+
+  /* ── Cactus Green ────────────────────────
+     The signature bright green of the cactus
+     icon — lively, natural, energetic. Used
+     for primary actions, success states, and
+     brand accents.
+  ─────────────────────────────────────── */
+  --color-cactus-50:  #EAF8EC;
+  --color-cactus-100: #C7EDCB;
+  --color-cactus-200: #9FE0A6;
+  --color-cactus-300: #72D27E;
+  --color-cactus-400: #4EC45B;
+  --color-cactus-500: #38B82C; /* ← Brand primary */
+  --color-cactus-600: #2EA323;
+  --color-cactus-700: #248B1A;
+  --color-cactus-800: #1A7212;
+  --color-cactus-900: #10590A;
+
+  /* ── Forest Dark ─────────────────────────
+     The deep near-black green of the "C"
+     letterform. Used for headings, dark
+     surfaces, the primary nav bar, and
+     high-emphasis text.
+  ─────────────────────────────────────── */
+  --color-forest-50:  #E5EDE7;
+  --color-forest-100: #BFCFC3;
+  --color-forest-200: #95AE9B;
+  --color-forest-300: #6B8E72;
+  --color-forest-400: #477551;
+  --color-forest-500: #245D31;
+  --color-forest-600: #1D4F29;
+  --color-forest-700: #164021;
+  --color-forest-800: #0F3219;
+  --color-forest-900: #0F2118; /* ← Brand dark */
+
+  /* ── Neutral ─────────────────────────────
+     Warm neutral gray with a subtle green
+     undertone, keeping all surfaces in the
+     brand's chromatic family.
+  ─────────────────────────────────────── */
+  --color-neutral-0:   #FFFFFF;
+  --color-neutral-50:  #F5F8F5;
+  --color-neutral-100: #EAECEA;
+  --color-neutral-200: #D2D7D2;
+  --color-neutral-300: #B3BAB3;
+  --color-neutral-400: #929E92;
+  --color-neutral-500: #707D70;
+  --color-neutral-600: #556055;
+  --color-neutral-700: #3E4A3E;
+  --color-neutral-800: #2A342A;
+  --color-neutral-900: #1A201A;
+
+  /* ── Semantic ────────────────────────────
+     Status colors for attendance: present,
+     absent, and justified. Also info/warning.
+  ─────────────────────────────────────── */
+  --color-success:        #38B82C;
+  --color-success-light:  #EAF8EC;
+  --color-success-dark:   #248B1A;
+
+  --color-warning:        #E09820;
+  --color-warning-light:  #FFF4DC;
+  --color-warning-dark:   #B07600;
+
+  --color-error:          #DC3535;
+  --color-error-light:    #FCEAEA;
+  --color-error-dark:     #B02828;
+
+  --color-info:           #2A7ADB;
+  --color-info-light:     #E5F0FC;
+  --color-info-dark:      #1E5DB0;
+
+  /* ── Attendance Status ───────────────────
+     Domain-specific semantic layer for the
+     Frequência Internato product.
+  ─────────────────────────────────────── */
+  --color-presente:       var(--color-success);
+  --color-presente-bg:    var(--color-success-light);
+  --color-ausente:        var(--color-error);
+  --color-ausente-bg:     var(--color-error-light);
+  --color-justificado:    var(--color-warning);
+  --color-justificado-bg: var(--color-warning-light);
+
+  /* ── Alias Layer ─────────────────────────
+     Semantic, purpose-driven tokens for use
+     in components. Reference these — not raw
+     palette tokens — in component styles.
+  ─────────────────────────────────────── */
+  --color-brand:            var(--color-cactus-500);
+  --color-brand-hover:      var(--color-cactus-600);
+  --color-brand-active:     var(--color-cactus-700);
+  --color-brand-subtle:     var(--color-cactus-50);
+  --color-brand-dark:       var(--color-forest-900);
+  --color-brand-dark-hover: var(--color-forest-800);
+
+  --color-surface:          var(--color-neutral-0);
+  --color-surface-raised:   var(--color-neutral-50);
+  --color-surface-app:      #EBF8EE; /* App-level mint background */
+  --color-surface-overlay:  rgba(15, 33, 24, 0.55);
+
+  --color-text-primary:     var(--color-forest-900);
+  --color-text-secondary:   var(--color-neutral-500);
+  --color-text-tertiary:    var(--color-neutral-400);
+  --color-text-disabled:    var(--color-neutral-300);
+  --color-text-inverse:     var(--color-neutral-0);
+  --color-text-brand:       var(--color-cactus-500);
+  --color-text-brand-dark:  var(--color-forest-900);
+
+  --color-border:           var(--color-neutral-200);
+  --color-border-strong:    var(--color-neutral-400);
+  --color-border-focus:     var(--color-cactus-500);
+  --color-border-error:     var(--color-error);
+}

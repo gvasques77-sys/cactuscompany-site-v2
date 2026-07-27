@@ -18,13 +18,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { margin:0; font-family:'Manrope',system-ui,sans-serif; color:#101828; background:#ffffff; -webkit-font-smoothing:antialiased; }
-    a { color:#145881; text-decoration-color:#A8CCD8; }
-    a:hover { color:#003048; }
+    a { color:#A02029; text-decoration-color:#E8B8BC; }
+    a:hover { color:#6E121B; }
     details > summary { list-style:none; cursor:pointer; }
     details > summary::-webkit-details-marker { display:none; }
     details[open] .faq-chev { transform:rotate(180deg); }
     @keyframes chainflow { from { background-position:0 0; } to { background-position:16px 0; } }
-    @keyframes chainpulse { 0%,100% { box-shadow:0 0 0 0 rgba(127,216,168,0.45); } 50% { box-shadow:0 0 0 12px rgba(127,216,168,0); } }
+    @keyframes chainpulse { 0%,100% { box-shadow:0 0 0 0 rgba(242,194,48,0.45); } 50% { box-shadow:0 0 0 12px rgba(242,194,48,0); } }
     @keyframes floaty { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
     @keyframes cellfill { 0% { opacity:0; transform:scale(0.7); } 6%,78% { opacity:1; transform:scale(1); } 88%,100% { opacity:0; transform:scale(0.7); } }
     @keyframes scanbar { 0% { width:8%; } 80% { width:96%; } 100% { width:96%; } }
@@ -54,30 +54,31 @@
 </helmet>
 
 <template id="__bundler_thumbnail">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#003048"></rect><circle cx="50" cy="50" r="22" fill="#1F6E54"></circle><path d="M40 50l7 7 14-14" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#6E121B"></rect><circle cx="50" cy="50" r="22" fill="#1F6E54"></circle><path d="M40 50l7 7 14-14" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </template>
-<header data-screen-label="Lockup" style="background:#ffffff; border-bottom:3px solid #E41824;">
+<header data-screen-label="Lockup" style="background:#ffffff;">
   <div style="max-width:1120px; margin:0 auto; padding:20px 24px 24px; display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:18px; align-items:center;">
     <div style="display:flex; align-items:center; gap:11px;">
-      <img src="uploads/icon_1024.png" alt="Logotipo da Cactus Company" style="width:42px; height:42px; border-radius:10px;">
+      <img src="assets/logo-cactus.png" alt="Logotipo da Cactus Company" style="width:42px; height:42px; border-radius:10px;">
       <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#0F2118; line-height:1.2;">Cactus Company</div>
     </div>
     <div style="display:flex; flex-direction:column; align-items:center; gap:12px; text-align:center;">
-      <div style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#667085; font-weight:600;">proposta preparada para</div>
-      <img src="uploads/images-2.jpeg" alt="Logotipo da Universidade Nilton Lins" style="height:clamp(96px,11vw,128px); width:auto; display:block;">
+      <div style="font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#A02029; font-weight:700;">proposta preparada para</div>
+      <img src="assets/logo-nilton-lins.jpeg" alt="Logotipo da Universidade Nilton Lins" style="height:clamp(96px,11vw,128px); width:auto; display:block;">
       <div style="font-size:13px; color:#475467;">Curso de Medicina — Manaus/AM<sc-if value="{{ temData }}" hint-placeholder-val="{{ false }}"><span> · na sequência da apresentação de {{ dataApresentacao }}</span></sc-if></div>
     </div>
     <div></div>
   </div>
+  <div style="height:5px; background:linear-gradient(90deg,#8E1520 0%,#C41E2A 30%,#C41E2A 46%,#E8B21C 64%,#E8B21C 74%,#2C4A5E 100%);"></div>
 </header>
 
 <main>
-<section data-screen-label="Hero" style="background:#003048; color:#ffffff; overflow:hidden;">
+<section data-screen-label="Hero" style="background:#6E121B; color:#ffffff; overflow:hidden;">
   <div style="max-width:1120px; margin:0 auto; padding:clamp(72px,10vw,128px) 24px 0; text-align:center;">
     <h1 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(38px,6.4vw,76px); line-height:1.06; margin:0 auto 22px; max-width:18ch; text-wrap:pretty;">Muito além da <span style="box-shadow:inset 0 -0.14em 0 #FCCC00;">chamada</span>.</h1>
-    <p style="font-size:clamp(17px,2vw,22px); line-height:1.55; color:#A8CCD8; margin:0 auto 34px; max-width:44ch; text-wrap:pretty;">A gestão completa do seu curso de Medicina — frequência, escala, preceptoria, avaliação e auditoria em uma única plataforma.</p>
-    <a href="{{ linkAgenda }}" style="display:inline-block; background-color:#1F6E54; background:{{ corCta }}; color:#ffffff; font-weight:700; font-size:17px; padding:16px 32px; border-radius:10px; text-decoration:none; transition:filter 120ms ease-out, transform 120ms ease-out;" style-hover="filter:brightness(1.12); transform:translateY(-1px);" style-active="transform:scale(0.97);">Agendar a reunião de implantação</a>
-    <div style="margin-top:14px; font-size:13px; color:#A8CCD8;">Reunião técnica com a coordenação e a TI · sem compromisso</div>
+    <p style="font-size:clamp(17px,2vw,22px); line-height:1.55; color:#EBC7CA; margin:0 auto 34px; max-width:44ch; text-wrap:pretty;">A gestão completa do seu curso de Medicina — frequência, escala, preceptoria, avaliação e auditoria em uma única plataforma.</p>
+    <a href="{{ linkAgenda }}" style="display:inline-block; background-color:#F2C230; background:{{ corCta }}; color:#4A0C12; font-weight:700; font-size:17px; padding:16px 32px; border-radius:10px; text-decoration:none; transition:filter 120ms ease-out, transform 120ms ease-out;" style-hover="filter:brightness(1.12); transform:translateY(-1px);" style-active="transform:scale(0.97);">Agendar a reunião de implantação</a>
+    <div style="margin-top:14px; font-size:13px; color:#EBC7CA;">Reunião técnica com a coordenação e a TI · sem compromisso</div>
     <div data-reveal style="position:relative; max-width:760px; margin:56px auto -140px; animation:floaty 7s ease-in-out infinite;">
       <div style="background:#ffffff; border-radius:14px; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,0.45); text-align:left;">
         <div style="background:#EDF1F3; padding:9px 14px; display:flex; align-items:center; gap:8px;">
@@ -86,7 +87,7 @@
         </div>
         <div style="padding:12px 18px; border-bottom:1px solid #E7ECEA; display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
           <div style="display:flex; align-items:center; gap:7px;">
-            <img src="uploads/images-2.jpeg" alt="" style="height:24px;">
+            <img src="assets/logo-nilton-lins.jpeg" alt="" style="height:24px;">
             <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:12.5px; color:#1F6E54;">Frequência · Nilton Lins</div>
           </div>
           <div style="display:flex; gap:12px; font-size:10.5px; color:#667085; flex-wrap:wrap;"><span style="color:#101828; font-weight:600;">Início</span><span>Rodízios</span><span>Estações</span><span>Alunos</span><span>Conflitos</span><span>Relatórios</span></div>
@@ -106,24 +107,24 @@
           <div style="background:#1B3A4B; padding:8px 11px 9px;">
             <div style="display:flex; justify-content:space-between; align-items:center; color:#ffffff; font-size:7.5px; font-weight:700;"><span>9:41</span><span style="letter-spacing:1px;">▮▮ ⌁ ▰</span></div>
             <div style="display:flex; align-items:center; gap:7px; margin-top:8px;">
-              <div style="flex:none; width:24px; height:24px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center; overflow:hidden;"><img src="uploads/images-2.jpeg" alt="" style="width:24px;"></div>
+              <div style="flex:none; width:24px; height:24px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center; overflow:hidden;"><img src="assets/logo-nilton-lins.jpeg" alt="" style="width:24px;"></div>
               <div style="flex:1; min-width:0;">
-                <div style="font-size:5.5px; letter-spacing:0.06em; color:#A8CCD8; font-weight:600;">UNIVERSIDADE NILTON LINS</div>
+                <div style="font-size:5.5px; letter-spacing:0.06em; color:#EBC7CA; font-weight:600;">UNIVERSIDADE NILTON LINS</div>
                 <div style="font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:700; color:#ffffff;">Internato médico</div>
               </div>
               <div style="flex:none; width:17px; height:17px; border-radius:50%; background:rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center;"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></div>
             </div>
           </div>
-          <div style="height:2px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #E41824 100%);"></div>
+          <div style="height:2px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #C41E2A 100%);"></div>
           <div style="padding:10px 11px 8px; flex:1; display:flex; flex-direction:column;">
             <div style="font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#1B263B;">Boa tarde, Isabela</div>
             <div style="font-size:7px; color:#98A2B3; margin-top:1px;">quinta-feira, 23 de julho</div>
             <div style="display:flex; justify-content:space-between; align-items:baseline; margin:8px 0 4px;">
               <span style="font-size:6.5px; font-weight:700; letter-spacing:0.06em; color:#667085;">CHECK-IN DISPONÍVEL</span>
-              <span style="font-size:6.5px; font-weight:600; color:#E41824;">janela até 19:30</span>
+              <span style="font-size:6.5px; font-weight:600; color:#C41E2A;">janela até 19:30</span>
             </div>
             <div style="background:#ffffff; border-radius:10px; padding:8px 9px;">
-              <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; color:#1B263B;">07:30</div><div style="background:#FCE7E8; color:#B3121C; font-size:6px; font-weight:700; padding:2px 7px; border-radius:999px;">Atividade</div></div>
+              <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; color:#1B263B;">07:30</div><div style="background:#FCE7E8; color:#8E1520; font-size:6px; font-weight:700; padding:2px 7px; border-radius:999px;">Atividade</div></div>
               <div style="font-size:8px; font-weight:700; color:#1B263B; margin-top:4px;">Centro obstétrico — manhã</div>
               <div style="font-size:6.5px; color:#667085; margin-top:2px; line-height:1.4;">Hospital Nilton Lins<br><span style="color:#98A2B3;">Av. Professor Nilton Lins, 3259 — Manaus/AM</span></div>
             </div>
@@ -137,7 +138,7 @@
               <div style="flex:none; text-align:center;"><div style="font-family:'Space Grotesk',sans-serif; font-size:9px; font-weight:700; color:#1B263B;">27</div><div style="font-size:5px; color:#98A2B3;">JUL</div></div>
               <div style="flex:1; min-width:0;"><div style="font-size:7px; font-weight:700; color:#1B263B;">Centro obstétrico — manhã</div><div style="font-size:6px; color:#98A2B3;">07:30 · Hospital Nilton Lins</div></div>
             </div>
-            <div style="margin-top:auto; padding-top:10px; display:flex; align-items:center; justify-content:center; gap:4px; font-size:5.5px; color:#98A2B3;"><img src="uploads/icon_1024.png" alt="" style="width:7px; height:7px; border-radius:2px;">tecnologia Cactus Company</div>
+            <div style="margin-top:auto; padding-top:10px; display:flex; align-items:center; justify-content:center; gap:4px; font-size:5.5px; color:#98A2B3;"><img src="assets/logo-cactus.png" alt="" style="width:7px; height:7px; border-radius:2px;">tecnologia Cactus Company</div>
             <div style="margin-top:7px; background:#ffffff; border-radius:999px; padding:6px 8px; display:flex; justify-content:space-between; font-size:5.5px; color:#98A2B3; font-weight:600;">
               <span style="background:#FCE7E8; color:#C4161C; padding:2px 7px; border-radius:999px;">Início</span><span style="padding:2px 0;">Escala</span><span style="padding:2px 0;">Check-in</span><span style="padding:2px 0;">Perfil</span><span style="padding:2px 0;">Mural</span>
             </div>
@@ -146,7 +147,7 @@
       </div>
     </div>
   </div>
-  <div style="height:170px; background:linear-gradient(#003048, #00263a);"></div>
+  <div style="height:170px; background:linear-gradient(#6E121B, #560D14);"></div>
 </section>
 
 <section data-screen-label="Credibilidade" style="background:#ffffff; border-bottom:1px solid #D4DDD6;">
@@ -157,9 +158,10 @@
   </div>
 </section>
 
-<section data-screen-label="Problema" style="background:#F3F8FB;">
+<section data-screen-label="Problema" style="background:#FBF5F5;">
   <div style="max-width:880px; margin:0 auto; padding:clamp(72px,10vw,120px) 24px; text-align:center;">
-    <p data-reveal style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(24px,3.6vw,40px); line-height:1.32; color:#1B263B; margin:0; text-wrap:pretty;">"A chamada é só o sintoma mais visível. O que a coordenação perde de verdade é a <span style="color:#145881;">visibilidade do curso enquanto ele acontece</span>."</p>
+    <div style="width:56px; height:4px; border-radius:999px; background:#C41E2A; margin:0 auto 26px;"></div>
+    <p data-reveal style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(24px,3.6vw,40px); line-height:1.32; color:#1B263B; margin:0; text-wrap:pretty;">"A chamada é só o sintoma mais visível. O que a coordenação perde de verdade é a <span style="color:#C41E2A;">visibilidade do curso enquanto ele acontece</span>."</p>
     <div data-reveal style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:40px;">
       <span style="background:#ffffff; border:1px solid #D4DDD6; border-radius:999px; padding:10px 20px; font-size:14px; color:#475467;">Diário eletrônico que não atende às exigências do MEC</span>
       <span style="background:#ffffff; border:1px solid #D4DDD6; border-radius:999px; padding:10px 20px; font-size:14px; color:#475467;">Problemas descobertos só no fechamento do rodízio</span>
@@ -168,43 +170,43 @@
   </div>
 </section>
 
-<section data-screen-label="Custo invisível" style="background:#003048; padding:clamp(56px,8vw,96px) 20px;">
+<section data-screen-label="Custo invisível" style="background:#6E121B; padding:clamp(56px,8vw,96px) 20px;">
   <div style="max-width:1040px; margin:0 auto;">
     <div style="text-align:center; margin-bottom:clamp(32px,5vw,52px);">
-      <p style="font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#7FD8A8; margin:0 0 14px;">Custo da inércia</p>
+      <p style="font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#F2C230; margin:0 0 14px;">Custo da inércia</p>
       <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(30px,4.4vw,46px); line-height:1.12; color:#ffffff; margin:0 0 16px; text-wrap:balance;">O custo invisível atual.</h2>
-      <p style="font-size:clamp(16px,2vw,19px); line-height:1.6; color:#A8CCD8; margin:0 auto; max-width:56ch; text-wrap:pretty;">O papel não é gratuito — ele só não aparece na planilha. Abaixo, uma simulação com as premissas visíveis e editáveis.</p>
+      <p style="font-size:clamp(16px,2vw,19px); line-height:1.6; color:#EBC7CA; margin:0 auto; max-width:56ch; text-wrap:pretty;">O papel não é gratuito — ele só não aparece na planilha. Abaixo, uma simulação com as premissas visíveis e editáveis.</p>
     </div>
-    <div style="background:linear-gradient(180deg,rgba(127,216,168,0.10),rgba(127,216,168,0.02)); border:1px solid rgba(127,216,168,0.30); border-radius:18px; padding:clamp(26px,4vw,40px); text-align:center; margin-bottom:22px;">
-      <p style="font-size:13px; letter-spacing:0.10em; text-transform:uppercase; color:#7FD8A8; margin:0 0 10px;">Custo operacional acumulado neste ano letivo</p>
+    <div style="background:linear-gradient(180deg,rgba(0,0,0,0.26),rgba(0,0,0,0.10)); border:1px solid rgba(242,194,48,0.42); border-radius:18px; padding:clamp(26px,4vw,40px); text-align:center; margin-bottom:22px;">
+      <p style="font-size:13px; letter-spacing:0.10em; text-transform:uppercase; color:#F2C230; margin:0 0 10px;">Custo operacional acumulado neste ano letivo</p>
       <p style="font-family:'Space Grotesk',sans-serif; font-variant-numeric:tabular-nums; font-size:clamp(34px,7vw,68px); line-height:1; font-weight:700; color:#ffffff; margin:0 0 12px;">R$ {{ kTot }}</p>
-      <p style="font-size:14px; line-height:1.55; color:#A8CCD8; margin:0 auto; max-width:52ch;">E continua subindo enquanto esta página está aberta. Nenhum real desse valor gera prova, relatório ou proteção para a instituição.</p>
+      <p style="font-size:14px; line-height:1.55; color:#EBC7CA; margin:0 auto; max-width:52ch;">E continua subindo enquanto esta página está aberta. Nenhum real desse valor gera prova, relatório ou proteção para a instituição.</p>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; margin-bottom:16px;">
-      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(168,204,216,0.20); border-radius:14px; padding:24px;">
-        <p style="font-size:12px; letter-spacing:0.10em; text-transform:uppercase; color:#7FD8A8; margin:0 0 10px;">Conferência manual</p>
-        <p style="font-family:'Space Grotesk',sans-serif; font-variant-numeric:tabular-nums; font-size:28px; font-weight:700; color:#ffffff; margin:0 0 8px;">R$ {{ kHoras }}<span style="font-size:15px; font-weight:500; color:#A8CCD8;">/ano</span></p>
-        <p style="font-size:14px; line-height:1.55; color:#A8CCD8; margin:0;">Horas de coordenação, secretaria e preceptoria lendo listas, digitando frequência e exportando planilhas à mão.</p>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(235,199,202,0.20); border-radius:14px; padding:24px;">
+        <p style="font-size:12px; letter-spacing:0.10em; text-transform:uppercase; color:#F2C230; margin:0 0 10px;">Conferência manual</p>
+        <p style="font-family:'Space Grotesk',sans-serif; font-variant-numeric:tabular-nums; font-size:28px; font-weight:700; color:#ffffff; margin:0 0 8px;">R$ {{ kHoras }}<span style="font-size:15px; font-weight:500; color:#EBC7CA;">/ano</span></p>
+        <p style="font-size:14px; line-height:1.55; color:#EBC7CA; margin:0;">Horas de coordenação, secretaria e preceptoria lendo listas, digitando frequência e exportando planilhas à mão.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(168,204,216,0.20); border-radius:14px; padding:24px;">
-        <p style="font-size:12px; letter-spacing:0.10em; text-transform:uppercase; color:#7FD8A8; margin:0 0 10px;">Contencioso</p>
-        <p style="font-family:'Space Grotesk',sans-serif; font-variant-numeric:tabular-nums; font-size:28px; font-weight:700; color:#ffffff; margin:0 0 8px;">R$ {{ kLit }}<span style="font-size:15px; font-weight:500; color:#A8CCD8;">/ano</span></p>
-        <p style="font-size:14px; line-height:1.55; color:#A8CCD8; margin:0;">Defesa em processos que contestam frequência ou supervisão — quando não há lastro documental que sustente o registro.</p>
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(235,199,202,0.20); border-radius:14px; padding:24px;">
+        <p style="font-size:12px; letter-spacing:0.10em; text-transform:uppercase; color:#F2C230; margin:0 0 10px;">Contencioso</p>
+        <p style="font-family:'Space Grotesk',sans-serif; font-variant-numeric:tabular-nums; font-size:28px; font-weight:700; color:#ffffff; margin:0 0 8px;">R$ {{ kLit }}<span style="font-size:15px; font-weight:500; color:#EBC7CA;">/ano</span></p>
+        <p style="font-size:14px; line-height:1.55; color:#EBC7CA; margin:0;">Defesa em processos que contestam frequência ou supervisão — quando não há lastro documental que sustente o registro.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(228,24,36,0.32); border-radius:14px; padding:24px;">
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(196,30,42,0.32); border-radius:14px; padding:24px;">
         <p style="font-size:12px; letter-spacing:0.10em; text-transform:uppercase; color:#FCCC00; margin:0 0 10px;">Exposição · LGPD</p>
-        <p style="font-family:'Space Grotesk',sans-serif; font-variant-numeric:tabular-nums; font-size:28px; font-weight:700; color:#ffffff; margin:0 0 8px;">até R$ 50 mi<span style="font-size:15px; font-weight:500; color:#A8CCD8;">/infração</span></p>
-        <p style="font-size:14px; line-height:1.55; color:#A8CCD8; margin:0;">Lei nº 13.709/2018, art. 52, II: multa de até 2% do faturamento no Brasil, limitada a R$ 50 milhões por infração — além de bloqueio ou suspensão do banco de dados e publicização. Frequência circulando por WhatsApp pessoal e planilha é tratamento de dado pessoal fora de controle institucional.</p>
+        <p style="font-family:'Space Grotesk',sans-serif; font-variant-numeric:tabular-nums; font-size:28px; font-weight:700; color:#ffffff; margin:0 0 8px;">até R$ 50 mi<span style="font-size:15px; font-weight:500; color:#EBC7CA;">/infração</span></p>
+        <p style="font-size:14px; line-height:1.55; color:#EBC7CA; margin:0;">Lei nº 13.709/2018, art. 52, II: multa de até 2% do faturamento no Brasil, limitada a R$ 50 milhões por infração — além de bloqueio ou suspensão do banco de dados e publicização. Frequência circulando por WhatsApp pessoal e planilha é tratamento de dado pessoal fora de controle institucional.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(228,24,36,0.32); border-radius:14px; padding:24px;">
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(196,30,42,0.32); border-radius:14px; padding:24px;">
         <p style="font-size:12px; letter-spacing:0.10em; text-transform:uppercase; color:#FCCC00; margin:0 0 10px;">Exposição · Supervisão MEC</p>
-        <p style="font-family:'Space Grotesk',sans-serif; font-variant-numeric:tabular-nums; font-size:28px; font-weight:700; color:#ffffff; margin:0 0 8px;">R$ {{ kReceita }}<span style="font-size:15px; font-weight:500; color:#A8CCD8;">/ciclo</span></p>
-        <p style="font-size:14px; line-height:1.55; color:#A8CCD8; margin:0;">Receita anual de um ciclo de ingresso ({{ kVagas }} vagas × R$ {{ kMens }} × 12). É o que fica sob risco quando um processo de supervisão alcança a entrada de novos estudantes — hipótese prevista no Decreto nº 9.235/2017.</p>
+        <p style="font-family:'Space Grotesk',sans-serif; font-variant-numeric:tabular-nums; font-size:28px; font-weight:700; color:#ffffff; margin:0 0 8px;">R$ {{ kReceita }}<span style="font-size:15px; font-weight:500; color:#EBC7CA;">/ciclo</span></p>
+        <p style="font-size:14px; line-height:1.55; color:#EBC7CA; margin:0;">Receita anual de um ciclo de ingresso ({{ kVagas }} vagas × R$ {{ kMens }} × 12). É o que fica sob risco quando um processo de supervisão alcança a entrada de novos estudantes — hipótese prevista no Decreto nº 9.235/2017.</p>
       </div>
     </div>
-    <div style="border-top:1px solid rgba(168,204,216,0.18); padding-top:22px;">
-      <p style="font-size:13px; line-height:1.65; color:#A8CCD8; margin:0 0 10px;"><strong style="color:#ffffff;">Premissas da simulação —</strong> conferência manual: {{ kHs }} h/semana × {{ kSem }} semanas letivas × R$ {{ kCh }}/hora. Contencioso: {{ kProc }} processos/ano × R$ {{ kCproc }} por processo. Ciclo de ingresso: {{ kVagas }} vagas × R$ {{ kMens }}/mês × 12. O acumulado corre desde o início do ano letivo corrente.</p>
-      <p style="font-size:13px; line-height:1.65; color:#A8CCD8; margin:0;">Valores ilustrativos, para dimensionar ordem de grandeza — não constituem estimativa contratual nem parecer jurídico. Ajustamos as premissas com os números reais da universidade na reunião de implantação. O custo operacional simulado, R$ {{ kAnual }}/ano, é dinheiro que já sai do caixa todos os anos — com a diferença de que ele não produz prova, não produz relatório e não protege a instituição.</p>
+    <div style="border-top:1px solid rgba(235,199,202,0.18); padding-top:22px;">
+      <p style="font-size:13px; line-height:1.65; color:#EBC7CA; margin:0 0 10px;"><strong style="color:#ffffff;">Premissas da simulação —</strong> conferência manual: {{ kHs }} h/semana × {{ kSem }} semanas letivas × R$ {{ kCh }}/hora. Contencioso: {{ kProc }} processos/ano × R$ {{ kCproc }} por processo. Ciclo de ingresso: {{ kVagas }} vagas × R$ {{ kMens }}/mês × 12. O acumulado corre desde o início do ano letivo corrente.</p>
+      <p style="font-size:13px; line-height:1.65; color:#EBC7CA; margin:0;">Valores ilustrativos, para dimensionar ordem de grandeza — não constituem estimativa contratual nem parecer jurídico. Ajustamos as premissas com os números reais da universidade na reunião de implantação. O custo operacional simulado, R$ {{ kAnual }}/ano, é dinheiro que já sai do caixa todos os anos — com a diferença de que ele não produz prova, não produz relatório e não protege a instituição.</p>
     </div>
   </div>
 </section>
@@ -218,33 +220,33 @@
             <div style="background:#1B3A4B; padding:12px 16px 14px;">
               <div style="display:flex; justify-content:space-between; align-items:center; color:#ffffff; font-size:10px; font-weight:700;"><span>9:41</span><span style="letter-spacing:1.5px;">▮▮ ⌁ ▰</span></div>
               <div style="display:flex; align-items:center; gap:10px; margin-top:12px;">
-                <div style="flex:none; width:34px; height:34px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center; overflow:hidden;"><img src="uploads/images-2.jpeg" alt="" style="width:34px;"></div>
+                <div style="flex:none; width:34px; height:34px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center; overflow:hidden;"><img src="assets/logo-nilton-lins.jpeg" alt="" style="width:34px;"></div>
                 <div style="flex:1; min-width:0;">
-                  <div style="font-size:7px; letter-spacing:0.08em; color:#A8CCD8; font-weight:600;">UNIVERSIDADE NILTON LINS</div>
+                  <div style="font-size:7px; letter-spacing:0.08em; color:#EBC7CA; font-weight:600;">UNIVERSIDADE NILTON LINS</div>
                   <div style="font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:700; color:#ffffff;">Internato médico</div>
                 </div>
                 <div style="flex:none; width:24px; height:24px; border-radius:50%; background:rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></div>
               </div>
             </div>
-            <div style="height:3px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #E41824 100%);"></div>
+            <div style="height:3px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #C41E2A 100%);"></div>
             <div style="padding:14px 16px 12px; flex:1; display:flex; flex-direction:column;">
               <div style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:700; color:#1B263B;">Boa tarde, Isabela</div>
               <div style="font-size:9.5px; color:#98A2B3; margin-top:2px;">quinta-feira, 23 de julho</div>
               <div style="display:flex; justify-content:space-between; align-items:baseline; margin:14px 0 6px;">
                 <span style="font-size:9px; font-weight:700; letter-spacing:0.06em; color:#667085;">CHECK-IN DISPONÍVEL</span>
-                <span style="font-size:9px; font-weight:600; color:#E41824;">janela até 19:30</span>
+                <span style="font-size:9px; font-weight:600; color:#C41E2A;">janela até 19:30</span>
               </div>
               <div style="background:#ffffff; border-radius:13px; padding:12px 13px;">
-                <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700; color:#1B263B;">07:30</div><div style="background:#FCE7E8; color:#B3121C; font-size:8.5px; font-weight:700; padding:3px 9px; border-radius:999px;">Atividade</div></div>
+                <div style="display:flex; justify-content:space-between; align-items:center;"><div style="font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700; color:#1B263B;">07:30</div><div style="background:#FCE7E8; color:#8E1520; font-size:8.5px; font-weight:700; padding:3px 9px; border-radius:999px;">Atividade</div></div>
                 <div style="font-size:11.5px; font-weight:700; color:#1B263B; margin-top:7px;">Centro obstétrico — manhã</div>
                 <div style="display:flex; gap:6px; margin-top:5px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#667085" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px;" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><div style="font-size:9px; color:#667085; line-height:1.45;">Hospital Nilton Lins<br><span style="color:#98A2B3;">Av. Professor Nilton Lins, 3259 — Flores, Manaus/AM</span></div></div>
                 <div style="height:1px; background:#EFF2F4; margin:10px 0 8px;"></div>
                 <div style="font-size:8.5px; font-weight:700; letter-spacing:0.06em; color:#98A2B3;">NA MESMA ESCALA</div>
                 <div style="display:flex; align-items:center; gap:8px; margin-top:7px;"><span style="flex:none; width:20px; height:20px; border-radius:50%; background:#E7EEF2; color:#1B3A4B; font-size:7.5px; font-weight:700; display:flex; align-items:center; justify-content:center;">IM</span><span style="font-size:10px; color:#1B263B;">Isabela Silva Moura</span></div>
-                <div style="display:flex; align-items:center; gap:8px; margin-top:6px;"><span style="flex:none; width:20px; height:20px; border-radius:50%; background:#FCE7E8; color:#B3121C; font-size:7.5px; font-weight:700; display:flex; align-items:center; justify-content:center;">NC</span><span style="font-size:10px; color:#1B263B;">Nicole Silva Costa</span></div>
+                <div style="display:flex; align-items:center; gap:8px; margin-top:6px;"><span style="flex:none; width:20px; height:20px; border-radius:50%; background:#FCE7E8; color:#8E1520; font-size:7.5px; font-weight:700; display:flex; align-items:center; justify-content:center;">NC</span><span style="font-size:10px; color:#1B263B;">Nicole Silva Costa</span></div>
               </div>
               <div style="background:#C4161C; color:#ffffff; text-align:center; font-size:12px; font-weight:700; padding:12px; border-radius:999px; margin-top:12px; display:flex; align-items:center; justify-content:center; gap:7px; animation:ringpulse 1.8s ease-in-out infinite;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="16 9 11 15 8 12"></polyline></svg>Fazer check-in</div>
-              <div style="margin-top:auto; padding-top:12px; display:flex; align-items:center; justify-content:center; gap:5px; font-size:8px; color:#98A2B3;"><img src="uploads/icon_1024.png" alt="" style="width:10px; height:10px; border-radius:3px;">tecnologia Cactus Company</div>
+              <div style="margin-top:auto; padding-top:12px; display:flex; align-items:center; justify-content:center; gap:5px; font-size:8px; color:#98A2B3;"><img src="assets/logo-cactus.png" alt="" style="width:10px; height:10px; border-radius:3px;">tecnologia Cactus Company</div>
               <div style="margin-top:8px; background:#ffffff; border-radius:999px; padding:8px 10px; display:flex; justify-content:space-between; font-size:8px; color:#98A2B3; font-weight:600;">
                 <span style="background:#FCE7E8; color:#C4161C; padding:3px 9px; border-radius:999px;">Início</span><span style="padding:3px 0;">Escala</span><span style="padding:3px 0;">Check-in</span><span style="padding:3px 0;">Perfil</span><span style="padding:3px 0;">Mural</span>
               </div>
@@ -288,50 +290,50 @@
   </div>
 </section>
 
-<section data-screen-label="Autenticidade" style="background:#003048;">
+<section data-screen-label="Autenticidade" style="background:#6E121B;">
   <div style="max-width:1120px; margin:0 auto; padding:clamp(72px,10vw,120px) 24px;">
     <h2 data-reveal style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4vw,46px); line-height:1.1; color:#ffffff; margin:0 0 14px; text-wrap:pretty;">De check-in a <span style="box-shadow:inset 0 -0.14em 0 #FCCC00;">evidência jurídica</span>.</h2>
-    <p data-reveal style="margin:0 0 44px; color:#A8CCD8; line-height:1.65; max-width:60ch;">Autenticidade e legitimidade comprováveis em cada registro — no padrão que o MEC exige do acervo acadêmico, com lastro documental que respalda a universidade em qualquer questionamento.</p>
+    <p data-reveal style="margin:0 0 44px; color:#EBC7CA; line-height:1.65; max-width:60ch;">Autenticidade e legitimidade comprováveis em cada registro — no padrão que o MEC exige do acervo acadêmico, com lastro documental que respalda a universidade em qualquer questionamento.</p>
     <div data-reveal style="overflow-x:auto; margin:0 -4px; padding:0 4px;">
       <div style="display:flex; align-items:flex-start; gap:6px; flex-wrap:nowrap; min-width:560px;">
         <div style="flex:1 1 96px; min-width:96px; max-width:150px; text-align:center;">
-          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid rgba(127,216,168,0.5); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 11a4 4 0 0 0-4 4v3"></path><path d="M12 11a4 4 0 0 1 4 4v1"></path><path d="M12 7.5A7.5 7.5 0 0 0 4.5 15v2"></path><path d="M12 7.5a7.5 7.5 0 0 1 7.5 7.5"></path><path d="M12 15v4"></path></svg></div>
-          <div style="font-size:12.5px; color:#A8CCD8; margin-top:10px; line-height:1.45;">Identidade confirmada no aparelho</div>
+          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid rgba(242,194,48,0.5); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 11a4 4 0 0 0-4 4v3"></path><path d="M12 11a4 4 0 0 1 4 4v1"></path><path d="M12 7.5A7.5 7.5 0 0 0 4.5 15v2"></path><path d="M12 7.5a7.5 7.5 0 0 1 7.5 7.5"></path><path d="M12 15v4"></path></svg></div>
+          <div style="font-size:12.5px; color:#EBC7CA; margin-top:10px; line-height:1.45;">Identidade confirmada no aparelho</div>
         </div>
-        <div style="flex:1 0 12px; height:2px; margin-top:25px; background:repeating-linear-gradient(90deg, #7FD8A8 0 7px, transparent 7px 16px); animation:chainflow 1s linear infinite;"></div>
+        <div style="flex:1 0 12px; height:2px; margin-top:25px; background:repeating-linear-gradient(90deg, #F2C230 0 7px, transparent 7px 16px); animation:chainflow 1s linear infinite;"></div>
         <div style="flex:1 1 96px; min-width:96px; max-width:150px; text-align:center;">
-          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid rgba(127,216,168,0.5); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
-          <div style="font-size:12.5px; color:#A8CCD8; margin-top:10px; line-height:1.45;">Local e horário validados no servidor</div>
+          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid rgba(242,194,48,0.5); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+          <div style="font-size:12.5px; color:#EBC7CA; margin-top:10px; line-height:1.45;">Local e horário validados no servidor</div>
         </div>
-        <div style="flex:1 0 12px; height:2px; margin-top:25px; background:repeating-linear-gradient(90deg, #7FD8A8 0 7px, transparent 7px 16px); animation:chainflow 1s linear infinite;"></div>
+        <div style="flex:1 0 12px; height:2px; margin-top:25px; background:repeating-linear-gradient(90deg, #F2C230 0 7px, transparent 7px 16px); animation:chainflow 1s linear infinite;"></div>
         <div style="flex:1 1 96px; min-width:96px; max-width:150px; text-align:center;">
-          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid rgba(127,216,168,0.5); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
-          <div style="font-size:12.5px; color:#A8CCD8; margin-top:10px; line-height:1.45;">Registro imutável, append-only</div>
+          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid rgba(242,194,48,0.5); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
+          <div style="font-size:12.5px; color:#EBC7CA; margin-top:10px; line-height:1.45;">Registro imutável, append-only</div>
         </div>
-        <div style="flex:1 0 12px; height:2px; margin-top:25px; background:repeating-linear-gradient(90deg, #7FD8A8 0 7px, transparent 7px 16px); animation:chainflow 1s linear infinite;"></div>
+        <div style="flex:1 0 12px; height:2px; margin-top:25px; background:repeating-linear-gradient(90deg, #F2C230 0 7px, transparent 7px 16px); animation:chainflow 1s linear infinite;"></div>
         <div style="flex:1 1 96px; min-width:96px; max-width:150px; text-align:center;">
-          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid rgba(127,216,168,0.5); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></div>
-          <div style="font-size:12.5px; color:#A8CCD8; margin-top:10px; line-height:1.45;">Trilha de auditoria completa</div>
+          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid rgba(242,194,48,0.5); display:flex; align-items:center; justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="13" y2="17"></line></svg></div>
+          <div style="font-size:12.5px; color:#EBC7CA; margin-top:10px; line-height:1.45;">Trilha de auditoria completa</div>
         </div>
-        <div style="flex:1 0 12px; height:2px; margin-top:25px; background:repeating-linear-gradient(90deg, #7FD8A8 0 7px, transparent 7px 16px); animation:chainflow 1s linear infinite;"></div>
+        <div style="flex:1 0 12px; height:2px; margin-top:25px; background:repeating-linear-gradient(90deg, #F2C230 0 7px, transparent 7px 16px); animation:chainflow 1s linear infinite;"></div>
         <div style="flex:1 1 96px; min-width:96px; max-width:150px; text-align:center;">
-          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid #7FD8A8; background:rgba(127,216,168,0.12); display:flex; align-items:center; justify-content:center; animation:chainpulse 2.4s ease-out infinite;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a3.5 3.5 0 0 0 7 0z"></path><path d="M19 7l-3 6a3.5 3.5 0 0 0 7 0z"></path><path d="M8 21h8"></path></svg></div>
+          <div style="width:52px; height:52px; margin:0 auto; border-radius:50%; border:1.5px solid #F2C230; background:rgba(242,194,48,0.12); display:flex; align-items:center; justify-content:center; animation:chainpulse 2.4s ease-out infinite;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"></path><path d="M5 7h14"></path><path d="M5 7l-3 6a3.5 3.5 0 0 0 7 0z"></path><path d="M19 7l-3 6a3.5 3.5 0 0 0 7 0z"></path><path d="M8 21h8"></path></svg></div>
           <div style="font-size:12.5px; color:#ffffff; font-weight:600; margin-top:10px; line-height:1.45;">Evidência com respaldo jurídico</div>
         </div>
       </div>
     </div>
     <div data-reveal style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:44px;">
-      <span style="border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;">Biometria só no aparelho</span>
-      <span style="border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;">Impressão do dispositivo auditada</span>
-      <span style="border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;">Sessão única por usuário</span>
-      <span style="border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;">Row Level Security por instituição</span>
-      <span style="border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;">Localização só no instante do check-in</span>
-      <span style="border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;">Dados no Brasil (São Paulo)</span>
+      <span style="border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;">Biometria só no aparelho</span>
+      <span style="border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;">Impressão do dispositivo auditada</span>
+      <span style="border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;">Sessão única por usuário</span>
+      <span style="border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;">Row Level Security por instituição</span>
+      <span style="border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;">Localização só no instante do check-in</span>
+      <span style="border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;">Dados no Brasil (São Paulo)</span>
     </div>
     <div data-reveal style="margin-top:56px; display:flex; flex-wrap:wrap; gap:32px 48px; align-items:center; justify-content:center;">
       <div style="flex:1 1 320px; max-width:460px;">
         <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(22px,2.8vw,30px); color:#ffffff; margin:0 0 12px; text-wrap:pretty;">Backup diário, aluno a aluno.</h3>
-        <p style="margin:0; color:#A8CCD8; line-height:1.7; font-size:15.5px;">Os dados de <strong style="color:#ffffff;">cada aluno</strong> são copiados <strong style="color:#ffffff;">todos os dias, individualmente</strong>. Se for preciso, a universidade responde na hora: onde o aluno estava, sob supervisão de qual professor, em determinado dia e hora — mesmo anos depois.</p>
+        <p style="margin:0; color:#EBC7CA; line-height:1.7; font-size:15.5px;">Os dados de <strong style="color:#ffffff;">cada aluno</strong> são copiados <strong style="color:#ffffff;">todos os dias, individualmente</strong>. Se for preciso, a universidade responde na hora: onde o aluno estava, sob supervisão de qual professor, em determinado dia e hora — mesmo anos depois.</p>
       </div>
       <div style="flex:0 1 380px; min-width:min(100%,290px); background:#ffffff; border-radius:14px; padding:20px 22px; box-shadow:0 24px 60px rgba(0,0,0,0.35); text-align:left;">
         <div style="font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#145881; margin-bottom:12px;">Consulta retroativa</div>
@@ -343,17 +345,17 @@
         </div>
       </div>
     </div>
-    <div data-reveal style="margin-top:56px; border-top:1px solid rgba(168,204,216,0.25); padding-top:40px;">
+    <div data-reveal style="margin-top:56px; border-top:1px solid rgba(235,199,202,0.25); padding-top:40px;">
       <h3 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(20px,2.4vw,26px); color:#ffffff; margin:0 0 22px; text-align:center;">Segurança incorporada à operação</h3>
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; max-width:880px; margin:0 auto;">
-        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Dados protegidos em trânsito</span>
-        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>Controle de acesso por função</span>
-        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>Trilha de auditoria</span>
-        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>Backups diários em nuvem</span>
-        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>Monitoramento de disponibilidade</span>
-        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10"></path></svg>Recuperação de registros</span>
-        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Práticas alinhadas à LGPD</span>
-        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#A8CCD8;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg>Arquitetura preparada para integração com assinatura digital</span>
+        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>Dados protegidos em trânsito</span>
+        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>Controle de acesso por função</span>
+        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>Trilha de auditoria</span>
+        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>Backups diários em nuvem</span>
+        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>Monitoramento de disponibilidade</span>
+        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10"></path></svg>Recuperação de registros</span>
+        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Práticas alinhadas à LGPD</span>
+        <span style="display:flex; align-items:center; gap:8px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:8px 16px; font-size:13px; color:#EBC7CA;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg>Arquitetura preparada para integração com assinatura digital</span>
       </div>
     </div>
   </div>
@@ -367,7 +369,7 @@
       <div data-reveal style="display:flex; gap:18px; font-size:13px; color:#475467; flex-wrap:wrap;">
         <span style="display:flex; align-items:center; gap:7px;"><span style="width:12px; height:12px; border-radius:3px; background:#1F6E54;"></span>Atividade gerada</span>
         <span style="display:flex; align-items:center; gap:7px;"><span style="width:12px; height:12px; border-radius:3px; background:#FCCC00;"></span>Feriado</span>
-        <span style="display:flex; align-items:center; gap:7px;"><span style="width:12px; height:12px; border-radius:3px; background:#A8CCD8;"></span>Férias do professor</span>
+        <span style="display:flex; align-items:center; gap:7px;"><span style="width:12px; height:12px; border-radius:3px; background:#EBC7CA;"></span>Férias do professor</span>
       </div>
     </div>
     <div data-reveal style="flex:0 1 460px; min-width:min(100%,300px);">
@@ -385,8 +387,8 @@
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:0.54s;"></div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:0.72s;"></div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:0.9s;"></div>
-          <div style="border-radius:7px; background:#A8CCD8; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:700; color:#134459;">férias</div>
-          <div style="border-radius:7px; background:#A8CCD8; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:700; color:#134459;">férias</div>
+          <div style="border-radius:7px; background:#EBC7CA; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:700; color:#134459;">férias</div>
+          <div style="border-radius:7px; background:#EBC7CA; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:700; color:#134459;">férias</div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:1.08s;"></div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:1.26s;"></div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:1.44s;"></div>
@@ -398,7 +400,7 @@
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:2.34s;"></div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:2.52s;"></div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:2.7s;"></div>
-          <div style="border-radius:7px; background:#A8CCD8; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:700; color:#134459;">férias</div>
+          <div style="border-radius:7px; background:#EBC7CA; display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:700; color:#134459;">férias</div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:2.88s;"></div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:3.06s;"></div>
           <div style="border-radius:7px; background:#1F6E54; animation:cellfill 7s ease infinite; animation-delay:3.24s;"></div>
@@ -409,7 +411,7 @@
   </div>
 </section>
 
-<section data-screen-label="Demo remanejo" style="background:#F3F8FB;">
+<section data-screen-label="Demo remanejo" style="background:#FBF5F5;">
   <div style="max-width:1120px; margin:0 auto; padding:clamp(72px,10vw,120px) 24px; display:flex; flex-wrap:wrap; gap:56px 72px; align-items:center; justify-content:center;">
     <div data-reveal style="flex:1 1 460px; min-width:min(100%,300px); order:2;">
       <div style="background:#ffffff; border-radius:14px; overflow:hidden; box-shadow:0 24px 60px rgba(15,33,24,0.16);">
@@ -420,7 +422,7 @@
         <div style="padding:18px 20px;">
           <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118;">Conflitos do período</div>
           <div style="font-size:10.5px; color:#667085; margin:2px 0 14px;">Atividades ativas com professor em indisponibilidade</div>
-          <div style="display:flex; align-items:center; gap:10px; background:#F3F8FB; border:1px solid #D4DDD6; border-radius:10px; padding:8px 12px; margin-bottom:12px;">
+          <div style="display:flex; align-items:center; gap:10px; background:#FBF5F5; border:1px solid #D4DDD6; border-radius:10px; padding:8px 12px; margin-bottom:12px;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#145881" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
             <div style="flex:1; min-width:0;"><div style="font-size:10.5px; font-weight:700; color:#101828;">Solicitação de férias — Isabela Silva Moura</div><div style="font-size:9px; color:#98A2B3;">24/07 – 23/09 · enviada pelo portal do professor</div></div>
             <span style="background:#1F6E54; color:#ffffff; font-size:9px; font-weight:700; padding:4px 10px; border-radius:999px;">Aprovar</span>
@@ -478,28 +480,28 @@
       <div style="border:1px solid #D4DDD6; border-radius:14px; padding:20px 22px;"><div style="font-size:12px; color:#667085; display:flex; align-items:center; gap:6px;"><span style="width:8px; height:8px; border-radius:50%; background:#1F6E54;"></span>Frequência geral</div><div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:#0F2118; margin-top:6px;">{{ cnt0 }}%</div></div>
       <div style="border:1px solid #D4DDD6; border-radius:14px; padding:20px 22px;"><div style="font-size:12px; color:#667085; display:flex; align-items:center; gap:6px;"><span style="width:8px; height:8px; border-radius:50%; background:#1F6E54;"></span>Presenças</div><div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:#0F2118; margin-top:6px;">{{ cnt1 }}</div></div>
       <div style="border:1px solid #D4DDD6; border-radius:14px; padding:20px 22px;"><div style="font-size:12px; color:#667085; display:flex; align-items:center; gap:6px;"><span style="width:8px; height:8px; border-radius:50%; background:#FCCC00;"></span>Justificadas</div><div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:#0F2118; margin-top:6px;">{{ cnt2 }}</div></div>
-      <div style="border:1px solid #D4DDD6; border-radius:14px; padding:20px 22px;"><div style="font-size:12px; color:#667085; display:flex; align-items:center; gap:6px;"><span style="width:8px; height:8px; border-radius:50%; background:#E41824;"></span>Alertas de aluno</div><div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:#0F2118; margin-top:6px;">{{ cnt3 }}</div></div>
+      <div style="border:1px solid #D4DDD6; border-radius:14px; padding:20px 22px;"><div style="font-size:12px; color:#667085; display:flex; align-items:center; gap:6px;"><span style="width:8px; height:8px; border-radius:50%; background:#C41E2A;"></span>Alertas de aluno</div><div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:#0F2118; margin-top:6px;">{{ cnt3 }}</div></div>
     </div>
     <div data-reveal data-bars="1" style="max-width:880px; margin:20px auto 0; border:1px solid #D4DDD6; border-radius:14px; padding:26px 28px;">
       <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118; margin-bottom:18px;">Comparativo por rodízio</div>
       <div style="display:grid; gap:14px;">
-        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">CLÍNICA MÉDICA 1</span><div style="height:10px; background:#F3F8FB; border-radius:999px; overflow:hidden;"><div style="width:96%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">96%</span></div>
-        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">GINECOLOGIA E OBST.</span><div style="height:10px; background:#F3F8FB; border-radius:999px; overflow:hidden;"><div style="width:93%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">93%</span></div>
-        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">PEDIATRIA I</span><div style="height:10px; background:#F3F8FB; border-radius:999px; overflow:hidden;"><div style="width:91%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">91%</span></div>
-        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">PEDIATRIA II</span><div style="height:10px; background:#F3F8FB; border-radius:999px; overflow:hidden;"><div style="width:95%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">95%</span></div>
-        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">URGÊNCIA E EMERG.</span><div style="height:10px; background:#F3F8FB; border-radius:999px; overflow:hidden;"><div style="width:89%; height:100%; background:#E9B10A; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">89%</span></div>
+        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">CLÍNICA MÉDICA 1</span><div style="height:10px; background:#FBF5F5; border-radius:999px; overflow:hidden;"><div style="width:96%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">96%</span></div>
+        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">GINECOLOGIA E OBST.</span><div style="height:10px; background:#FBF5F5; border-radius:999px; overflow:hidden;"><div style="width:93%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">93%</span></div>
+        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">PEDIATRIA I</span><div style="height:10px; background:#FBF5F5; border-radius:999px; overflow:hidden;"><div style="width:91%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">91%</span></div>
+        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">PEDIATRIA II</span><div style="height:10px; background:#FBF5F5; border-radius:999px; overflow:hidden;"><div style="width:95%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">95%</span></div>
+        <div style="display:grid; grid-template-columns:minmax(130px,220px) 1fr 40px; gap:12px; align-items:center;"><span style="font-size:12px; color:#475467;">URGÊNCIA E EMERG.</span><div style="height:10px; background:#FBF5F5; border-radius:999px; overflow:hidden;"><div style="width:89%; height:100%; background:#E9B10A; border-radius:999px; transform-origin:left; transform:{{ barT }}; transition:transform 1.1s cubic-bezier(.2,.7,.2,1);"></div></div><span style="font-size:12px; font-weight:700; color:#0F2118;">89%</span></div>
       </div>
       <div style="margin-top:18px; font-size:12px; color:#98A2B3;">Exportação por aluno em CSV/Excel (PT-BR) · log de auditoria append-only</div>
     </div>
     </div>
 </section>
 
-<section data-screen-label="Indicadores ENAMED" style="background:#003048; color:#ffffff; overflow:hidden;">
+<section data-screen-label="Indicadores ENAMED" style="background:#6E121B; color:#ffffff; overflow:hidden;">
   <div style="max-width:1120px; margin:0 auto; padding:clamp(72px,10vw,120px) 24px;">
     <div data-reveal style="max-width:62ch; margin:0 auto 48px; text-align:center;">
-      <div style="display:inline-block; background:rgba(127,216,168,0.14); color:#7FD8A8; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:6px 14px; border-radius:999px;">Indicadores de nota</div>
+      <div style="display:inline-block; background:rgba(242,194,48,0.14); color:#F2C230; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; padding:6px 14px; border-radius:999px;">Indicadores de nota</div>
       <h2 style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4vw,46px); line-height:1.1; color:#ffffff; margin:18px 0 14px; text-wrap:pretty;">Onde a nota do <span style="box-shadow:inset 0 -0.14em 0 #FCCC00;">ENAMED</span> se decide.</h2>
-      <p style="margin:0; color:#A8CCD8; line-height:1.65;">Três níveis de leitura — turma, matéria e aluno — para enxergar a fragilidade de aprendizado enquanto ainda dá tempo de corrigir. Da curva da turma até o nome do aluno em três cliques.</p>
+      <p style="margin:0; color:#EBC7CA; line-height:1.65;">Três níveis de leitura — turma, matéria e aluno — para enxergar a fragilidade de aprendizado enquanto ainda dá tempo de corrigir. Da curva da turma até o nome do aluno em três cliques.</p>
       <div data-reveal data-gift style="position:relative; margin:32px auto 0; max-width:62ch;">
         <div style="position:absolute; inset:-18px; border-radius:26px; background:radial-gradient(ellipse at center, rgba(252,204,0,0.30), transparent 72%); filter:blur(26px); opacity:{{ giftGlow }}; transition:opacity 900ms ease; pointer-events:none;"></div>
         <div style="position:relative; background:rgba(252,204,0,0.09); border:1px solid rgba(252,204,0,0.5); border-radius:16px; padding:20px 24px; overflow:hidden; text-align:left;">
@@ -523,19 +525,19 @@
           </div>
           <div style="position:absolute; top:50%; left:50%; margin:-27px 0 0 -34px; width:68px; height:54px; transform:{{ bowT }}; opacity:{{ bowOp }}; transition:transform 900ms cubic-bezier(0.3,0.9,0.3,1), opacity 700ms ease;">
             <div style="animation:bowwiggle 2.6s ease-in-out infinite; transform-origin:center;">
-              <svg width="68" height="54" viewBox="0 0 68 54" fill="none" aria-hidden="true"><path d="M34 27C34 27 22 8 13 12S6 30 20 30c8 0 14-3 14-3z" fill="#ffffff"></path><path d="M34 27s12-19 21-15 7 18-7 18c-8 0-14-3-14-3z" fill="#F3F8FB"></path><path d="M28 27l-9 20 15-13z" fill="#ffffff" opacity="0.85"></path><path d="M40 27l9 20-15-13z" fill="#F3F8FB" opacity="0.85"></path><circle cx="34" cy="27" r="7" fill="#ffffff"></circle><circle cx="34" cy="27" r="3" fill="#E5A400"></circle></svg>
+              <svg width="68" height="54" viewBox="0 0 68 54" fill="none" aria-hidden="true"><path d="M34 27C34 27 22 8 13 12S6 30 20 30c8 0 14-3 14-3z" fill="#ffffff"></path><path d="M34 27s12-19 21-15 7 18-7 18c-8 0-14-3-14-3z" fill="#FBF5F5"></path><path d="M28 27l-9 20 15-13z" fill="#ffffff" opacity="0.85"></path><path d="M40 27l9 20-15-13z" fill="#FBF5F5" opacity="0.85"></path><circle cx="34" cy="27" r="7" fill="#ffffff"></circle><circle cx="34" cy="27" r="3" fill="#E5A400"></circle></svg>
             </div>
           </div>
           <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,26px); font-family:'Space Grotesk',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:0.18em; color:#7A4E00; opacity:{{ bowOp }}; transition:opacity 500ms ease; white-space:nowrap;">CORTESIA EXCLUSIVA</div>
           <span style="position:absolute; top:-10px; left:14%; width:7px; height:7px; border-radius:50%; background:#FCCC00; opacity:{{ giftGlow }}; animation:sparkle 2.2s ease-in-out infinite;"></span>
           <span style="position:absolute; bottom:-9px; left:38%; width:5px; height:5px; border-radius:50%; background:#ffffff; opacity:{{ giftGlow }}; animation:sparkle 2.8s ease-in-out infinite 0.5s;"></span>
           <span style="position:absolute; top:-12px; right:22%; width:6px; height:6px; border-radius:50%; background:#FCCC00; opacity:{{ giftGlow }}; animation:sparkle 3.1s ease-in-out infinite 1.1s;"></span>
-          <span style="position:absolute; bottom:-11px; right:12%; width:7px; height:7px; border-radius:50%; background:#7FD8A8; opacity:{{ giftGlow }}; animation:sparkle 2.5s ease-in-out infinite 0.8s;"></span>
+          <span style="position:absolute; bottom:-11px; right:12%; width:7px; height:7px; border-radius:50%; background:#F2C230; opacity:{{ giftGlow }}; animation:sparkle 2.5s ease-in-out infinite 0.8s;"></span>
         </div>
       </div>
     </div>
     <div data-reveal style="max-width:960px; margin:0 auto; position:relative;">
-      <div style="position:absolute; inset:6% 8% 18%; background:radial-gradient(ellipse at center, rgba(127,216,168,0.20), transparent 70%); filter:blur(46px); pointer-events:none;"></div>
+      <div style="position:absolute; inset:6% 8% 18%; background:radial-gradient(ellipse at center, rgba(242,194,48,0.20), transparent 70%); filter:blur(46px); pointer-events:none;"></div>
       <div style="position:relative; background:linear-gradient(180deg,#1B3A48,#0B1F29); border-radius:22px; padding:15px 15px 17px; box-shadow:0 46px 100px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.09);">
         <div ref="{{ screenRef }}" style="position:relative; background:#ffffff; border-radius:12px; overflow:hidden;">
           <div style="display:flex; align-items:center; gap:12px; padding:11px 15px; background:#EEF4F7; border-bottom:1px solid #DDE7EC;">
@@ -552,7 +554,7 @@
             <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118;">Indicadores de desempenho</div>
             <div style="font-size:11px; color:#98A2B3; margin-top:2px;">Integrado ao sistema acadêmico · dados ilustrativos</div>
           </div>
-          <div style="display:flex; gap:6px; background:#F3F8FB; border-radius:999px; padding:4px;">
+          <div style="display:flex; gap:6px; background:#FBF5F5; border-radius:999px; padding:4px;">
           <div ref="{{ tabRef0 }}" onClick="{{ verNv0 }}" role="button" tabindex="0" style="padding:7px 15px; border-radius:999px; cursor:pointer; font-size:12px; font-weight:700; background:{{ tabBg0 }}; color:{{ tabFg0 }}; transition:background 260ms ease, color 260ms ease;">1 · Turma</div>
           <div ref="{{ tabRef1 }}" onClick="{{ verNv1 }}" role="button" tabindex="0" style="padding:7px 15px; border-radius:999px; cursor:pointer; font-size:12px; font-weight:700; background:{{ tabBg1 }}; color:{{ tabFg1 }}; transition:background 260ms ease, color 260ms ease;">2 · Matéria</div>
           <div ref="{{ tabRef2 }}" onClick="{{ verNv2 }}" role="button" tabindex="0" style="padding:7px 15px; border-radius:999px; cursor:pointer; font-size:12px; font-weight:700; background:{{ tabBg2 }}; color:{{ tabFg2 }}; transition:background 260ms ease, color 260ms ease;">3 · Aluno</div>
@@ -582,25 +584,25 @@
         <text x="506" y="230" text-anchor="middle" font-size="10" fill="#98A2B3" font-family="Manrope,sans-serif">8º</text>
         <polyline points="44,135 110,128 176,139 242,122 308,115 374,108 440,105 506,94" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="760" style="animation:drawline 5s ease-out infinite; animation-delay:0.00s;"></polyline>
         <circle cx="506" cy="94" r="4.5" fill="#1F6E54" style="animation:dotpop 5s ease-out infinite; animation-delay:0.00s;"></circle>
-        <polyline points="44,142 110,149 176,159 242,169 308,162 374,173 440,176 506,183" fill="none" stroke="#E41824" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="760" style="animation:drawline 5s ease-out infinite; animation-delay:0.12s;"></polyline>
-        <circle cx="506" cy="183" r="4.5" fill="#E41824" style="animation:dotpop 5s ease-out infinite; animation-delay:0.12s;"></circle>
+        <polyline points="44,142 110,149 176,159 242,169 308,162 374,173 440,176 506,183" fill="none" stroke="#C41E2A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="760" style="animation:drawline 5s ease-out infinite; animation-delay:0.12s;"></polyline>
+        <circle cx="506" cy="183" r="4.5" fill="#C41E2A" style="animation:dotpop 5s ease-out infinite; animation-delay:0.12s;"></circle>
         <polyline points="44,145 110,139 176,125 242,122 308,111 374,108 440,101 506,98" fill="none" stroke="#145881" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="760" style="animation:drawline 5s ease-out infinite; animation-delay:0.24s;"></polyline>
         <circle cx="506" cy="98" r="4.5" fill="#145881" style="animation:dotpop 5s ease-out infinite; animation-delay:0.24s;"></circle>
             </svg>
             <div style="display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:12px;">
         <span style="display:flex; align-items:center; gap:7px; font-size:11.5px; color:#475467;"><span style="width:9px; height:9px; border-radius:50%; background:#1F6E54;"></span><strong style="color:#0F2118; white-space:nowrap;">TURMA 29</strong>8,4 · subindo</span>
-        <span style="display:flex; align-items:center; gap:7px; font-size:11.5px; color:#475467;"><span style="width:9px; height:9px; border-radius:50%; background:#E41824;"></span><strong style="color:#0F2118; white-space:nowrap;">TURMA 30</strong>5,8 · em queda</span>
+        <span style="display:flex; align-items:center; gap:7px; font-size:11.5px; color:#475467;"><span style="width:9px; height:9px; border-radius:50%; background:#C41E2A;"></span><strong style="color:#0F2118; white-space:nowrap;">TURMA 30</strong>5,8 · em queda</span>
         <span style="display:flex; align-items:center; gap:7px; font-size:11.5px; color:#475467;"><span style="width:9px; height:9px; border-radius:50%; background:#145881;"></span><strong style="color:#0F2118; white-space:nowrap;">TURMA 31</strong>8,3 · subindo</span>
             </div>
             <div style="margin-top:14px; display:flex; align-items:center; gap:9px; background:#FDF3F4; border-radius:10px; padding:10px 13px; animation:flagpop 5s ease-out infinite;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B3121C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;" aria-hidden="true"><path d="M12 9v4"></path><path d="M12 17h.01"></path><circle cx="12" cy="12" r="9"></circle></svg>
-              <span style="font-size:12px; color:#B3121C;"><strong>TURMA 30 — 1,2 ponto abaixo</strong> em três semestres. Abrir por matéria.</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8E1520" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;" aria-hidden="true"><path d="M12 9v4"></path><path d="M12 17h.01"></path><circle cx="12" cy="12" r="9"></circle></svg>
+              <span style="font-size:12px; color:#8E1520;"><strong>TURMA 30 — 1,2 ponto abaixo</strong> em três semestres. Abrir por matéria.</span>
             </div>
           </div>
           <div style="position:absolute; inset:0; background:#ffffff; display:flex; flex-direction:column; transition:opacity 450ms ease; opacity:{{ nv1 }}; pointer-events:{{ nvpe1 }};">
             <div style="display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; justify-content:space-between;">
               <div style="font-size:11.5px; font-weight:700; letter-spacing:0.06em; color:#667085;">TURMA 30 · APROVEITAMENTO POR MATÉRIA</div>
-              <div style="display:flex; align-items:center; gap:10px; font-size:10px; color:#98A2B3;"><span style="display:flex; align-items:center; gap:4px;"><span style="width:9px; height:9px; border-radius:3px; background:#1F6E54;"></span>bom</span><span style="display:flex; align-items:center; gap:4px;"><span style="width:9px; height:9px; border-radius:3px; background:#E9B10A;"></span>atenção</span><span style="display:flex; align-items:center; gap:4px;"><span style="width:9px; height:9px; border-radius:3px; background:#E41824;"></span>crítico</span></div>
+              <div style="display:flex; align-items:center; gap:10px; font-size:10px; color:#98A2B3;"><span style="display:flex; align-items:center; gap:4px;"><span style="width:9px; height:9px; border-radius:3px; background:#1F6E54;"></span>bom</span><span style="display:flex; align-items:center; gap:4px;"><span style="width:9px; height:9px; border-radius:3px; background:#E9B10A;"></span>atenção</span><span style="display:flex; align-items:center; gap:4px;"><span style="width:9px; height:9px; border-radius:3px; background:#C41E2A;"></span>crítico</span></div>
             </div>
             <div style="display:grid; grid-template-columns:minmax(96px,148px) repeat(6,1fr) 34px; gap:6px; margin:14px 0 8px; font-size:9.5px; color:#98A2B3; text-align:center;">
               <span></span><span>N1</span><span>N2</span><span>N3</span><span>N4</span><span>N5</span><span>N6</span><span style="text-align:right;">méd.</span>
@@ -608,46 +610,46 @@
             <div style="flex:1; display:grid; gap:8px; align-content:stretch;">
             <div style="display:grid; grid-template-columns:minmax(96px,148px) repeat(6,1fr) 34px; gap:6px; align-items:stretch; min-height:26px;"><span style="font-size:11.5px; color:#475467; display:flex; align-items:center;">Semiologia</span><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.00s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.07s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.14s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.21s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.28s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.35s;"></div><span style="font-size:11.5px; font-weight:700; color:#0F2118; display:flex; align-items:center; justify-content:flex-end;">8,6</span></div>
             <div style="display:grid; grid-template-columns:minmax(96px,148px) repeat(6,1fr) 34px; gap:6px; align-items:stretch; min-height:26px;"><span style="font-size:11.5px; color:#475467; display:flex; align-items:center;">Clínica médica</span><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.05s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.12s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.19s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.26s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.33s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.40s;"></div><span style="font-size:11.5px; font-weight:700; color:#0F2118; display:flex; align-items:center; justify-content:flex-end;">8,4</span></div>
-            <div style="display:grid; grid-template-columns:minmax(96px,148px) repeat(6,1fr) 34px; gap:6px; align-items:stretch; min-height:26px;"><span style="display:flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; color:#B3121C;">Pediatria</span><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.10s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.17s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#E9B10A; animation:cellfill 5s ease-out infinite; animation-delay:0.24s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#E9B10A; animation:cellfill 5s ease-out infinite; animation-delay:0.31s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#E41824; animation:cellfill 5s ease-out infinite; animation-delay:0.38s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#E41824; animation:cellfill 5s ease-out infinite; animation-delay:0.45s;"></div><span style="font-size:11.5px; font-weight:700; color:#B3121C; display:flex; align-items:center; justify-content:flex-end;">5,9</span></div>
+            <div style="display:grid; grid-template-columns:minmax(96px,148px) repeat(6,1fr) 34px; gap:6px; align-items:stretch; min-height:26px;"><span style="display:flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; color:#8E1520;">Pediatria</span><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.10s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.17s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#E9B10A; animation:cellfill 5s ease-out infinite; animation-delay:0.24s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#E9B10A; animation:cellfill 5s ease-out infinite; animation-delay:0.31s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#C41E2A; animation:cellfill 5s ease-out infinite; animation-delay:0.38s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#C41E2A; animation:cellfill 5s ease-out infinite; animation-delay:0.45s;"></div><span style="font-size:11.5px; font-weight:700; color:#8E1520; display:flex; align-items:center; justify-content:flex-end;">5,9</span></div>
             <div style="display:grid; grid-template-columns:minmax(96px,148px) repeat(6,1fr) 34px; gap:6px; align-items:stretch; min-height:26px;"><span style="font-size:11.5px; color:#475467; display:flex; align-items:center;">Ginec. e obstetrícia</span><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.15s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.22s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.29s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.36s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.43s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.50s;"></div><span style="font-size:11.5px; font-weight:700; color:#0F2118; display:flex; align-items:center; justify-content:flex-end;">8,1</span></div>
             <div style="display:grid; grid-template-columns:minmax(96px,148px) repeat(6,1fr) 34px; gap:6px; align-items:stretch; min-height:26px;"><span style="font-size:11.5px; color:#475467; display:flex; align-items:center;">Cirurgia</span><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.20s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.27s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.34s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.41s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#1F6E54; animation:cellfill 5s ease-out infinite; animation-delay:0.48s;"></div><div style="height:100%; min-height:26px; border-radius:6px; background:#61B08F; animation:cellfill 5s ease-out infinite; animation-delay:0.55s;"></div><span style="font-size:11.5px; font-weight:700; color:#0F2118; display:flex; align-items:center; justify-content:flex-end;">8,0</span></div>
             </div>
             <div style="margin-top:16px; display:flex; align-items:center; gap:9px; background:#FDF3F4; border-radius:10px; padding:10px 13px; animation:flagpop 5s ease-out infinite;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B3121C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;" aria-hidden="true"><path d="M12 9v4"></path><path d="M12 17h.01"></path><circle cx="12" cy="12" r="9"></circle></svg>
-              <span style="font-size:12px; color:#B3121C;"><strong>Pediatria</strong> — três provas consecutivas em queda. Abrir aluno a aluno.</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8E1520" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;" aria-hidden="true"><path d="M12 9v4"></path><path d="M12 17h.01"></path><circle cx="12" cy="12" r="9"></circle></svg>
+              <span style="font-size:12px; color:#8E1520;"><strong>Pediatria</strong> — três provas consecutivas em queda. Abrir aluno a aluno.</span>
             </div>
             <div style="margin-top:10px; font-size:11.5px; line-height:1.55; color:#98A2B3;">Média por prova (N1–N6) do 2º semestre · a mesma leitura existe para todas as turmas e todos os períodos.</div>
           </div>
           <div style="position:absolute; inset:0; background:#ffffff; display:flex; flex-direction:column; transition:opacity 450ms ease; opacity:{{ nv2 }}; pointer-events:{{ nvpe2 }};">
             <div style="display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center;">
               <div style="font-size:11.5px; font-weight:700; letter-spacing:0.06em; color:#667085; white-space:nowrap;">TURMA 30 · PEDIATRIA</div>
-              <span style="background:#F3F8FB; border:1px solid #D4DDD6; border-radius:999px; padding:3px 10px; font-size:10px; color:#475467; white-space:nowrap;">6 provas · 2º sem.</span>
+              <span style="background:#FBF5F5; border:1px solid #D4DDD6; border-radius:999px; padding:3px 10px; font-size:10px; color:#475467; white-space:nowrap;">6 provas · 2º sem.</span>
             </div>
             <div style="flex:1; display:grid; gap:6px; margin-top:14px; align-content:center;">
             <div style="display:grid; grid-template-columns:minmax(120px,190px) 1fr 96px; gap:12px; align-items:center; padding:7px 10px; border-radius:9px; background:transparent;">
               <span style="font-size:12px; font-weight:400; color:#475467;">Nicole Silva Costa</span>
-              <div style="height:10px; background:#F3F8FB; border-radius:999px; overflow:hidden;"><div style="width:92%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; animation:barloop 5s cubic-bezier(.2,.7,.2,1) infinite; animation-delay:0.00s;"></div></div>
+              <div style="height:10px; background:#FBF5F5; border-radius:999px; overflow:hidden;"><div style="width:92%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; animation:barloop 5s cubic-bezier(.2,.7,.2,1) infinite; animation-delay:0.00s;"></div></div>
               <span style="display:flex; align-items:center; justify-content:flex-end; gap:6px; font-size:12px; font-weight:700; color:#0F2118;">9,2<span style="font-size:8.5px; font-weight:700; padding:2px 7px; border-radius:999px; background:#EEF3F1; color:#667085;">estável</span></span>
             </div>
             <div style="display:grid; grid-template-columns:minmax(120px,190px) 1fr 96px; gap:12px; align-items:center; padding:7px 10px; border-radius:9px; background:transparent;">
               <span style="font-size:12px; font-weight:400; color:#475467;">André Teixeira</span>
-              <div style="height:10px; background:#F3F8FB; border-radius:999px; overflow:hidden;"><div style="width:76%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; animation:barloop 5s cubic-bezier(.2,.7,.2,1) infinite; animation-delay:0.09s;"></div></div>
+              <div style="height:10px; background:#FBF5F5; border-radius:999px; overflow:hidden;"><div style="width:76%; height:100%; background:#1F6E54; border-radius:999px; transform-origin:left; animation:barloop 5s cubic-bezier(.2,.7,.2,1) infinite; animation-delay:0.09s;"></div></div>
               <span style="display:flex; align-items:center; justify-content:flex-end; gap:6px; font-size:12px; font-weight:700; color:#0F2118;">7,6<span style="font-size:8.5px; font-weight:700; padding:2px 7px; border-radius:999px; background:#EEF3F1; color:#667085;">subindo</span></span>
             </div>
             <div style="display:grid; grid-template-columns:minmax(120px,190px) 1fr 96px; gap:12px; align-items:center; padding:7px 10px; border-radius:9px; background:transparent;">
               <span style="font-size:12px; font-weight:400; color:#475467;">Beatriz Silva Tavares</span>
-              <div style="height:10px; background:#F3F8FB; border-radius:999px; overflow:hidden;"><div style="width:61%; height:100%; background:#E9B10A; border-radius:999px; transform-origin:left; animation:barloop 5s cubic-bezier(.2,.7,.2,1) infinite; animation-delay:0.18s;"></div></div>
+              <div style="height:10px; background:#FBF5F5; border-radius:999px; overflow:hidden;"><div style="width:61%; height:100%; background:#E9B10A; border-radius:999px; transform-origin:left; animation:barloop 5s cubic-bezier(.2,.7,.2,1) infinite; animation-delay:0.18s;"></div></div>
               <span style="display:flex; align-items:center; justify-content:flex-end; gap:6px; font-size:12px; font-weight:700; color:#0F2118;">6,1<span style="font-size:8.5px; font-weight:700; padding:2px 7px; border-radius:999px; background:#EEF3F1; color:#667085;">atenção</span></span>
             </div>
             <div style="display:grid; grid-template-columns:minmax(120px,190px) 1fr 96px; gap:12px; align-items:center; padding:7px 10px; border-radius:9px; background:#FDF3F4;">
-              <span style="font-size:12px; font-weight:700; color:#B3121C;">Kaique Silva Carvalho</span>
-              <div style="height:10px; background:#F3F8FB; border-radius:999px; overflow:hidden;"><div style="width:52%; height:100%; background:#E41824; border-radius:999px; transform-origin:left; animation:barloop 5s cubic-bezier(.2,.7,.2,1) infinite; animation-delay:0.27s;"></div></div>
-              <span style="display:flex; align-items:center; justify-content:flex-end; gap:6px; font-size:12px; font-weight:700; color:#0F2118;">5,2<span style="font-size:8.5px; font-weight:700; padding:2px 7px; border-radius:999px; background:#FCE7E8; color:#B3121C;">3 provas em queda</span></span>
+              <span style="font-size:12px; font-weight:700; color:#8E1520;">Kaique Silva Carvalho</span>
+              <div style="height:10px; background:#FBF5F5; border-radius:999px; overflow:hidden;"><div style="width:52%; height:100%; background:#C41E2A; border-radius:999px; transform-origin:left; animation:barloop 5s cubic-bezier(.2,.7,.2,1) infinite; animation-delay:0.27s;"></div></div>
+              <span style="display:flex; align-items:center; justify-content:flex-end; gap:6px; font-size:12px; font-weight:700; color:#0F2118;">5,2<span style="font-size:8.5px; font-weight:700; padding:2px 7px; border-radius:999px; background:#FCE7E8; color:#8E1520;">3 provas em queda</span></span>
             </div>
             </div>
             <div style="margin-top:14px; border:1px solid #F1D9DB; border-radius:11px; padding:13px 15px; animation:flagpop 5s ease-out infinite;">
               <div style="font-size:12px; font-weight:700; color:#0F2118;">Kaique Silva Carvalho · plano sugerido</div>
-              <div style="font-size:11.5px; line-height:1.6; color:#667085; margin-top:5px;">Queda de 2,4 pontos em Pediatria · 2 faltas justificadas no rodízio · <strong style="color:#B3121C;">reforço dirigido antes do ENAMED</strong>. Alerta enviado à coordenação e ao preceptor responsável.</div>
+              <div style="font-size:11.5px; line-height:1.6; color:#667085; margin-top:5px;">Queda de 2,4 pontos em Pediatria · 2 faltas justificadas no rodízio · <strong style="color:#8E1520;">reforço dirigido antes do ENAMED</strong>. Alerta enviado à coordenação e ao preceptor responsável.</div>
             </div>
             <div style="margin-top:10px; font-size:11.5px; line-height:1.55; color:#98A2B3;">Cada aluno também vê as próprias notas no aplicativo, em <strong style="color:#667085;">Perfil · Minhas notas</strong>.</div>
           </div>
@@ -664,40 +666,40 @@
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; max-width:960px; margin:40px auto 0;">
         <div style="display:flex; gap:14px; padding:16px 18px; border-radius:13px; border:1px solid {{ nbd0 }}; background:{{ nbg0 }}; opacity:{{ ncap0 }}; transition:opacity 400ms ease, background 400ms ease, border-color 400ms ease;">
-          <span style="flex:none; width:26px; height:26px; border-radius:50%; background:rgba(127,216,168,0.16); color:#7FD8A8; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center;">1</span>
+          <span style="flex:none; width:26px; height:26px; border-radius:50%; background:rgba(242,194,48,0.16); color:#F2C230; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center;">1</span>
           <div>
             <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; color:#ffffff;">Comece pela turma</div>
-            <div style="font-size:13.5px; line-height:1.6; color:#A8CCD8; margin-top:5px;">A média de cada turma, período a período, desde o 1º semestre. A TURMA 30 perdeu <strong>1,2 ponto em três semestres</strong> — e isso apareceu no painel, não no resultado final.</div>
+            <div style="font-size:13.5px; line-height:1.6; color:#EBC7CA; margin-top:5px;">A média de cada turma, período a período, desde o 1º semestre. A TURMA 30 perdeu <strong>1,2 ponto em três semestres</strong> — e isso apareceu no painel, não no resultado final.</div>
           </div>
         </div>
         <div style="display:flex; gap:14px; padding:16px 18px; border-radius:13px; border:1px solid {{ nbd1 }}; background:{{ nbg1 }}; opacity:{{ ncap1 }}; transition:opacity 400ms ease, background 400ms ease, border-color 400ms ease;">
-          <span style="flex:none; width:26px; height:26px; border-radius:50%; background:rgba(127,216,168,0.16); color:#7FD8A8; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center;">2</span>
+          <span style="flex:none; width:26px; height:26px; border-radius:50%; background:rgba(242,194,48,0.16); color:#F2C230; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center;">2</span>
           <div>
             <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; color:#ffffff;">Abra por matéria</div>
-            <div style="font-size:13.5px; line-height:1.6; color:#A8CCD8; margin-top:5px;">O mapa de calor mostra <strong>onde</strong> a queda começou: Pediatria, a partir da terceira prova. A coordenação vê a matéria frágil da turma antes do fechamento.</div>
+            <div style="font-size:13.5px; line-height:1.6; color:#EBC7CA; margin-top:5px;">O mapa de calor mostra <strong>onde</strong> a queda começou: Pediatria, a partir da terceira prova. A coordenação vê a matéria frágil da turma antes do fechamento.</div>
           </div>
         </div>
         <div style="display:flex; gap:14px; padding:16px 18px; border-radius:13px; border:1px solid {{ nbd2 }}; background:{{ nbg2 }}; opacity:{{ ncap2 }}; transition:opacity 400ms ease, background 400ms ease, border-color 400ms ease;">
-          <span style="flex:none; width:26px; height:26px; border-radius:50%; background:rgba(127,216,168,0.16); color:#7FD8A8; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center;">3</span>
+          <span style="flex:none; width:26px; height:26px; border-radius:50%; background:rgba(242,194,48,0.16); color:#F2C230; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center;">3</span>
           <div>
             <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16px; color:#ffffff;">Chegue ao aluno</div>
-            <div style="font-size:13.5px; line-height:1.6; color:#A8CCD8; margin-top:5px;">Nome, histórico de provas e frequência lado a lado. <strong>Quem precisa de reforço aparece com nome</strong> — e o alerta vai para a coordenação e para o preceptor.</div>
+            <div style="font-size:13.5px; line-height:1.6; color:#EBC7CA; margin-top:5px;">Nome, histórico de provas e frequência lado a lado. <strong>Quem precisa de reforço aparece com nome</strong> — e o alerta vai para a coordenação e para o preceptor.</div>
           </div>
         </div>
     </div>
-    <div style="text-align:center; font-size:12px; color:#7FD8A8; margin-top:18px;">A demonstração avança sozinha — clique em uma aba para explorar no seu ritmo.</div>
+    <div style="text-align:center; font-size:12px; color:#F2C230; margin-top:18px;">A demonstração avança sozinha — clique em uma aba para explorar no seu ritmo.</div>
     <div data-reveal style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:52px;">
-      <div style="border:1px solid rgba(168,204,216,0.28); border-radius:14px; padding:22px 24px;">
+      <div style="border:1px solid rgba(235,199,202,0.28); border-radius:14px; padding:22px 24px;">
         <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; color:#ffffff;">Diagnóstico precoce</div>
-        <div style="font-size:13.5px; line-height:1.6; color:#A8CCD8; margin-top:8px;">A fragilidade aparece no semestre em que acontece — não na véspera da prova.</div>
+        <div style="font-size:13.5px; line-height:1.6; color:#EBC7CA; margin-top:8px;">A fragilidade aparece no semestre em que acontece — não na véspera da prova.</div>
       </div>
-      <div style="border:1px solid rgba(168,204,216,0.28); border-radius:14px; padding:22px 24px;">
+      <div style="border:1px solid rgba(235,199,202,0.28); border-radius:14px; padding:22px 24px;">
         <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; color:#ffffff;">Intervenção dirigida</div>
-        <div style="font-size:13.5px; line-height:1.6; color:#A8CCD8; margin-top:8px;">Reforço na matéria e na turma certas, com a lista nominal de quem precisa.</div>
+        <div style="font-size:13.5px; line-height:1.6; color:#EBC7CA; margin-top:8px;">Reforço na matéria e na turma certas, com a lista nominal de quem precisa.</div>
       </div>
-      <div style="border:1px solid rgba(168,204,216,0.28); border-radius:14px; padding:22px 24px;">
+      <div style="border:1px solid rgba(235,199,202,0.28); border-radius:14px; padding:22px 24px;">
         <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:17px; color:#ffffff;">Nota do curso no ENAMED</div>
-        <div style="font-size:13.5px; line-height:1.6; color:#A8CCD8; margin-top:8px;">O ENAMED avalia o aluno, e a média dos alunos avalia a faculdade. Cada aluno recuperado a tempo sobe esse número.</div>
+        <div style="font-size:13.5px; line-height:1.6; color:#EBC7CA; margin-top:8px;">O ENAMED avalia o aluno, e a média dos alunos avalia a faculdade. Cada aluno recuperado a tempo sobe esse número.</div>
       </div>
     </div>
   </div>
@@ -719,19 +721,19 @@
             <div style="background:#1B3A4B; padding:11px 13px 12px;">
               <div style="display:flex; justify-content:space-between; align-items:center; color:#ffffff; font-size:8px; font-weight:700;"><span>9:41</span><span style="letter-spacing:1.4px;">▮▮ ⌁ ▰</span></div>
               <div style="display:flex; align-items:center; gap:9px; margin-top:10px;">
-                <div style="flex:none; width:26px; height:26px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center; overflow:hidden;"><img src="uploads/images-2.jpeg" alt="" style="width:26px;"></div>
+                <div style="flex:none; width:26px; height:26px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center; overflow:hidden;"><img src="assets/logo-nilton-lins.jpeg" alt="" style="width:26px;"></div>
                 <div style="flex:1; min-width:0;">
                   <div style="font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#ffffff;">Mural</div>
-                  <div style="font-size:8px; color:#A8CCD8; margin-top:1px;">Avisos da coordenação</div>
+                  <div style="font-size:8px; color:#EBC7CA; margin-top:1px;">Avisos da coordenação</div>
                 </div>
 
               </div>
             </div>
-            <div style="height:3px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #E41824 100%);"></div>
+            <div style="height:3px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #C41E2A 100%);"></div>
             <div style="position:relative; padding:11px 12px 10px; flex:1; display:flex; flex-direction:column; gap:8px;">
               <div style="position:absolute; left:12px; right:12px; top:8px; z-index:2; background:#1B3A4B; border-radius:11px; padding:8px 10px; display:flex; align-items:center; gap:8px; box-shadow:0 10px 24px rgba(15,33,24,0.28); animation:notifin 4200ms ease-out infinite;">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l9 4V6L6 10H4a1 1 0 0 0-1 1z"></path></svg>
-                <div style="min-width:0;"><div style="font-size:8px; font-weight:700; color:#ffffff;">Coordenação publicou um aviso</div><div style="font-size:7px; color:#A8CCD8; margin-top:1px;">Ginecologia e obstetrícia · agora</div></div>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;" aria-hidden="true"><path d="M3 11v2a1 1 0 0 0 1 1h2l9 4V6L6 10H4a1 1 0 0 0-1 1z"></path></svg>
+                <div style="min-width:0;"><div style="font-size:8px; font-weight:700; color:#ffffff;">Coordenação publicou um aviso</div><div style="font-size:7px; color:#EBC7CA; margin-top:1px;">Ginecologia e obstetrícia · agora</div></div>
               </div>
               <div style="background:#ffffff; border-radius:12px; padding:10px 11px; box-shadow:0 2px 8px rgba(15,33,24,0.05);">
                 <div style="display:inline-block; background:#FCF3D9; color:#8a6100; font-size:6.5px; font-weight:700; letter-spacing:0.08em; padding:3px 8px; border-radius:999px; margin-bottom:6px;">NOVO AVISO</div>
@@ -753,7 +755,7 @@
             <div style="background:#1B3A4B; padding:11px 13px 12px;">
               <div style="display:flex; justify-content:space-between; align-items:center; color:#ffffff; font-size:8px; font-weight:700;"><span>9:41</span><span style="letter-spacing:1.4px;">▮▮ ⌁ ▰</span></div>
               <div style="display:flex; align-items:center; gap:9px; margin-top:10px;">
-                <div style="flex:none; width:26px; height:26px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center; overflow:hidden;"><img src="uploads/images-2.jpeg" alt="" style="width:26px;"></div>
+                <div style="flex:none; width:26px; height:26px; border-radius:50%; background:#ffffff; display:flex; align-items:center; justify-content:center; overflow:hidden;"><img src="assets/logo-nilton-lins.jpeg" alt="" style="width:26px;"></div>
                 <div style="flex:1; min-width:0;">
                   <div style="font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#ffffff;">Perfil</div>
 
@@ -761,10 +763,10 @@
 
               </div>
             </div>
-            <div style="height:3px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #E41824 100%);"></div>
+            <div style="height:3px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #C41E2A 100%);"></div>
             <div style="position:relative; padding:11px 12px 10px; flex:1; display:flex; flex-direction:column; gap:8px;">
               <div style="background:#ffffff; border-radius:12px; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(15,33,24,0.05);">
-                <div style="width:36px; height:36px; margin:0 auto; border-radius:50%; background:#FCE7E8; color:#B3121C; font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;">IM</div>
+                <div style="width:36px; height:36px; margin:0 auto; border-radius:50%; background:#FCE7E8; color:#8E1520; font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;">IM</div>
                 <div style="font-size:8px; color:#667085; margin-top:7px;">Você está autenticado como</div>
                 <div style="font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:700; color:#1B263B; margin-top:1px;">Aluno</div>
                 <div style="font-size:7.5px; color:#98A2B3; margin-top:3px;">aluno.demo37@niltonlins.test</div>
@@ -796,12 +798,12 @@
                 <div style="flex:none; width:22px; height:22px; border-radius:50%; background:rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg></div>
                 <div style="flex:1; min-width:0;">
                   <div style="font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#ffffff;">Ginecologia e obstetrícia</div>
-                  <div style="font-size:8px; color:#A8CCD8; margin-top:1px;">Coordenação · responde em até 1 dia</div>
+                  <div style="font-size:8px; color:#EBC7CA; margin-top:1px;">Coordenação · responde em até 1 dia</div>
                 </div>
-                <div style="flex:none; width:22px; height:22px; border-radius:50%; background:#ffffff; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="uploads/images-2.jpeg" alt="" style="width:22px;"></div>
+                <div style="flex:none; width:22px; height:22px; border-radius:50%; background:#ffffff; overflow:hidden; display:flex; align-items:center; justify-content:center;"><img src="assets/logo-nilton-lins.jpeg" alt="" style="width:22px;"></div>
               </div>
             </div>
-            <div style="height:3px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #E41824 100%);"></div>
+            <div style="height:3px; background:linear-gradient(90deg, #FCCC00 0%, #FCCC00 40%, #C41E2A 100%);"></div>
             <div style="position:relative; padding:11px 12px; flex:1; display:flex; flex-direction:column;">
               <div style="text-align:center; font-size:7.5px; color:#98A2B3; margin-bottom:9px;">quarta-feira, 22 de julho</div>
               <div style="display:flex; flex-direction:column; align-items:flex-end; gap:3px;">
@@ -854,7 +856,7 @@
             <div style="font-size:13.5px; line-height:1.6; color:#475467; margin-top:5px;">Pergunta, resposta e confirmação de leitura ficam no <strong>histórico da instituição</strong> — não no celular pessoal de ninguém. Combinado por mensagem tem lastro.</div>
           </div>
         </div>
-        <div style="display:flex; align-items:center; gap:9px; margin-top:6px; background:#F3F8FB; border-radius:12px; padding:14px 16px;">
+        <div style="display:flex; align-items:center; gap:9px; margin-top:6px; background:#FBF5F5; border-radius:12px; padding:14px 16px;">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line></svg>
           <span style="font-size:13px; line-height:1.55; color:#475467;">O que foi avisado, quem leu e quando — tudo auditável pela coordenação, com exportação junto ao acervo do curso.</span>
         </div>
@@ -862,7 +864,7 @@
     </div>
   </div>
 </section>
-<section data-screen-label="Modulos" style="background:#F3F8FB;">
+<section data-screen-label="Modulos" style="background:#FBF5F5;">
   <div style="max-width:1120px; margin:0 auto; padding:clamp(72px,10vw,120px) 24px;">
     <h2 data-reveal style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4vw,46px); line-height:1.1; color:#1B263B; margin:0 0 14px; text-align:center; text-wrap:pretty;">Uma plataforma. Infinitas possibilidades.</h2>
     <p data-reveal style="margin:0 auto 44px; color:#475467; line-height:1.6; max-width:56ch; text-align:center;">Seis perfis de acesso, do coordenador de curso ao representante de turma. E nós fazemos a <strong>integração automática com os sistemas que a faculdade já usa</strong>: os alunos entram no portal sozinhos — a coordenação só escolhe as atividades de cada um.</p>
@@ -878,7 +880,7 @@
       <div style="background:#ffffff; border:1px solid #D4DDD6; border-radius:14px; padding:22px;" style-hover="transform:translateY(-3px); box-shadow:0 12px 30px rgba(15,33,24,0.12);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#145881" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg><h3 style="font-family:'Space Grotesk',sans-serif; font-size:17px; color:#1B263B; margin:12px 0 6px;">Pendências sinalizadas</h3><p style="margin:0; font-size:14px; line-height:1.55; color:#475467;">Rematrícula em aberto e situação do aluno, direto no painel.</p></div>
     </div>
     <div data-reveal style="margin-top:44px; text-align:center;">
-      <a href="{{ linkAgenda }}" style="display:inline-block; background-color:#1F6E54; background:{{ corCta }}; color:#ffffff; font-weight:700; font-size:17px; padding:16px 30px; border-radius:10px; text-decoration:none; transition:filter 120ms ease-out, transform 120ms ease-out;" style-hover="filter:brightness(1.12); transform:translateY(-1px);" style-active="transform:scale(0.97);">Agendar a reunião de implantação</a>
+      <a href="{{ linkAgenda }}" style="display:inline-block; background-color:#F2C230; background:{{ corCta }}; color:#4A0C12; font-weight:700; font-size:17px; padding:16px 30px; border-radius:10px; text-decoration:none; transition:filter 120ms ease-out, transform 120ms ease-out;" style-hover="filter:brightness(1.12); transform:translateY(-1px);" style-active="transform:scale(0.97);">Agendar a reunião de implantação</a>
     </div>
   </div>
 </section>
@@ -888,12 +890,12 @@
     <h2 data-reveal style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4vw,46px); line-height:1.1; color:#1B263B; margin:0 0 14px; text-wrap:pretty;">O MEC não pede só digitalização.</h2>
     <p data-reveal style="margin:0 auto 36px; color:#475467; line-height:1.65; max-width:56ch;">O acervo acadêmico digital precisa garantir autenticidade, rastreabilidade e preservação. O Frequência Internato foi desenvolvido para atender a esses requisitos <strong>desde a origem do registro</strong>.</p>
     <div data-reveal style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
-      <span style="display:flex; align-items:center; gap:8px; background:#F3F8FB; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Autenticidade e integridade</span>
-      <span style="display:flex; align-items:center; gap:8px; background:#F3F8FB; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Quem criou, validou ou alterou — sempre identificado</span>
-      <span style="display:flex; align-items:center; gap:8px; background:#F3F8FB; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Trilha de auditoria e histórico</span>
-      <span style="display:flex; align-items:center; gap:8px; background:#F3F8FB; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Acesso por perfis e permissões</span>
-      <span style="display:flex; align-items:center; gap:8px; background:#F3F8FB; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Backup, preservação e exportação</span>
-      <span style="display:flex; align-items:center; gap:8px; background:#F3F8FB; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Preparado para assinatura digital ICP-Brasil</span>
+      <span style="display:flex; align-items:center; gap:8px; background:#FBF5F5; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Autenticidade e integridade</span>
+      <span style="display:flex; align-items:center; gap:8px; background:#FBF5F5; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Quem criou, validou ou alterou — sempre identificado</span>
+      <span style="display:flex; align-items:center; gap:8px; background:#FBF5F5; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Trilha de auditoria e histórico</span>
+      <span style="display:flex; align-items:center; gap:8px; background:#FBF5F5; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Acesso por perfis e permissões</span>
+      <span style="display:flex; align-items:center; gap:8px; background:#FBF5F5; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Backup, preservação e exportação</span>
+      <span style="display:flex; align-items:center; gap:8px; background:#FBF5F5; border:1px solid #D4DDD6; border-radius:999px; padding:9px 18px; font-size:13.5px; color:#1B263B;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Preparado para assinatura digital ICP-Brasil</span>
     </div>
     <blockquote data-reveal style="margin:40px auto 0; max-width:64ch; padding:0; border:0; font-family:'Space Grotesk',sans-serif; font-size:clamp(17px,2.2vw,22px); line-height:1.55; color:#1B263B; font-weight:600; text-wrap:pretty;">Não apenas substitui o sistema de presença atual: estrutura o registro do curso para um acervo acadêmico digital confiável — <span style="color:#1F6E54;">pronto para auditoria</span>.</blockquote>
     <div data-reveal style="margin:44px auto 0; max-width:72ch; text-align:left; border-top:1px solid #D4DDD6; padding-top:24px;">
@@ -908,7 +910,7 @@
   </div>
 </section>
 
-<section data-screen-label="FAQ" style="background:#F3F8FB;">
+<section data-screen-label="FAQ" style="background:#FBF5F5;">
   <div style="max-width:820px; margin:0 auto; padding:clamp(64px,9vw,104px) 24px;">
     <h2 data-reveal style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(24px,3vw,34px); color:#1B263B; margin:0 0 32px;">Perguntas diretas, respostas honestas</h2>
     <div style="display:grid; gap:12px;">
@@ -942,10 +944,10 @@
 
 <section data-screen-label="Convite Pioneira" style="background:#ffffff; border-top:1px solid #D4DDD6;">
   <div style="max-width:820px; margin:0 auto; padding:clamp(72px,10vw,120px) 24px 0; text-align:center;">
-    <div data-reveal style="display:inline-flex; align-items:center; gap:8px; background:#FCCC00; color:#003048; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:6px 16px; border-radius:999px; margin-bottom:22px;">Convite</div>
+    <div data-reveal style="display:inline-flex; align-items:center; gap:8px; background:#FCCC00; color:#6E121B; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:6px 16px; border-radius:999px; margin-bottom:22px;">Convite</div>
     <h2 data-reveal style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4vw,46px); line-height:1.12; color:#1B263B; margin:0 0 22px; text-wrap:pretty;">Convite para integrar o Programa Instituição Pioneira.</h2>
     <div data-reveal style="display:grid; gap:16px; text-align:left; max-width:64ch; margin:0 auto; font-size:16px; line-height:1.75; color:#475467;">
-      <p style="margin:0;">A Cactus Company iniciará sua implantação na Região Norte com <strong style="color:#1B263B;">apenas uma Instituição Pioneira</strong>.</p>
+      <p style="margin:0;">A Cactus Company iniciará sua implantação na <strong style="color:#1B263B; background:linear-gradient(to top, rgba(252,204,0,0.45) 42%, transparent 42%); padding:0 2px;">Região Norte</strong> com <strong style="color:#1B263B;">apenas uma Instituição Pioneira</strong>.</p>
       <p style="margin:0;">Como toda plataforma corporativa voltada ao ensino médico, a primeira implantação exige acompanhamento próximo da equipe de desenvolvimento, validação dos fluxos institucionais e evolução conjunta de funcionalidades.</p>
       <p style="margin:0;">Por esse motivo, a primeira instituição parceira receberá <strong style="color:#1B263B;">condições comerciais exclusivas, que não serão repetidas para futuras contratações</strong>.</p>
       <p style="margin:0;">Em contrapartida, o nosso time aproveitará a experiência adquirida nessa implantação para acelerar a expansão nacional da plataforma.</p>
@@ -957,8 +959,8 @@
   <div style="max-width:1120px; margin:0 auto; padding:clamp(56px,8vw,88px) 24px clamp(72px,10vw,120px);">
     <h2 data-reveal style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(28px,4vw,46px); line-height:1.1; color:#1B263B; margin:0 0 14px; text-align:center; text-wrap:pretty;">Planos de contratação</h2>
     <p data-reveal style="margin:0 auto 28px; color:#475467; line-height:1.65; max-width:56ch; text-align:center;">Planos padrão para <strong>até 800 usuários</strong> — e <strong>até 1.200 usuários, exclusivo do Programa Instituição Pioneira</strong> — entre alunos, professores, preceptores, coordenadores e demais usuários autorizados.</p>
-    <div data-reveal style="max-width:760px; margin:0 auto 44px; background:#003048; border-radius:14px; padding:18px 26px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:center; text-align:center;">
-      <span style="background:#FCCC00; color:#003048; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 12px; border-radius:999px;">Exclusivo</span>
+    <div data-reveal style="max-width:760px; margin:0 auto 44px; background:#6E121B; border-radius:14px; padding:18px 26px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:center; text-align:center;">
+      <span style="background:#FCCC00; color:#6E121B; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 12px; border-radius:999px;">Exclusivo</span>
       <span style="color:#ffffff; font-size:14.5px; line-height:1.6;">A condição especial do <strong>Programa Instituição Pioneira</strong> é válida <strong style="box-shadow:inset 0 -0.14em 0 #FCCC00;">somente para a primeira faculdade que fechar negócio</strong>.</span>
     </div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:18px; align-items:stretch;">
@@ -979,9 +981,7 @@
           <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>Backups diários em nuvem, com consulta técnica ou jurídica</li>
         </ul>
         <div style="margin-top:auto; padding-top:22px;">
-          <div style="border-top:1px solid #E7ECEA; padding-top:16px; font-size:12px; color:#667085;">Investimento no 1º ano</div>
-          <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:#1B263B;">R$ 449.000,00</div>
-          <div style="font-size:13px; line-height:1.5; color:#667085; margin-top:6px;">Equivale a <strong style="color:#1B263B;">R$ 46,77 por usuário/mês</strong> (800 usuários).</div>
+          <div style="border-top:1px solid #E7ECEA; padding-top:16px; font-size:13px; line-height:1.5; color:#667085;">Equivale a <strong style="color:#1B263B;">R$ 46,77 por usuário/mês</strong> (800 usuários).</div>
         </div>
       </div>
       <div data-reveal style="border:1px solid #D4DDD6; border-radius:16px; padding:28px 26px; display:flex; flex-direction:column;">
@@ -1002,37 +1002,32 @@
           <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F6E54" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>Economia de R$ 12.450,00 na licença (5% à vista)</li>
         </ul>
         <div style="margin-top:auto; padding-top:22px;">
-          <div style="border-top:1px solid #E7ECEA; padding-top:16px; font-size:12px; color:#667085;">Investimento no 1º ano</div>
-          <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:#1B263B;">R$ 436.550,00</div>
-          <div style="font-size:13px; line-height:1.5; color:#667085; margin-top:6px;">Equivale a <strong style="color:#1B263B;">R$ 45,47 por usuário/mês</strong> (800 usuários).</div>
+          <div style="border-top:1px solid #E7ECEA; padding-top:16px; font-size:13px; line-height:1.5; color:#667085;">Equivale a <strong style="color:#1B263B;">R$ 45,47 por usuário/mês</strong> (800 usuários).</div>
         </div>
       </div>
-      <div data-reveal style="background:#003048; border:2px solid #FCCC00; border-radius:16px; padding:28px 26px; display:flex; flex-direction:column; position:relative; box-shadow:0 24px 60px rgba(0,48,72,0.35);">
-        <div style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:#FCCC00; color:#003048; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:999px; white-space:nowrap;">Vaga exclusiva — Instituição Pioneira · Região Norte</div>
+      <div data-reveal style="background:#6E121B; border:2px solid #FCCC00; border-radius:16px; padding:28px 26px; display:flex; flex-direction:column; position:relative; box-shadow:0 24px 60px rgba(0,48,72,0.35);">
+        <div style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:#FCCC00; color:#6E121B; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:999px; white-space:nowrap;">Vaga exclusiva — Instituição Pioneira · Região Norte</div>
         <div style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:700; color:#ffffff;">Programa Instituição Pioneira</div>
-        <div style="font-size:13px; color:#A8CCD8; margin:6px 0 18px; line-height:1.55;">Benefícios exclusivos reservados à primeira Instituição Pioneira do Frequência Internato.</div>
-        <div style="border-top:1px solid rgba(168,204,216,0.3); padding-top:16px; display:grid; gap:10px; font-size:14px; color:#ffffff;">
-          <div style="display:flex; justify-content:space-between; gap:12px; align-items:baseline;"><span style="color:#A8CCD8;">Implantação</span><span><s style="color:#6f93a3; font-size:12.5px;">R$ 200.000,00</s> <strong style="color:#7FD8A8;">R$ 165.000,00</strong></span></div>
+        <div style="font-size:13px; color:#EBC7CA; margin:6px 0 18px; line-height:1.55;">Benefícios exclusivos reservados à primeira Instituição Pioneira do Frequência Internato.</div>
+        <div style="border-top:1px solid rgba(235,199,202,0.3); padding-top:16px; display:grid; gap:10px; font-size:14px; color:#ffffff;">
+          <div style="display:flex; justify-content:space-between; gap:12px; align-items:baseline;"><span style="color:#EBC7CA;">Implantação</span><span><s style="color:#6f93a3; font-size:12.5px;">R$ 200.000,00</s> <strong style="color:#F2C230;">R$ 165.000,00</strong></span></div>
           <div style="font-size:12px; color:#6f93a3; margin-top:-6px; text-align:right;">em até 6x ou por marcos, a cada fase da entrega</div>
-          <div style="display:flex; justify-content:space-between; gap:12px; align-items:baseline;"><span style="color:#A8CCD8;">Licença anual à vista</span><span><s style="color:#6f93a3; font-size:12.5px;">R$ 249.000,00</s> <strong style="color:#7FD8A8;">R$ 199.900,00</strong></span></div>
-          <div style="display:flex; justify-content:space-between; gap:12px;"><span style="color:#A8CCD8;">ou parcelada</span><span>12x R$ 18.490,00 <span style="color:#6f93a3; font-size:12px;">(R$ 221.880,00)</span></span></div>
+          <div style="display:flex; justify-content:space-between; gap:12px; align-items:baseline;"><span style="color:#EBC7CA;">Licença anual à vista</span><span><s style="color:#6f93a3; font-size:12.5px;">R$ 249.000,00</s> <strong style="color:#F2C230;">R$ 199.900,00</strong></span></div>
+          <div style="display:flex; justify-content:space-between; gap:12px;"><span style="color:#EBC7CA;">ou parcelada</span><span>12x R$ 18.490,00 <span style="color:#6f93a3; font-size:12px;">(R$ 221.880,00)</span></span></div>
         </div>
-        <ul style="margin:18px 0 0; padding:0; list-style:none; display:grid; gap:8px; font-size:13.5px; line-height:1.5; color:#A8CCD8;">
-          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span style="color:#ffffff;"><strong>Todos os benefícios dos planos padrão</strong></span></li>
+        <ul style="margin:18px 0 0; padding:0; list-style:none; display:grid; gap:8px; font-size:13.5px; line-height:1.5; color:#EBC7CA;">
+          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span style="color:#ffffff;"><strong>Todos os benefícios dos planos padrão</strong></span></li>
           <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FCCC00" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg><span style="color:#ffffff;"><strong>Acesso antecipado ao módulo de indicadores de nota</strong> (em beta, ainda não comercializado) — customizado para a faculdade e <strong style="color:#FCCC00;">gratuito por toda a vigência do contrato</strong></span></li>
-          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span style="color:#ffffff;"><strong>Até 1.200 usuários</strong> — exclusivo do programa</span></li>
-          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Prioridade máxima na implantação</li>
-          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"></path></svg>Participação em reuniões consultivas de evolução do produto, com possibilidade de sugerir e priorizar melhorias de interesse institucional</li>
-          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>Direito à solicitação de uma funcionalidade adicional de baixa ou média complexidade, limitada a até 80 horas de desenvolvimento, sujeita à validação técnica e definição conjunta de escopo</li>
-          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>Condição comercial diferenciada na 1ª renovação</li>
-          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg><span style="color:#ffffff;"><strong>Economia de R$ 84.100,00</strong> no 1º ano vs. plano padrão</span></li>
+          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span style="color:#ffffff;"><strong>Até 1.200 usuários</strong> — exclusivo do programa</span></li>
+          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Prioridade máxima na implantação</li>
+          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"></path></svg>Participação em reuniões consultivas de evolução do produto, com possibilidade de sugerir e priorizar melhorias de interesse institucional</li>
+          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>Direito à solicitação de uma funcionalidade adicional de baixa ou média complexidade, limitada a até 80 horas de desenvolvimento, sujeita à validação técnica e definição conjunta de escopo</li>
+          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>Condição comercial diferenciada na 1ª renovação</li>
+          <li style="display:flex; gap:9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:3px;" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg><span style="color:#ffffff;"><strong>Economia de R$ 84.100,00</strong> no 1º ano vs. plano padrão</span></li>
         </ul>
         <p style="margin:14px 0 0; font-size:11px; line-height:1.6; color:#6f93a3;">As sugestões de melhoria estão sujeitas à análise de viabilidade técnica, segurança, compatibilidade regulatória e aderência ao escopo da plataforma.</p>
         <div style="margin-top:auto; padding-top:22px;">
-          <div style="border-top:1px solid rgba(168,204,216,0.3); padding-top:16px; font-size:12px; color:#A8CCD8;">Investimento no 1º ano</div>
-          <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:#7FD8A8;">R$ 364.900,00 <span style="font-size:13px; font-weight:600; color:#A8CCD8;">à vista</span></div>
-          <div style="font-size:12px; color:#A8CCD8; margin-top:2px;">ou R$ 386.880,00 com a licença em 12x</div>
-          <div style="font-size:13px; line-height:1.5; color:#A8CCD8; margin-top:6px;">Equivale a <strong style="color:#7FD8A8;">R$ 25,34 por usuário/mês</strong> (1.200 usuários) — quase metade do custo do plano padrão.</div>
+          <div style="border-top:1px solid rgba(235,199,202,0.3); padding-top:16px; font-size:13px; line-height:1.5; color:#EBC7CA;">Equivale a <strong style="color:#F2C230;">R$ 25,34 por usuário/mês</strong> (1.200 usuários) — quase metade do custo do plano padrão.</div>
         </div>
       </div>
     </div>
@@ -1040,20 +1035,20 @@
   </div>
 </section>
 
-<section data-screen-label="Comercial" style="background:#003048; color:#ffffff;">
+<section data-screen-label="Comercial" style="background:#6E121B; color:#ffffff;">
   <div style="max-width:880px; margin:0 auto; padding:clamp(72px,10vw,128px) 24px; text-align:center;">
     <h2 data-reveal style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(30px,4.6vw,52px); line-height:1.1; margin:0 0 18px; text-wrap:pretty;">Em operação em 60 a 90 dias após a assinatura.</h2>
-    <p data-reveal style="margin:0 auto 26px; color:#A8CCD8; line-height:1.65; max-width:52ch;">Escolha o plano ideal acima — <strong style="color:#ffffff;">personalização, treinamento, suporte e backups já inclusos</strong>. Na reunião de implantação, alinhamos o cronograma e o que a universidade deseja em cada etapa.</p>
+    <p data-reveal style="margin:0 auto 26px; color:#EBC7CA; line-height:1.65; max-width:52ch;">Escolha o plano ideal acima — <strong style="color:#ffffff;">personalização, treinamento, suporte e backups já inclusos</strong>. Na reunião de implantação, alinhamos o cronograma e o que a universidade deseja em cada etapa.</p>
     <p data-reveal style="margin:0 auto 36px; max-width:56ch; font-family:'Space Grotesk',sans-serif; font-size:clamp(17px,2.2vw,22px); font-weight:600; line-height:1.5; color:#ffffff; text-wrap:pretty;">Em tempos de intensa mudança no cenário regulatório e fiscalizatório da medicina, ter organização e se adequar às exigências <span style="box-shadow:inset 0 -0.14em 0 #FCCC00;">deixou de ser opcional — virou indispensável</span>.</p>
     <div data-reveal>
-      <a href="{{ linkAgenda }}" style="display:inline-block; background-color:#1F6E54; background:{{ corCta }}; color:#ffffff; font-weight:700; font-size:18px; padding:18px 36px; border-radius:10px; text-decoration:none; transition:filter 120ms ease-out, transform 120ms ease-out;" style-hover="filter:brightness(1.12); transform:translateY(-1px);" style-active="transform:scale(0.97);">Agendar a reunião de implantação</a>
+      <a href="{{ linkAgenda }}" style="display:inline-block; background-color:#F2C230; background:{{ corCta }}; color:#4A0C12; font-weight:700; font-size:18px; padding:18px 36px; border-radius:10px; text-decoration:none; transition:filter 120ms ease-out, transform 120ms ease-out;" style-hover="filter:brightness(1.12); transform:translateY(-1px);" style-active="transform:scale(0.97);">Agendar a reunião de implantação</a>
       <div style="margin-top:26px; display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-        <a href="mailto:suporte@cactuscompany.com.br" style="display:flex; align-items:center; gap:10px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:12px 24px; color:#7FD8A8; text-decoration:none; font-size:15px; transition:border-color 120ms ease-out;" style-hover="border-color:#7FD8A8;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7FD8A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6l-10 7L2 6"></path></svg>
+        <a href="mailto:suporte@cactuscompany.com.br" style="display:flex; align-items:center; gap:10px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:12px 24px; color:#F2C230; text-decoration:none; font-size:15px; transition:border-color 120ms ease-out;" style-hover="border-color:#F2C230;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2C230" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M22 6l-10 7L2 6"></path></svg>
           suporte@cactuscompany.com.br
         </a>
-        <a href="https://wa.me/5566999522244" style="display:flex; align-items:center; gap:10px; border:1px solid rgba(168,204,216,0.4); border-radius:999px; padding:12px 24px; color:#7FD8A8; text-decoration:none; font-size:15px; transition:border-color 120ms ease-out;" style-hover="border-color:#7FD8A8;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#7FD8A8" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.94L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.9.86-3-.2-.31a8.2 8.2 0 1 1 6.92 3.74zm4.5-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22a7.5 7.5 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.5.11-.11.25-.3.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07 0 1.22.9 2.4 1.02 2.57.12.17 1.76 2.68 4.25 3.76.6.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.17-.48-.29z"></path></svg>
+        <a href="https://wa.me/5566999522244" style="display:flex; align-items:center; gap:10px; border:1px solid rgba(235,199,202,0.4); border-radius:999px; padding:12px 24px; color:#F2C230; text-decoration:none; font-size:15px; transition:border-color 120ms ease-out;" style-hover="border-color:#F2C230;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#F2C230" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.94L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.08.9.86-3-.2-.31a8.2 8.2 0 1 1 6.92 3.74zm4.5-6.13c-.25-.12-1.46-.72-1.68-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22a7.5 7.5 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.5.11-.11.25-.3.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07 0 1.22.9 2.4 1.02 2.57.12.17 1.76 2.68 4.25 3.76.6.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.17-.48-.29z"></path></svg>
           WhatsApp (66) 99952-2244
         </a>
       </div>
@@ -1062,18 +1057,18 @@
 </section>
 </main>
 
-<footer data-screen-label="Rodape" style="background:#00263a; color:#A8CCD8;">
+<footer data-screen-label="Rodape" style="background:#560D14; color:#EBC7CA;">
   <div style="max-width:1120px; margin:0 auto; padding:36px 24px 44px; font-size:13px; line-height:1.8;">
     <div style="display:flex; flex-wrap:wrap; gap:8px 28px;">
       <span style="color:#ffffff; font-weight:600;">Cactus Company · GV Tecnologia LTDA</span>
       <span>CNPJ 65.923.667/0001-01</span>
-      <a href="mailto:suporte@cactuscompany.com.br" style="color:#A8CCD8;">suporte@cactuscompany.com.br</a>
+      <a href="mailto:suporte@cactuscompany.com.br" style="color:#EBC7CA;">suporte@cactuscompany.com.br</a>
       <span>(66) 99952-2244</span>
-      <a href="https://www.instagram.com/cactuscompany_oficial/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:7px; color:#A8CCD8; text-decoration:none;" style-hover="color:#ffffff;">
+      <a href="https://www.instagram.com/cactuscompany_oficial/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:7px; color:#EBC7CA; text-decoration:none;" style-hover="color:#ffffff;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle></svg>
         @cactuscompany_oficial
       </a>
-      <a href="mailto:suporte@cactuscompany.com.br?subject=Pol%C3%ADtica%20de%20privacidade" style="color:#A8CCD8;">Política de privacidade</a>
+      <a href="mailto:suporte@cactuscompany.com.br?subject=Pol%C3%ADtica%20de%20privacidade" style="color:#EBC7CA;">Política de privacidade</a>
     </div>
     <p style="margin:18px 0 0; font-size:12px; color:#6f93a3; max-width:88ch;">Documento comercial da Cactus Company (GV Tecnologia LTDA). As marcas da Universidade Nilton Lins pertencem à instituição e são exibidas apenas para identificar o destinatário desta proposta. Interfaces e indicadores exibidos são ilustrativos.</p>
   </div>
@@ -1086,7 +1081,7 @@
 </sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
-  &quot;corCta&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#1F6E54&quot;,&quot;options&quot;:[&quot;#1F6E54&quot;,&quot;#E41824&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;CTA&quot;},
+  &quot;corCta&quot;: {&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#F2C230&quot;,&quot;options&quot;:[&quot;#F2C230&quot;,&quot;#FFFFFF&quot;,&quot;#1F6E54&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;CTA&quot;},
   &quot;zapFlutuante&quot;: {&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;CTA&quot;},
   &quot;dataApresentacao&quot;: {&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lockup&quot;}
 }">
@@ -1175,7 +1170,7 @@ class Component extends DCLogic {
     const data = this.props.dataApresentacao ?? "";
     const ci = this.state.ci, rm = this.state.rm;
     const v = {
-      corCta: this.props.corCta ?? "#1F6E54",
+      corCta: this.props.corCta ?? "#F2C230",
       linkAgenda: zap,
       mostrarZap: this.props.zapFlutuante ?? true,
       temData: data.trim().length > 0,
@@ -1184,14 +1179,14 @@ class Component extends DCLogic {
     for (let i = 0; i < 4; i++) {
       v['ci' + i] = ci === i ? 1 : 0;
       v['cap' + i] = ci === i ? 1 : 0.38;
-      v['bg' + i] = ci === i ? '#F3F8FB' : 'transparent';
+      v['bg' + i] = ci === i ? '#FBF5F5' : 'transparent';
       v['rcap' + i] = rm === i ? 1 : 0.38;
       v['rbg' + i] = rm === i ? '#ffffff' : 'transparent';
     }
     v.ckOp = rm >= 1 ? 1 : 0;
     v.ckBg = rm >= 1 ? '#1F6E54' : 'transparent';
     v.ckBd = rm >= 1 ? '#1F6E54' : '#98A2B3';
-    v.rowBg = rm >= 1 && rm < 3 ? '#F3F8FB' : '#ffffff';
+    v.rowBg = rm >= 1 && rm < 3 ? '#FBF5F5' : '#ffffff';
     v.selBd = rm === 2 ? '#1F6E54' : '#D4DDD6';
     v.selSh = rm === 2 ? '0 0 0 3px rgba(31,110,84,0.18)' : 'none';
     v.btnTr = rm === 3 ? 'scale(0.96)' : 'none';
@@ -1202,19 +1197,19 @@ class Component extends DCLogic {
     for (let i = 0; i < 3; i++) {
       v['nv' + i] = nv === i ? 1 : 0;
       v['nvpe' + i] = nv === i ? 'auto' : 'none';
-      v['tabBg' + i] = nv === i ? '#003048' : 'transparent';
+      v['tabBg' + i] = nv === i ? '#6E121B' : 'transparent';
       v['tabFg' + i] = nv === i ? '#ffffff' : '#667085';
       v['ncap' + i] = nv === i ? 1 : 0.4;
       v['nbg' + i] = nv === i ? 'rgba(255,255,255,0.07)' : 'transparent';
-      v['nbd' + i] = nv === i ? '#7FD8A8' : 'rgba(168,204,216,0.2)';
+      v['nbd' + i] = nv === i ? '#F2C230' : 'rgba(235,199,202,0.2)';
     }
     const mu = this.state.mu;
     for (let i = 0; i < 3; i++) {
       v['mv' + i] = mu === i ? 1 : 0;
       v['mvpe' + i] = mu === i ? 'auto' : 'none';
       v['mcap' + i] = mu === i ? 1 : 0.45;
-      v['mbg' + i] = mu === i ? '#F3F8FB' : 'transparent';
-      v['mbd' + i] = mu === i ? '#A8CCD8' : '#E7ECEA';
+      v['mbg' + i] = mu === i ? '#FBF5F5' : 'transparent';
+      v['mbd' + i] = mu === i ? '#EBC7CA' : '#E7ECEA';
       v['mdot' + i] = mu === i ? '#1F6E54' : '#D4DDD6';
       v['verMu' + i] = ((k) => () => this.verMu(k))(i);
     }

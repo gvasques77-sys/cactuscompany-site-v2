@@ -1,0 +1,56 @@
+/* ─────────────────────────────────────────
+   Cactus Company — Effects Tokens
+   Shadows, motion, and blur
+───────────────────────────────────────── */
+:root {
+  /* ── Shadows ────────────────────────────
+     All shadows are tinted with the brand's
+     forest-dark green (rgba 15,33,24) for a
+     chromatic, on-brand depth effect.
+  ─────────────────────────────────────── */
+  --shadow-xs:  0 1px 2px rgba(15, 33, 24, 0.06);
+  --shadow-sm:  0 2px 4px rgba(15, 33, 24, 0.08),
+                0 1px 2px rgba(15, 33, 24, 0.04);
+  --shadow-md:  0 4px 8px rgba(15, 33, 24, 0.10),
+                0 2px 4px rgba(15, 33, 24, 0.06);
+  --shadow-lg:  0 8px 20px rgba(15, 33, 24, 0.12),
+                0 4px 8px rgba(15, 33, 24, 0.06);
+  --shadow-xl:  0 16px 32px rgba(15, 33, 24, 0.14),
+                0 8px 16px rgba(15, 33, 24, 0.08);
+  --shadow-2xl: 0 24px 48px rgba(15, 33, 24, 0.18);
+  --shadow-inner: inset 0 2px 4px rgba(15, 33, 24, 0.08);
+
+  /* Focus ring — brand green glow */
+  --shadow-focus: 0 0 0 3px rgba(56, 184, 44, 0.22);
+  --shadow-focus-error: 0 0 0 3px rgba(220, 53, 53, 0.20);
+
+  /* ── Motion ─────────────────────────────
+     Fast transitions for micro-interactions.
+     Spring easing for element entrances.
+  ─────────────────────────────────────── */
+  --ease-in:     cubic-bezier(0.4, 0, 1, 1);         /* @kind other */
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);          /* @kind other */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);        /* @kind other */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);   /* @kind other */
+
+  --duration-instant: 50ms;  /* @kind other */
+  --duration-fast:    120ms; /* @kind other */
+  --duration-normal:  200ms; /* @kind other */
+  --duration-slow:    350ms; /* @kind other */
+  --duration-slower:  500ms; /* @kind other */
+
+  /* Composite transitions */
+  --transition-color:     color var(--duration-fast) var(--ease-out),
+                          background-color var(--duration-fast) var(--ease-out),
+                          border-color var(--duration-fast) var(--ease-out),
+                          fill var(--duration-fast) var(--ease-out);
+  --transition-shadow:    box-shadow var(--duration-normal) var(--ease-out);
+  --transition-transform: transform var(--duration-normal) var(--ease-spring);
+  --transition-all:       all var(--duration-normal) var(--ease-out);
+
+  /* ── Blur ─────────────────────────────── */
+  --blur-sm:  4px;
+  --blur-md:  8px;
+  --blur-lg:  16px;
+  --blur-xl:  32px;
+}

@@ -1,0 +1,64 @@
+/* ─────────────────────────────────────────
+   Cactus Company — Typography Tokens
+   ─────────────────────────────────────────
+   Primary: Nunito — the closest Google Fonts
+   match to the rounded bold sans-serif in the
+   Frequência Internato wordmark. Its rounded
+   terminals and friendly weight feel match the
+   brand's approachable-yet-professional tone.
+
+   ⚠ SUBSTITUTION FLAG: If you have the
+   original font files, please share them so
+   this can be updated to exact font matches.
+───────────────────────────────────────── */
+
+/* Google Fonts — Nunito primary + JetBrains Mono */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ── Families ─────────────────────────── */
+  --font-sans:    'Nunito', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* Role aliases */
+  --font-heading: var(--font-sans);
+  --font-body:    var(--font-sans);
+  --font-label:   var(--font-sans);
+  --font-code:    var(--font-mono);
+
+  /* ── Type Scale ───────────────────────── */
+  --text-2xs:  0.625rem;  /* 10px */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+  --text-3xl:  1.875rem;  /* 30px */
+  --text-4xl:  2.25rem;   /* 36px */
+  --text-5xl:  3rem;      /* 48px */
+  --text-6xl:  3.75rem;   /* 60px */
+
+  /* ── Weights ──────────────────────────── */
+  --weight-light:     300;
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+  --weight-black:     900;
+
+  /* ── Line Heights ─────────────────────── */
+  --leading-none:    1;
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* ── Letter Spacing ───────────────────── */
+  --tracking-tight:   -0.025em;
+  --tracking-normal:   0em;
+  --tracking-wide:     0.025em;
+  --tracking-wider:    0.05em;
+  --tracking-widest:   0.12em;
+}

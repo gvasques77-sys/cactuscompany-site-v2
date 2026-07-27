@@ -1,0 +1,9 @@
+/* Cactus Design System — Global Stylesheet
+   Import this single file to get all tokens.
+   @font-face rules are declared in typography.css.
+*/
+@import './tokens/typography.css';
+@import './tokens/colors.css';
+@import './tokens/spacing.css';
+@import './tokens/effects.css';
+@import './tokens/base.css';

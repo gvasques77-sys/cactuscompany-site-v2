@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/site-institucional/">
+<title>Cactus Company | Tecnologia para gestão institucional</title>
+<meta name="description" content="Aplicativos, sistemas web, inteligência artificial e suporte para instituições de ensino organizarem sua operação acadêmica de ponta a ponta.">
+<link rel="canonical" href="https://www.cactuscompany.com.br/">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/cactus-design-system-7d7c0bbf-8c57-493d-86e2-20414618b654/tokens/typography.css">
+<link rel="stylesheet" href="_ds/cactus-design-system-7d7c0bbf-8c57-493d-86e2-20414618b654/tokens/colors.css">
+<link rel="stylesheet" href="_ds/cactus-design-system-7d7c0bbf-8c57-493d-86e2-20414618b654/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/cactus-design-system-7d7c0bbf-8c57-493d-86e2-20414618b654/tokens/effects.css">
+<link rel="stylesheet" href="_ds/cactus-design-system-7d7c0bbf-8c57-493d-86e2-20414618b654/tokens/base.css">
+<link rel="stylesheet" href="_ds/cactus-design-system-7d7c0bbf-8c57-493d-86e2-20414618b654/styles.css">
+<script src="_ds/cactus-design-system-7d7c0bbf-8c57-493d-86e2-20414618b654/_ds_bundle.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #fff; font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #248B1A; text-decoration: none; }
+  a:hover { color: #38B82C; }
+  ::selection { background: #C7EDCB; color: #0F2118; }
+  @keyframes cc-pulse { 0%,100% { opacity: .35; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+  @keyframes cc-sweep { from { transform: translateX(-100%); } to { transform: translateX(220%); } }
+  @keyframes cc-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes cc-cell { 0% { opacity: 0; transform: scale(0.55); } 7% { opacity: 1; transform: scale(1); } 88% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(0.85); } }
+  @keyframes cc-growx { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes cc-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes cc-pop { from { opacity: 0; transform: scale(0.92) translateY(14px); } to { opacity: 1; transform: none; } }
+  .cc-nav-links a { white-space: nowrap; }
+  .cc-hero-devices { opacity: 0; transform: translateY(46px); transition: opacity .8s ease, transform .8s cubic-bezier(0.22,1,0.36,1); }
+  .cc-devices-in .cc-hero-devices { opacity: 1; transform: translateY(0); }
+  @media (max-width: 1100px) { .cc-hero-devices { transform-origin: bottom right; transform: translateY(46px) scale(0.82); } .cc-devices-in .cc-hero-devices { transform: scale(0.82); } }
+  @media (max-width: 680px) { .cc-hero-devices { display: none; } .cc-hero-pad { padding-bottom: 40px !important; } }
+  @media (max-width: 1150px) { .cc-nav-links a { font-size: 12px !important; } }
+  @media (max-width: 980px) { .cc-nav-links a { font-size: 11px !important; } .cc-nav-links { gap: 3px 10px !important; } }
+  @media (max-width: 560px) { .cc-nav-links { display: none !important; } }
+</style>
+</helmet>
+
+<div style="background:#fff; color:#0F2118; font-family:'Nunito', system-ui, sans-serif; overflow-x:hidden;">
+
+  <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position:fixed; inset:0; z-index:200; background:rgba(15,33,24,0.55); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:24px; animation:cc-fade .25s ease both;">
+      <div onClick="{{ stopClick }}" style="position:relative; width:min(480px,100%); background:#fff; border-radius:24px; padding:44px 38px 36px; text-align:center; box-shadow:0 40px 90px -20px rgba(15,33,24,0.5); animation:cc-pop .4s cubic-bezier(0.34,1.56,0.64,1) both;">
+        <div onClick="{{ closeModal }}" style="position:absolute; top:14px; right:14px; width:32px; height:32px; border-radius:50%; background:#F5F8F5; color:#556055; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; cursor:pointer;" style-hover="background:#EAECEA">✕</div>
+        <div style="width:64px; height:64px; margin:0 auto; border-radius:50%; background:#0F2118; display:flex; align-items:center; justify-content:center; box-shadow:0 16px 36px -12px rgba(15,33,24,0.45);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#9FE0A6" stroke-width="2" stroke-linecap="round"><rect x="4" y="10.5" width="16" height="9.5" rx="2.5"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path><circle cx="12" cy="15.2" r="1.4" fill="#9FE0A6" stroke="none"></circle></svg>
+        </div>
+        <p style="margin:20px 0 0; font-size:12px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#38B82C;">Disponível em breve</p>
+        <h3 style="margin:10px 0 0; font-size:30px; line-height:1.1; font-weight:800; letter-spacing:-0.025em; color:#0F2118;">Indicadores ENAMED</h3>
+        <p style="margin:14px auto 0; max-width:360px; font-size:15px; line-height:1.55; font-weight:500; color:#556055; text-wrap:pretty;">Desempenho por área nos moldes do exame nacional, simulados e trilhas de reforço — para turbinar o desempenho dos seus alunos.</p>
+        <div style="display:flex; gap:12px; justify-content:center; margin-top:26px;">
+          <div onClick="{{ goEnamed }}" style="cursor:pointer;">
+            <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Button" size="lg" hint-size="150px,46px">Conhecer</x-import>
+          </div>
+          <div onClick="{{ closeModal }}" style="cursor:pointer;">
+            <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Button" size="lg" variant="ghost" hint-size="120px,46px">Agora não</x-import>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <header style="position:sticky; top:0; z-index:80; backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); background:rgba(255,255,255,0.72); borderBottom:1px solid rgba(15,33,24,0.08);">
+    <nav style="max-width:1180px; margin:0 auto; padding:0 24px; min-height:52px; padding-top:6px; padding-bottom:6px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <a href="#topo" style="display:flex; align-items:center; gap:9px; color:#0F2118; flex-shrink:0;">
+        <img src="assets/cactus-icon.png" alt="Cactus Company" style="width:26px; height:26px; border-radius:7px; display:block; flex-shrink:0;">
+        <span style="font-weight:800; font-size:15px; letter-spacing:-0.01em; white-space:nowrap;">Cactus Company</span>
+      </a>
+      <div class="cc-nav-links" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:4px clamp(10px,1.6vw,24px); min-width:0; flex:1 1 auto;">
+        <a href="#plataforma" style="font-size:13px; font-weight:600; color:#3E4A3E;" style-hover="color:#0F2118">Plataforma</a>
+        <a href="#servicos" style="font-size:13px; font-weight:600; color:#3E4A3E;" style-hover="color:#0F2118">Serviços</a>
+        <a href="#ia" style="font-size:13px; font-weight:600; color:#3E4A3E;" style-hover="color:#0F2118">Inteligência</a>
+        <a href="#seguranca" style="font-size:13px; font-weight:600; color:#3E4A3E;" style-hover="color:#0F2118">Segurança</a>
+        <a href="#enamed" style="font-size:13px; font-weight:600; color:#3E4A3E;" style-hover="color:#0F2118">ENAMED</a>
+        <a href="#suporte" style="font-size:13px; font-weight:600; color:#3E4A3E;" style-hover="color:#0F2118">Suporte</a>
+        <a href="#produto" style="font-size:13px; font-weight:600; color:#3E4A3E;" style-hover="color:#0F2118">Produto</a>
+        <a href="#faq" style="font-size:13px; font-weight:600; color:#3E4A3E;" style-hover="color:#0F2118">Perguntas</a>
+        <a href="#contato" style="font-size:13px; font-weight:600; color:#3E4A3E;" style-hover="color:#0F2118">Contato</a>
+      </div>
+      <a href="#contato" style="flex-shrink:0;">
+        <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Button" size="sm" hint-size="150px,30px">Agendar demonstração</x-import>
+      </a>
+    </nav>
+  </header>
+
+  <section id="topo" style="position:relative; background:linear-gradient(180deg,#EBF8EE 0%, #F7FCF8 58%, #FFFFFF 100%); padding:96px 24px 0; text-align:center; overflow:hidden;">
+    <div style="max-width:980px; margin:0 auto; position:relative; z-index:2;">
+      <p style="margin:0 0 18px; font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#38B82C;">Gestão institucional completa</p>
+      <h1 style="margin:0; font-size:clamp(46px,7.2vw,92px); line-height:0.98; font-weight:800; letter-spacing:-0.035em; color:#0F2118; text-wrap:balance;">A instituição inteira.<br>Em uma plataforma.</h1>
+      <p style="margin:28px auto 0; max-width:660px; font-size:clamp(17px,1.6vw,21px); line-height:1.5; font-weight:500; color:#556055; text-wrap:pretty;">Aplicativos móveis, sistemas web e painéis executivos que organizam a operação acadêmica de ponta a ponta — automatizados por IA, com suporte, treinamento e proteção de dados sensíveis desde a origem do registro.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:34px;">
+        <a href="#contato">
+          <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Button" size="xl" hint-size="210px,54px">Agendar demonstração</x-import>
+        </a>
+        <a href="#plataforma">
+          <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Button" size="xl" variant="ghost" hint-size="200px,54px">Conhecer a plataforma →</x-import>
+        </a>
+      </div>
+    </div>
+
+    <div class="cc-hero-pad" style="max-width:1200px; margin:60px auto 0; position:relative; z-index:2; padding-bottom:150px;">
+      <div data-hero-stage="1" style="position:relative;">
+        <div style="background:#fff; border:1px solid rgba(15,33,24,0.08); border-radius:22px; box-shadow:0 40px 90px -30px rgba(15,33,24,0.35), 0 4px 14px rgba(15,33,24,0.06); overflow:hidden; text-align:left;">
+          <div style="height:40px; background:#0F2118; display:flex; align-items:center; gap:8px; padding:0 16px;">
+            <span style="width:9px; height:9px; border-radius:50%; background:#3E4A3E;"></span>
+            <span style="width:9px; height:9px; border-radius:50%; background:#3E4A3E;"></span>
+            <span style="width:9px; height:9px; border-radius:50%; background:#3E4A3E;"></span>
+            <span style="margin-left:14px; font-size:11px; font-weight:600; color:#95AE9B;">painel.cactuscompany.com.br</span>
+          </div>
+          <div style="display:grid; grid-template-columns:190px minmax(0,1fr);">
+            <div style="background:#F5F8F5; border-right:1px solid rgba(15,33,24,0.07); padding:18px 14px; display:flex; flex-direction:column; gap:3px; min-height:470px;">
+              <p style="margin:0 0 12px; font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#929E92;">Coordenação</p>
+              <div style="display:flex; align-items:center; gap:9px; padding:9px 11px; border-radius:10px; background:#EAF8EC; color:#0F2118; font-size:13px; font-weight:700;"><span style="width:6px; height:6px; border-radius:50%; background:#38B82C;"></span>Visão geral</div>
+              <div style="display:flex; align-items:center; gap:9px; padding:9px 11px; border-radius:10px; color:#556055; font-size:13px; font-weight:600;"><span style="width:6px; height:6px; border-radius:50%; background:#D2D7D2;"></span>Rodízios</div>
+              <div style="display:flex; align-items:center; gap:9px; padding:9px 11px; border-radius:10px; color:#556055; font-size:13px; font-weight:600;"><span style="width:6px; height:6px; border-radius:50%; background:#D2D7D2;"></span>Escala</div>
+              <div style="display:flex; align-items:center; gap:9px; padding:9px 11px; border-radius:10px; color:#556055; font-size:13px; font-weight:600;"><span style="width:6px; height:6px; border-radius:50%; background:#D2D7D2;"></span>Preceptoria</div>
+              <div style="display:flex; align-items:center; gap:9px; padding:9px 11px; border-radius:10px; color:#556055; font-size:13px; font-weight:600;"><span style="width:6px; height:6px; border-radius:50%; background:#D2D7D2;"></span>Avaliação</div>
+              <div style="display:flex; align-items:center; gap:9px; padding:9px 11px; border-radius:10px; color:#556055; font-size:13px; font-weight:600;"><span style="width:6px; height:6px; border-radius:50%; background:#D2D7D2;"></span>Mural<span style="margin-left:auto; font-size:9px; font-weight:800; color:#fff; background:#38B82C; border-radius:9999px; padding:2px 7px;">3</span></div>
+              <div style="display:flex; align-items:center; gap:9px; padding:9px 11px; border-radius:10px; color:#556055; font-size:13px; font-weight:600;"><span style="width:6px; height:6px; border-radius:50%; background:#D2D7D2;"></span>Relatórios</div>
+              <div style="display:flex; align-items:center; gap:9px; padding:9px 11px; border-radius:10px; color:#556055; font-size:13px; font-weight:600;"><span style="width:6px; height:6px; border-radius:50%; background:#D2D7D2;"></span>Auditoria</div>
+            </div>
+            <div style="padding:26px 30px 34px;">
+              <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:16px;">
+                <div>
+                  <p style="margin:0; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#929E92;">Semestre em curso</p>
+                  <h3 style="margin:6px 0 0; font-size:23px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Tudo sob controle hoje</h3>
+                </div>
+                <span style="display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:800; color:#248B1A; background:#EAF8EC; border-radius:9999px; padding:6px 13px;"><span style="width:7px; height:7px; border-radius:50%; background:#38B82C; animation:cc-pulse 1.8s ease infinite;"></span>Ao vivo</span>
+              </div>
+              <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:20px;">
+                <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="md" hint-size="100%,82px">
+                  <p style="margin:0; font-size:11px; font-weight:700; color:#707D70;">Frequência geral</p>
+                  <p style="margin:6px 0 0; font-size:28px; font-weight:800; letter-spacing:-0.03em; color:#0F2118;">94<span style="font-size:16px;">%</span></p>
+                </x-import>
+                <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="md" hint-size="100%,82px">
+                  <p style="margin:0; font-size:11px; font-weight:700; color:#707D70;">Conflitos de escala</p>
+                  <p style="margin:6px 0 0; font-size:28px; font-weight:800; letter-spacing:-0.03em; color:#38B82C;">0</p>
+                </x-import>
+                <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="md" hint-size="100%,82px">
+                  <p style="margin:0; font-size:11px; font-weight:700; color:#707D70;">Alertas de aluno</p>
+                  <p style="margin:6px 0 0; font-size:28px; font-weight:800; letter-spacing:-0.03em; color:#E09820;">3</p>
+                </x-import>
+                <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="md" hint-size="100%,82px">
+                  <p style="margin:0; font-size:11px; font-weight:700; color:#707D70;">Avisos no mural</p>
+                  <p style="margin:6px 0 0; font-size:28px; font-weight:800; letter-spacing:-0.03em; color:#0F2118;">12</p>
+                </x-import>
+              </div>
+              <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:16px; margin-top:22px; align-items:start;">
+                <div>
+                  <p style="margin:0 0 14px; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#929E92;">Comparativo por rodízio</p>
+                  <div style="display:flex; flex-direction:column; gap:12px;">
+                    <div style="display:flex; align-items:center; gap:12px;"><span style="width:118px; font-size:11px; font-weight:700; color:#556055;">Clínica médica 1</span><span style="flex:1; height:8px; border-radius:9999px; background:#EAECEA; overflow:hidden; display:block;"><span style="display:block; height:100%; width:96%; border-radius:9999px; background:#38B82C; transform-origin:left; animation:cc-growx 1.3s cubic-bezier(0.22,1,0.36,1) 0.3s both;"></span></span><span style="font-size:11px; font-weight:800; color:#0F2118;">96%</span></div>
+                    <div style="display:flex; align-items:center; gap:12px;"><span style="width:118px; font-size:11px; font-weight:700; color:#556055;">Gineco. e obst.</span><span style="flex:1; height:8px; border-radius:9999px; background:#EAECEA; overflow:hidden; display:block;"><span style="display:block; height:100%; width:93%; border-radius:9999px; background:#4EC45B; transform-origin:left; animation:cc-growx 1.3s cubic-bezier(0.22,1,0.36,1) 0.45s both;"></span></span><span style="font-size:11px; font-weight:800; color:#0F2118;">93%</span></div>
+                    <div style="display:flex; align-items:center; gap:12px;"><span style="width:118px; font-size:11px; font-weight:700; color:#556055;">Pediatria I</span><span style="flex:1; height:8px; border-radius:9999px; background:#EAECEA; overflow:hidden; display:block;"><span style="display:block; height:100%; width:91%; border-radius:9999px; background:#72D27E; transform-origin:left; animation:cc-growx 1.3s cubic-bezier(0.22,1,0.36,1) 0.6s both;"></span></span><span style="font-size:11px; font-weight:800; color:#0F2118;">91%</span></div>
+                    <div style="display:flex; align-items:center; gap:12px;"><span style="width:118px; font-size:11px; font-weight:700; color:#556055;">Urgência e emerg.</span><span style="flex:1; height:8px; border-radius:9999px; background:#EAECEA; overflow:hidden; display:block;"><span style="display:block; height:100%; width:89%; border-radius:9999px; background:#E09820; transform-origin:left; animation:cc-growx 1.3s cubic-bezier(0.22,1,0.36,1) 0.75s both;"></span></span><span style="font-size:11px; font-weight:800; color:#0F2118;">89%</span></div>
+                  </div>
+                </div>
+                <div style="background:#F5F8F5; border-radius:16px; padding:16px 18px;">
+                  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+                    <p style="margin:0; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#929E92;">Mural · comunicação</p>
+                    <span style="font-size:9px; font-weight:800; color:#fff; background:#38B82C; border-radius:9999px; padding:2px 8px;">3 novos</span>
+                  </div>
+                  <div style="display:flex; flex-direction:column; gap:10px;">
+                    <div style="display:flex; gap:9px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:#38B82C; margin-top:5px; flex-shrink:0; animation:cc-pulse 2.2s ease infinite;"></span><div><p style="margin:0; font-size:12px; font-weight:800; color:#0F2118;">Aula reagendada para 28/11</p><p style="margin:2px 0 0; font-size:10px; font-weight:600; color:#707D70;">Enviado a 84 alunos · 71 confirmaram leitura</p></div></div>
+                    <div style="display:flex; gap:9px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:#72D27E; margin-top:5px; flex-shrink:0;"></span><div><p style="margin:0; font-size:12px; font-weight:800; color:#0F2118;">Dúvida de plantão respondida</p><p style="margin:2px 0 0; font-size:10px; font-weight:600; color:#707D70;">Aluno ↔ coordenação · registrado no histórico</p></div></div>
+                    <div style="display:flex; gap:9px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:#C7EDCB; margin-top:5px; flex-shrink:0;"></span><div><p style="margin:0; font-size:12px; font-weight:800; color:#0F2118;">Prova prática confirmada</p><p style="margin:2px 0 0; font-size:10px; font-weight:600; color:#707D70;">Turma 31 · há 2 horas</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cc-hero-devices" style="position:absolute; right:2px; bottom:-84px; z-index:4;">
+          <div style="width:330px; background:#0F2118; border-radius:24px; padding:10px; box-shadow:0 34px 70px -20px rgba(15,33,24,0.55);">
+            <div style="background:#EBF8EE; border-radius:15px; overflow:hidden; text-align:left;">
+              <div style="background:#0F2118; padding:11px 16px; display:flex; align-items:center; justify-content:space-between;">
+                <p style="margin:0; font-size:12px; font-weight:800; color:#fff;">Mural · Turma 31</p>
+                <span style="font-size:9px; font-weight:800; color:#0F2118; background:#38B82C; border-radius:9999px; padding:3px 9px;">3 novos</span>
+              </div>
+              <div style="padding:12px; display:flex; flex-direction:column; gap:9px;">
+                <div style="background:#fff; border-radius:13px; padding:12px; box-shadow:0 2px 8px rgba(15,33,24,0.06);">
+                  <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Badge" variant="primary" size="sm" hint-size="76px,18px">NOVO AVISO</x-import>
+                  <p style="margin:8px 0 0; font-size:12px; font-weight:800; color:#0F2118;">Aula reagendada para 28/11</p>
+                  <p style="margin:3px 0 0; font-size:10px; line-height:1.45; font-weight:500; color:#707D70;">A aula será no ambulatório do Hospital Universitário.</p>
+                  <p style="margin:7px 0 0; font-size:8px; font-weight:700; color:#B3BAB3;">Enviado a 84 alunos · 71 confirmaram leitura</p>
+                </div>
+                <div style="background:#0F2118; border-radius:13px; padding:12px;">
+                  <p style="margin:0; font-size:8px; font-weight:800; letter-spacing:0.07em; color:#72D27E;">CANAL ALUNO ↔ COORDENAÇÃO</p>
+                  <div style="margin-top:8px; background:rgba(255,255,255,0.12); border-radius:10px 10px 10px 3px; padding:8px 10px; margin-right:26px;"><p style="margin:0; font-size:10px; line-height:1.45; font-weight:600; color:#fff;">Posso trocar meu plantão de sexta?</p></div>
+                  <div style="margin-top:6px; background:#38B82C; border-radius:10px 10px 3px 10px; padding:8px 10px; margin-left:26px;"><p style="margin:0; font-size:10px; line-height:1.45; font-weight:700; color:#fff;">Pode. Já ajustei a escala — veja o Mural.</p></div>
+                  <p style="margin:7px 0 0; font-size:8px; font-weight:700; color:#6B8E72;">Tudo registrado no histórico da turma</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="position:absolute; right:-20px; bottom:-22px; width:186px; z-index:2; background:#0F2118; border-radius:30px; padding:7px; box-shadow:0 30px 60px -18px rgba(15,33,24,0.55);">
+            <div style="background:#EBF8EE; border-radius:24px; overflow:hidden; text-align:left;">
+              <div style="background:#0F2118; padding:9px 13px 11px; color:#fff;">
+                <div style="display:flex; justify-content:space-between; font-size:8px; font-weight:700; color:#95AE9B;"><span>9:41</span><span>▮▮ ⌁ ▰</span></div>
+                <p style="margin:8px 0 0; font-size:8px; font-weight:800; letter-spacing:0.08em; color:#9FE0A6;">CHECK-IN</p>
+                <p style="margin:2px 0 0; font-size:13px; font-weight:800;">Boa tarde, Nicole</p>
+              </div>
+              <div style="padding:11px;">
+                <div style="background:#fff; border-radius:14px; padding:12px; box-shadow:0 2px 8px rgba(15,33,24,0.07);">
+                  <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Badge" variant="presente" size="sm" hint-size="80px,18px">DISPONÍVEL</x-import>
+                  <p style="margin:7px 0 0; font-size:12px; font-weight:800; color:#0F2118;">Centro obstétrico</p>
+                  <p style="margin:2px 0 9px; font-size:9px; font-weight:600; color:#707D70;">07:30 · Hospital Universitário</p>
+                  <div style="background:#38B82C; color:#fff; border-radius:9999px; text-align:center; padding:8px 0; font-size:10px; font-weight:800;">Fazer check-in</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#0F2118; padding:22px 24px;">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center; gap:14px 46px; font-size:12px; font-weight:700; color:#9FE0A6;">
+      <span>Publicado na App Store e no Google Play</span>
+      <span style="color:#477551;">·</span>
+      <span>Dados hospedados no Brasil (São Paulo)</span>
+      <span style="color:#477551;">·</span>
+      <span>Práticas alinhadas à LGPD</span>
+      <span style="color:#477551;">·</span>
+      <span>GV Tecnologia LTDA · CNPJ 65.923.667/0001-01</span>
+    </div>
+  </section>
+
+  <section id="servicos" style="padding:120px 24px; background:#fff;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); max-width:840px;">
+        <p style="margin:0 0 16px; font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#38B82C;">O que entregamos</p>
+        <h2 style="margin:0; font-size:clamp(34px,4.6vw,62px); line-height:1.03; font-weight:800; letter-spacing:-0.032em; color:#0F2118; text-wrap:balance;">Não é um software. É a operação inteira, cuidada.</h2>
+        <p style="margin:22px 0 0; max-width:620px; font-size:19px; line-height:1.55; font-weight:500; color:#556055; text-wrap:pretty;">Da primeira reunião técnica ao treinamento da última turma de usuários — a Cactus entrega, implanta, ensina e sustenta.</p>
+      </div>
+
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .08s, transform .7s cubic-bezier(0.22,1,0.36,1) .08s; margin-top:56px; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px;">
+        <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="xl" hoverable="{{ true }}" hint-size="100%,250px">
+          <div style="width:40px; height:40px; border-radius:12px; background:#0F2118; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; color:#38B82C;">◧</div>
+          <h3 style="margin:20px 0 10px; font-size:22px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Gestão institucional completa</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; font-weight:500; color:#556055;">Frequência, escala, preceptoria, avaliação, comunicação e auditoria em uma única plataforma — seis perfis de acesso, do coordenador ao representante de turma.</p>
+        </x-import>
+        <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="xl" hoverable="{{ true }}" hint-size="100%,250px">
+          <div style="width:40px; height:40px; border-radius:12px; background:#0F2118; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; color:#38B82C;">▤</div>
+          <h3 style="margin:20px 0 10px; font-size:22px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Aplicativos móveis</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; font-weight:500; color:#556055;">iOS e Android nativos, publicados nas lojas, com biometria do próprio aparelho, notificações e funcionamento mesmo sem internet.</p>
+        </x-import>
+        <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="xl" hoverable="{{ true }}" hint-size="100%,250px">
+          <div style="width:40px; height:40px; border-radius:12px; background:#0F2118; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; color:#38B82C;">▦</div>
+          <h3 style="margin:20px 0 10px; font-size:22px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Sistemas web e painéis</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; font-weight:500; color:#556055;">Portais por papel, dashboards executivos e relatórios exportáveis em CSV/Excel (PT-BR) — dado bruto virando decisão da coordenação.</p>
+        </x-import>
+        <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="xl" hoverable="{{ true }}" hint-size="100%,250px">
+          <div style="width:40px; height:40px; border-radius:12px; background:#0F2118; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; color:#38B82C;">✦</div>
+          <h3 style="margin:20px 0 10px; font-size:22px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Automação com IA</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; font-weight:500; color:#556055;">Cronogramas gerados em minutos, conflitos detectados antes de acontecerem e alertas de risco acadêmico enquanto ainda dá tempo de corrigir.</p>
+        </x-import>
+        <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="xl" hoverable="{{ true }}" hint-size="100%,250px">
+          <div style="width:40px; height:40px; border-radius:12px; background:#0F2118; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; color:#38B82C;">⛨</div>
+          <h3 style="margin:20px 0 10px; font-size:22px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Segurança de dados sensíveis</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; font-weight:500; color:#556055;">Isolamento por instituição, controle de acesso por função, trilha de auditoria append-only e backup diário aluno a aluno.</p>
+        </x-import>
+        <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Card" variant="ghost" padding="xl" hoverable="{{ true }}" hint-size="100%,250px">
+          <div style="width:40px; height:40px; border-radius:12px; background:#0F2118; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:800; color:#38B82C;">◎</div>
+          <h3 style="margin:20px 0 10px; font-size:22px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Suporte e treinamento</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; font-weight:500; color:#556055;">Implantação acompanhada, treinamento de professores, preceptores e coordenações, suporte em horário comercial e prioridade em chamados críticos.</p>
+        </x-import>
+      </div>
+    </div>
+  </section>
+
+  <section id="ia" style="background:#0F2118; color:#fff; padding:120px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); max-width:880px;">
+        <p style="margin:0 0 16px; font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#38B82C;">Inteligência artificial</p>
+        <h2 style="margin:0; font-size:clamp(34px,4.6vw,62px); line-height:1.03; font-weight:800; letter-spacing:-0.032em; color:#fff; text-wrap:balance;">Cronogramas extensos.<br>Gerados em minutos.</h2>
+        <p style="margin:22px 0 0; max-width:640px; font-size:19px; line-height:1.55; font-weight:500; color:#BFCFC3; text-wrap:pretty;">O que hoje consome semanas de planilha, e-mail e WhatsApp passa a se resolver dentro da plataforma — e o que dá errado aparece antes de virar problema.</p>
+      </div>
+
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .1s, transform .7s cubic-bezier(0.22,1,0.36,1) .1s; margin-top:60px; display:grid; grid-template-columns:1.05fr 1fr; gap:28px; align-items:start;">
+        <div style="background:#fff; border:1px solid rgba(15,33,24,0.08); border-radius:24px; padding:28px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+            <div>
+              <p style="margin:0; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#248B1A;">Gerador de escala</p>
+              <p style="margin:4px 0 0; font-size:18px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Pediatria I · Turma 31</p>
+            </div>
+            <span style="display:inline-block; animation:cc-pulse 2s ease infinite;"><x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Badge" variant="success" size="sm" hint-size="70px,18px">Gerando…</x-import></span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:6px; font-size:9px; font-weight:800; color:#929E92; text-align:center; margin-bottom:7px;">
+            <span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span><span>SÁB</span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:6px;">
+            <span style="animation:cc-cell 6.5s ease 0.00s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 0.22s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 0.44s infinite both; height:34px; border-radius:8px; background:rgba(224,152,32,0.85); display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:800; color:#0F2118;">feriado</span>
+            <span style="animation:cc-cell 6.5s ease 0.66s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 0.88s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 1.10s infinite both; height:34px; border-radius:8px; background:#EAECEA;"></span>
+            <span style="animation:cc-cell 6.5s ease 1.32s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 1.54s infinite both; height:34px; border-radius:8px; background:rgba(42,122,219,0.6); display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:800; color:#fff;">férias</span>
+            <span style="animation:cc-cell 6.5s ease 1.76s infinite both; height:34px; border-radius:8px; background:rgba(42,122,219,0.6); display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:800; color:#fff;">férias</span>
+            <span style="animation:cc-cell 6.5s ease 1.98s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 2.20s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 2.42s infinite both; height:34px; border-radius:8px; background:#EAECEA;"></span>
+            <span style="animation:cc-cell 6.5s ease 2.64s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 2.86s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 3.08s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 3.30s infinite both; height:34px; border-radius:8px; background:rgba(224,152,32,0.85); display:flex; align-items:center; justify-content:center; font-size:8px; font-weight:800; color:#0F2118;">feriado</span>
+            <span style="animation:cc-cell 6.5s ease 3.52s infinite both; height:34px; border-radius:8px; background:#38B82C;"></span>
+            <span style="animation:cc-cell 6.5s ease 3.74s infinite both; height:34px; border-radius:8px; background:#EAECEA;"></span>
+          </div>
+          <p style="margin:18px 0 0; font-size:13px; line-height:1.55; font-weight:600; color:#556055;">A escala do semestre inteiro é montada de uma vez — e <strong style="color:#0F2118; font-weight:800;">desvia sozinha de cada feriado e das férias dos professores</strong>.</p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div style="background:#fff; border:1px solid rgba(15,33,24,0.08); border-radius:24px; padding:26px;">
+            <h3 style="margin:0 0 8px; font-size:19px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Conflitos resolvidos em lote</h3>
+            <p style="margin:0 0 16px; font-size:14px; line-height:1.55; font-weight:500; color:#556055;">Férias, licença ou atestado do professor entram sozinhos na aba de conflitos. A coordenação escolhe o substituto e confirma — a escala inteira se ajusta.</p>
+            <div style="display:flex; flex-direction:column; gap:7px;">
+              <div style="display:flex; align-items:center; gap:10px; background:#F5F8F5; border-radius:11px; padding:9px 12px;">
+                <span style="font-size:10px; font-weight:800; color:#707D70; width:44px;">10/08</span>
+                <span style="flex:1; font-size:11px; font-weight:700; color:#0F2118;">Isabela S. Moura → Murilo S. Almeida</span>
+                <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Badge" variant="success" size="sm" hint-size="66px,18px">Resolvido</x-import>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; background:#F5F8F5; border-radius:11px; padding:9px 12px;">
+                <span style="font-size:10px; font-weight:800; color:#707D70; width:44px;">11/08</span>
+                <span style="flex:1; font-size:11px; font-weight:700; color:#0F2118;">Caio S. Fonseca → Murilo S. Almeida</span>
+                <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Badge" variant="success" size="sm" hint-size="66px,18px">Resolvido</x-import>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; background:#F5F8F5; border-radius:11px; padding:9px 12px;">
+                <span style="font-size:10px; font-weight:800; color:#707D70; width:44px;">01/09</span>
+                <span style="flex:1; font-size:11px; font-weight:700; color:#0F2118;">Isabela S. Moura → Murilo S. Almeida</span>
+                <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Badge" variant="success" size="sm" hint-size="66px,18px">Resolvido</x-import>
+              </div>
+            </div>
+          </div>
+          <div style="background:#fff; border:1px solid rgba(15,33,24,0.08); border-radius:24px; padding:26px;">
+            <h3 style="margin:0 0 8px; font-size:19px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Risco acadêmico sinalizado antes</h3>
+            <p style="margin:0; font-size:14px; line-height:1.55; font-weight:500; color:#556055;">Falta próxima do limite, queda de desempenho em três provas seguidas, rematrícula em aberto — a plataforma avisa a coordenação e o preceptor com nome, matéria e plano sugerido.</p>
+            <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+              <div style="display:flex; align-items:center; gap:12px; background:#FFF4DC; border:1px solid rgba(224,152,32,0.25); border-radius:12px; padding:10px 14px;">
+                <span style="width:8px; height:8px; border-radius:50%; background:#E09820; flex-shrink:0; animation:cc-pulse 1.6s ease infinite;"></span>
+                <div style="flex:1; min-width:0;">
+                  <p style="margin:0; font-size:12px; font-weight:800; color:#0F2118;">Notas em queda · Caio S. Fonseca</p>
+                  <p style="margin:2px 0 0; font-size:10px; font-weight:600; color:#707D70;">3 avaliações seguidas abaixo da média em Pediatria</p>
+                </div>
+                <span style="display:flex; align-items:flex-end; gap:3px; height:22px; flex-shrink:0;">
+                  <span style="width:5px; height:20px; border-radius:2px; background:#E09820; transform-origin:bottom; animation:cc-grow 1.6s ease -0.2s infinite alternate;"></span>
+                  <span style="width:5px; height:14px; border-radius:2px; background:#E09820; opacity:0.75; transform-origin:bottom; animation:cc-grow 1.6s ease -0.7s infinite alternate;"></span>
+                  <span style="width:5px; height:8px; border-radius:2px; background:#E09820; opacity:0.5; transform-origin:bottom; animation:cc-grow 1.6s ease -1.2s infinite alternate;"></span>
+                </span>
+              </div>
+              <div style="display:flex; align-items:center; gap:12px; background:#FCEAEA; border:1px solid rgba(220,53,53,0.22); border-radius:12px; padding:10px 14px;">
+                <span style="width:8px; height:8px; border-radius:50%; background:#DC3535; flex-shrink:0; animation:cc-pulse 1.6s ease -0.8s infinite;"></span>
+                <div style="flex:1; min-width:0;">
+                  <p style="margin:0; font-size:12px; font-weight:800; color:#0F2118;">Faltas perto do limite · Nicole S. Costa</p>
+                  <p style="margin:2px 0 0; font-size:10px; font-weight:600; color:#707D70;">Presença em 78% — mínimo exigido: 75%</p>
+                </div>
+                <span style="width:64px; flex-shrink:0;">
+                  <span style="display:block; height:7px; border-radius:9999px; background:rgba(220,53,53,0.18); overflow:hidden;"><span style="display:block; height:100%; width:90%; border-radius:9999px; background:#DC3535; transform-origin:left; animation:cc-growx 2.4s cubic-bezier(0.22,1,0.36,1) infinite;"></span></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="enamed" style="padding:120px 24px; background:#F5F8F5;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); text-align:center; max-width:780px; margin:0 auto;">
+        <div style="display:inline-flex; align-items:center; gap:8px; background:#EAECEA; border-radius:9999px; padding:7px 16px; margin-bottom:22px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#556055" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="10.5" width="16" height="9.5" rx="2.5"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg>
+          <span style="font-size:12px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#556055;">Em breve</span>
+        </div>
+        <h2 style="margin:0; font-size:clamp(34px,4.6vw,62px); line-height:1.03; font-weight:800; letter-spacing:-0.032em; color:#0F2118; text-wrap:balance;">Indicadores ENAMED.</h2>
+        <p style="margin:22px auto 0; max-width:640px; font-size:19px; line-height:1.55; font-weight:500; color:#556055; text-wrap:pretty;">A próxima fronteira da plataforma: desempenho por área nos moldes do Exame Nacional de Avaliação da Formação Médica — para turbinar a preparação dos alunos muito antes da prova.</p>
+      </div>
+
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .1s, transform .7s cubic-bezier(0.22,1,0.36,1) .1s; margin-top:56px; position:relative; max-width:940px; margin-left:auto; margin-right:auto;">
+        <div aria-hidden="true" style="filter:grayscale(1); opacity:0.55; pointer-events:none; user-select:none; background:#fff; border:1px solid rgba(15,33,24,0.08); border-radius:20px; padding:34px 36px 38px; box-shadow:0 24px 60px -28px rgba(15,33,24,0.3);">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:24px;">
+            <div>
+              <p style="margin:0; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#929E92;">Indicadores ENAMED</p>
+              <p style="margin:5px 0 0; font-size:21px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Desempenho por área · Turma 31</p>
+            </div>
+            <span style="font-size:11px; font-weight:800; color:#fff; background:#38B82C; padding:5px 13px; border-radius:9999px; animation:cc-pulse 2s ease infinite; animation-play-state:paused;">Atualizando…</span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:28px;">
+            <div style="background:#F5F8F5; border-radius:14px; padding:16px;">
+              <p style="margin:0; font-size:11px; font-weight:700; color:#707D70;">Percentil da instituição</p>
+              <span style="display:block; margin-top:10px; width:64px; height:26px; border-radius:8px; background:#DDE1DD;"></span>
+            </div>
+            <div style="background:#F5F8F5; border-radius:14px; padding:16px;">
+              <p style="margin:0; font-size:11px; font-weight:700; color:#707D70;">Simulados aplicados</p>
+              <span style="display:block; margin-top:10px; width:46px; height:26px; border-radius:8px; background:#DDE1DD;"></span>
+            </div>
+            <div style="background:#F5F8F5; border-radius:14px; padding:16px;">
+              <p style="margin:0; font-size:11px; font-weight:700; color:#707D70;">Alunos em trilha de reforço</p>
+              <span style="display:block; margin-top:10px; width:52px; height:26px; border-radius:8px; background:#DDE1DD;"></span>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-end; gap:20px; height:160px; padding:0 8px;">
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px; height:100%; justify-content:flex-end;"><span style="display:block; height:82%; border-radius:9px 9px 4px 4px; background:#9AA49A; transform-origin:bottom; animation:cc-grow 1.8s cubic-bezier(0.22,1,0.36,1) -1.1s both paused;"></span><span style="text-align:center; font-size:10px; font-weight:800; color:#929E92;">Clínica médica</span></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px; height:100%; justify-content:flex-end;"><span style="display:block; height:64%; border-radius:9px 9px 4px 4px; background:#AEB6AE; transform-origin:bottom; animation:cc-grow 1.8s cubic-bezier(0.22,1,0.36,1) -0.8s both paused;"></span><span style="text-align:center; font-size:10px; font-weight:800; color:#929E92;">Cirurgia</span></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px; height:100%; justify-content:flex-end;"><span style="display:block; height:91%; border-radius:9px 9px 4px 4px; background:#8B968B; transform-origin:bottom; animation:cc-grow 1.8s cubic-bezier(0.22,1,0.36,1) -1.4s both paused;"></span><span style="text-align:center; font-size:10px; font-weight:800; color:#929E92;">Pediatria</span></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px; height:100%; justify-content:flex-end;"><span style="display:block; height:55%; border-radius:9px 9px 4px 4px; background:#B9C1B9; transform-origin:bottom; animation:cc-grow 1.8s cubic-bezier(0.22,1,0.36,1) -0.6s both paused;"></span><span style="text-align:center; font-size:10px; font-weight:800; color:#929E92;">Gineco. e obst.</span></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px; height:100%; justify-content:flex-end;"><span style="display:block; height:73%; border-radius:9px 9px 4px 4px; background:#A3ACA3; transform-origin:bottom; animation:cc-grow 1.8s cubic-bezier(0.22,1,0.36,1) -0.95s both paused;"></span><span style="text-align:center; font-size:10px; font-weight:800; color:#929E92;">Saúde coletiva</span></div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:9px; height:100%; justify-content:flex-end;"><span style="display:block; height:47%; border-radius:9px 9px 4px 4px; background:#C4CAC4; transform-origin:bottom; animation:cc-grow 1.8s cubic-bezier(0.22,1,0.36,1) -0.45s both paused;"></span><span style="text-align:center; font-size:10px; font-weight:800; color:#929E92;">Saúde mental</span></div>
+          </div>
+        </div>
+
+        <div style="position:absolute; inset:0; border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; text-align:center; padding:24px; background:linear-gradient(180deg, rgba(245,248,245,0.15) 0%, rgba(245,248,245,0.6) 100%); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);">
+          <div style="width:68px; height:68px; border-radius:50%; background:#0F2118; box-shadow:0 18px 40px -14px rgba(15,33,24,0.5); display:flex; align-items:center; justify-content:center;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9FE0A6" stroke-width="2" stroke-linecap="round"><rect x="4" y="10.5" width="16" height="9.5" rx="2.5"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path><circle cx="12" cy="15.2" r="1.4" fill="#9FE0A6" stroke="none"></circle></svg>
+          </div>
+          <div>
+            <p style="margin:0; font-size:22px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Disponível em breve</p>
+            <p style="margin:8px auto 0; max-width:420px; font-size:14px; line-height:1.55; font-weight:600; color:#556055;">Simulados por área, percentis comparáveis e trilhas de reforço por aluno — para turbinar o desempenho dos seus alunos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plataforma" style="padding:120px 24px; background:#EBF8EE;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); text-align:center; max-width:760px; margin:0 auto;">
+        <p style="margin:0 0 16px; font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#38B82C;">Registro confiável</p>
+        <h2 style="margin:0; font-size:clamp(34px,4.6vw,62px); line-height:1.03; font-weight:800; letter-spacing:-0.032em; color:#0F2118; text-wrap:balance;">Presença que se prova.</h2>
+        <p style="margin:22px 0 0; font-size:19px; line-height:1.55; font-weight:500; color:#556055; text-wrap:pretty;">Quatro etapas entre o aluno e um registro que a instituição pode defender anos depois. Toque em cada etapa.</p>
+      </div>
+
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .08s, transform .7s cubic-bezier(0.22,1,0.36,1) .08s; margin-top:60px; display:grid; grid-template-columns:1fr 260px; gap:56px; align-items:center; max-width:960px; margin-left:auto; margin-right:auto;">
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+            <div onClick="{{ s.select }}" style="{{ s.rowStyle }}">
+              <span style="{{ s.numStyle }}">{{ s.n }}</span>
+              <div>
+                <p style="margin:0; font-size:17px; font-weight:800; letter-spacing:-0.015em; color:#0F2118;">{{ s.title }}</p>
+                <p style="margin:5px 0 0; font-size:14px; line-height:1.5; font-weight:500; color:#556055;">{{ s.body }}</p>
+              </div>
+            </div>
+          </sc-for>
+          <p style="margin:14px 0 0; font-size:14px; line-height:1.6; font-weight:600; color:#3E4A3E;">Totalmente configurável pela coordenação — raio, janela de horário e até duas etapas, com validação do professor do cenário. Funciona mesmo sem internet: o registro sincroniza e é validado quando a conexão retorna.</p>
+        </div>
+
+        <div style="justify-self:center; width:250px; background:#0F2118; border-radius:40px; padding:9px; box-shadow:0 34px 70px -22px rgba(15,33,24,0.5);">
+          <div style="background:#EBF8EE; border-radius:32px; overflow:hidden; min-height:452px; display:flex; flex-direction:column;">
+            <div style="background:#0F2118; padding:12px 16px 14px; color:#fff;">
+              <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:700; color:#95AE9B;"><span>9:41</span><span>▮▮ ⌁ ▰</span></div>
+              <p style="margin:12px 0 0; font-size:9px; font-weight:800; letter-spacing:0.09em; color:#9FE0A6;">INTERNATO MÉDICO</p>
+              <p style="margin:3px 0 0; font-size:15px; font-weight:800; letter-spacing:-0.015em;">Boa tarde, Isabela</p>
+            </div>
+            <div style="flex:1; padding:16px; display:flex; flex-direction:column; justify-content:center; gap:12px;">
+              <div style="background:#fff; border-radius:18px; padding:18px 16px; box-shadow:0 3px 12px rgba(15,33,24,0.08); text-align:center;">
+                <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Badge" variant="{{ phoneBadgeVariant }}" size="sm" hint-size="112px,18px">{{ phoneBadge }}</x-import>
+                <p style="margin:12px 0 0; font-size:15px; font-weight:800; letter-spacing:-0.015em; color:#0F2118;">{{ phoneTitle }}</p>
+                <p style="margin:6px 0 0; font-size:11px; line-height:1.5; font-weight:600; color:#707D70;">{{ phoneSub }}</p>
+                <div style="{{ phoneCtaStyle }}">{{ phoneCta }}</div>
+              </div>
+              <p style="margin:0; text-align:center; font-size:10px; font-weight:700; color:#929E92;">{{ phoneFoot }}</p>
+            </div>
+            <div style="background:#fff; border-top:1px solid rgba(15,33,24,0.07); padding:10px 12px; display:flex; justify-content:space-between; font-size:8px; font-weight:700; color:#929E92;">
+              <span>Início</span><span>Escala</span><span style="color:#38B82C;">Check-in</span><span>Perfil</span><span>Mural</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="seguranca" style="background:#0F2118; color:#fff; padding:120px 24px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); max-width:880px;">
+        <p style="margin:0 0 16px; font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#38B82C;">Dados sensíveis</p>
+        <h2 style="margin:0; font-size:clamp(34px,4.6vw,62px); line-height:1.03; font-weight:800; letter-spacing:-0.032em; color:#fff; text-wrap:balance;">De registro a evidência jurídica.</h2>
+        <p style="margin:22px 0 0; max-width:640px; font-size:19px; line-height:1.55; font-weight:500; color:#BFCFC3; text-wrap:pretty;">Os dados são o bem mais valioso da faculdade — e nós os tratamos como tal: segurança de ponta, criptografia e rigor técnico em cada registro, com lastro documental que respalda a instituição em qualquer questionamento.</p>
+      </div>
+
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .08s, transform .7s cubic-bezier(0.22,1,0.36,1) .08s; margin-top:56px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px;">
+        <div style="background:#164021; border:1px solid rgba(159,224,166,0.16); border-radius:16px; padding:26px;">
+          <h3 style="margin:0 0 8px; font-size:17px; font-weight:800; letter-spacing:-0.015em; color:#fff;">Biometria só no aparelho</h3>
+          <p style="margin:0; font-size:14px; line-height:1.55; font-weight:500; color:#BFCFC3;">A confirmação é feita pelo sistema operacional. Nenhum dado biométrico é coletado, transmitido ou armazenado pela plataforma.</p>
+        </div>
+        <div style="background:#164021; border:1px solid rgba(159,224,166,0.16); border-radius:16px; padding:26px;">
+          <h3 style="margin:0 0 8px; font-size:17px; font-weight:800; letter-spacing:-0.015em; color:#fff;">Isolamento por instituição</h3>
+          <p style="margin:0; font-size:14px; line-height:1.55; font-weight:500; color:#BFCFC3;">Row Level Security, sessão única por usuário e impressão de dispositivo auditada. Cada instituição vê apenas o que é dela.</p>
+        </div>
+        <div style="background:#164021; border:1px solid rgba(159,224,166,0.16); border-radius:16px; padding:26px;">
+          <h3 style="margin:0 0 8px; font-size:17px; font-weight:800; letter-spacing:-0.015em; color:#fff;">Registro imutável</h3>
+          <p style="margin:0; font-size:14px; line-height:1.55; font-weight:500; color:#BFCFC3;">Trilha append-only: quem criou, validou ou alterou fica sempre identificado. Nada é sobrescrito, nada desaparece.</p>
+        </div>
+        <div style="background:#164021; border:1px solid rgba(159,224,166,0.16); border-radius:16px; padding:26px;">
+          <h3 style="margin:0 0 8px; font-size:17px; font-weight:800; letter-spacing:-0.015em; color:#fff;">Backup diário, aluno a aluno</h3>
+          <p style="margin:0; font-size:14px; line-height:1.55; font-weight:500; color:#BFCFC3;">Os dados de cada aluno são copiados todos os dias, individualmente — com consulta retroativa mesmo anos depois.</p>
+        </div>
+      </div>
+
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .14s, transform .7s cubic-bezier(0.22,1,0.36,1) .14s; margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:stretch;">
+        <div style="background:#fff; color:#0F2118; border-radius:24px; padding:30px;">
+          <p style="margin:0 0 6px; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#929E92;">Consulta retroativa</p>
+          <p style="margin:0 0 18px; font-size:17px; font-weight:800; letter-spacing:-0.015em;">Onde estava Nicole Silva Costa em 14/03/2026, às 07:30?</p>
+          <div style="background:#EAF8EC; border-radius:16px; padding:18px;">
+            <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Badge" variant="presente" size="lg" hint-size="250px,26px">PRESENTE · CENTRO OBSTÉTRICO MANHÃ</x-import>
+            <p style="margin:8px 0 0; font-size:14px; font-weight:700; color:#0F2118;">Hospital Universitário — Manaus/AM</p>
+            <p style="margin:3px 0 0; font-size:13px; font-weight:600; color:#556055;">Supervisão: Prof.ª Isabela Silva Moura</p>
+            <p style="margin:12px 0 0; font-size:11px; font-weight:700; color:#707D70;">Registro imutável · check-in validado no servidor às 07:31</p>
+          </div>
+        </div>
+        <div style="background:#164021; border:1px solid rgba(159,224,166,0.16); border-radius:24px; padding:30px; display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <p style="margin:0 0 6px; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#72D27E;">Conformidade</p>
+            <h3 style="margin:0 0 14px; font-size:24px; font-weight:800; letter-spacing:-0.022em; color:#fff;">O MEC não pede só digitalização.</h3>
+            <p style="margin:0 0 18px; font-size:14px; line-height:1.6; font-weight:500; color:#BFCFC3;">O acervo acadêmico digital precisa garantir autenticidade, rastreabilidade e preservação. A plataforma foi desenvolvida para atender a esses requisitos desde a origem do registro.</p>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="font-size:11px; font-weight:700; color:#9FE0A6; background:rgba(159,224,166,0.12); border-radius:9999px; padding:6px 13px;">Decreto nº 9.235/2017</span>
+            <span style="font-size:11px; font-weight:700; color:#9FE0A6; background:rgba(159,224,166,0.12); border-radius:9999px; padding:6px 13px;">Portaria Normativa MEC nº 22/2017</span>
+            <span style="font-size:11px; font-weight:700; color:#9FE0A6; background:rgba(159,224,166,0.12); border-radius:9999px; padding:6px 13px;">Portarias nº 315/2018 e nº 360/2022</span>
+            <span style="font-size:11px; font-weight:700; color:#9FE0A6; background:rgba(159,224,166,0.12); border-radius:9999px; padding:6px 13px;">Preparado para ICP-Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="suporte" style="padding:120px 24px; background:#fff;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); max-width:840px;">
+        <p style="margin:0 0 16px; font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#38B82C;">Implantação, treinamento e suporte</p>
+        <h2 style="margin:0; font-size:clamp(34px,4.6vw,62px); line-height:1.03; font-weight:800; letter-spacing:-0.032em; color:#0F2118; text-wrap:balance;">A tecnologia é metade. A outra metade somos nós.</h2>
+        <p style="margin:22px 0 0; max-width:620px; font-size:19px; line-height:1.55; font-weight:500; color:#556055; text-wrap:pretty;">Nenhuma instituição fica sozinha com um sistema novo. A implantação é planejada para ser consistente e organizada, com treinamento de todos os perfis que vão usar a plataforma.</p>
+      </div>
+
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .08s, transform .7s cubic-bezier(0.22,1,0.36,1) .08s; margin-top:56px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:0; border-top:1px solid rgba(15,33,24,0.1);">
+        <div style="padding:34px 30px 34px 0; border-right:1px solid rgba(15,33,24,0.1);">
+          <p style="margin:0; font-size:44px; font-weight:800; letter-spacing:-0.04em; color:#38B82C;">01</p>
+          <h3 style="margin:12px 0 10px; font-size:21px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Implantação acompanhada</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; font-weight:500; color:#556055;">Reunião técnica com coordenação e TI, integração automática com os sistemas que a instituição já usa e entrega por marcos. Em média, 60 a 90 dias até a plena conformidade com a visão da instituição.</p>
+        </div>
+        <div style="padding:34px 30px; border-right:1px solid rgba(15,33,24,0.1);">
+          <p style="margin:0; font-size:44px; font-weight:800; letter-spacing:-0.04em; color:#38B82C;">02</p>
+          <h3 style="margin:12px 0 10px; font-size:21px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Treinamento dos usuários</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; font-weight:500; color:#556055;">Professores, preceptores, coordenações e secretaria treinados no fluxo real do curso — não em manual genérico. Cada perfil aprende exatamente a parte que usa.</p>
+        </div>
+        <div style="padding:34px 0 34px 30px;">
+          <p style="margin:0; font-size:44px; font-weight:800; letter-spacing:-0.04em; color:#38B82C;">03</p>
+          <h3 style="margin:12px 0 10px; font-size:21px; font-weight:800; letter-spacing:-0.02em; color:#0F2118;">Suporte técnico contínuo</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; font-weight:500; color:#556055;">Atendimento em horário comercial com prioridade em chamados críticos, monitoramento de disponibilidade, recuperação de registros e consulta técnica ou jurídica aos backups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:120px 24px; background:#F5F8F5;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); text-align:center; max-width:760px; margin:0 auto;">
+        <h2 style="margin:0; font-size:clamp(34px,4.6vw,62px); line-height:1.03; font-weight:800; letter-spacing:-0.032em; color:#0F2118; text-wrap:balance;">Uma plataforma.<br>Infinitas possibilidades.</h2>
+        <p style="margin:22px 0 0; font-size:19px; line-height:1.55; font-weight:500; color:#556055; text-wrap:pretty;">Seis perfis de acesso, do coordenador de curso ao representante de turma. E a integração automática com os sistemas que a instituição já usa: os usuários entram no portal sozinhos.</p>
+      </div>
+
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .08s, transform .7s cubic-bezier(0.22,1,0.36,1) .08s; margin-top:56px; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2px; background:rgba(15,33,24,0.08); border-radius:16px; overflow:hidden;">
+        <sc-for list="{{ capabilities }}" as="c" hint-placeholder-count="9">
+          <div style="background:#fff; padding:30px 28px; transition:background .18s ease;" style-hover="background:#EAF8EC">
+            <h3 style="margin:0 0 8px; font-size:18px; font-weight:800; letter-spacing:-0.018em; color:#0F2118;">{{ c.t }}</h3>
+            <p style="margin:0; font-size:14px; line-height:1.6; font-weight:500; color:#556055;">{{ c.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="produto" style="padding:120px 24px; background:#fff;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1);">
+        <p style="margin:0 0 16px; font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#38B82C;">Produto em destaque</p>
+        <h2 style="margin:0; font-size:clamp(34px,4.2vw,56px); line-height:1.04; font-weight:800; letter-spacing:-0.032em; color:#0F2118; text-wrap:balance;">Frequência Internato</h2>
+        <p style="margin:20px 0 26px; font-size:18px; line-height:1.55; font-weight:500; color:#556055; text-wrap:pretty;">A gestão completa do curso de Medicina — frequência, escala, preceptoria, avaliação e auditoria. Publicado na App Store e no Google Play, em operação com dados hospedados no Brasil.</p>
+        <div style="display:flex; flex-direction:column; gap:11px; margin-bottom:30px;">
+          <div style="display:flex; gap:11px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:#38B82C; margin-top:8px; flex-shrink:0;"></span><p style="margin:0; font-size:15px; line-height:1.55; font-weight:600; color:#3E4A3E;">Check-in com geolocalização e janela de horário validados no servidor</p></div>
+          <div style="display:flex; gap:11px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:#38B82C; margin-top:8px; flex-shrink:0;"></span><p style="margin:0; font-size:15px; line-height:1.55; font-weight:600; color:#3E4A3E;">Escala do semestre gerada automaticamente, desviando de feriados e férias</p></div>
+          <div style="display:flex; gap:11px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:#38B82C; margin-top:8px; flex-shrink:0;"></span><p style="margin:0; font-size:15px; line-height:1.55; font-weight:600; color:#3E4A3E;">Mural e canal direto com a coordenação — fora do WhatsApp pessoal</p></div>
+          <div style="display:flex; gap:11px; align-items:flex-start;"><span style="width:7px; height:7px; border-radius:50%; background:#38B82C; margin-top:8px; flex-shrink:0;"></span><p style="margin:0; font-size:15px; line-height:1.55; font-weight:600; color:#3E4A3E;">Rastro de auditoria completo para validações institucionais</p></div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <a href="https://apps.apple.com/br/app/frequencia-internato/id6785627123">
+            <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Button" variant="dark" size="lg" hint-size="130px,46px">App Store</x-import>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=br.com.cactuscompany.frequenciainternato&hl=pt_BR">
+            <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Button" variant="outline" size="lg" hint-size="140px,46px">Google Play</x-import>
+          </a>
+        </div>
+      </div>
+
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .1s, transform .7s cubic-bezier(0.22,1,0.36,1) .1s; background:#EBF8EE; border-radius:28px; padding:40px; display:flex; justify-content:center;">
+        <div style="width:240px; background:#0F2118; border-radius:38px; padding:9px; box-shadow:0 30px 60px -20px rgba(15,33,24,0.45);">
+          <div style="background:#fff; border-radius:30px; overflow:hidden;">
+            <div style="background:#0F2118; padding:12px 16px 14px; color:#fff;">
+              <div style="display:flex; justify-content:space-between; font-size:10px; font-weight:700; color:#95AE9B;"><span>9:41</span><span>▮▮ ⌁ ▰</span></div>
+              <p style="margin:12px 0 0; font-size:15px; font-weight:800; letter-spacing:-0.015em;">Mural</p>
+              <p style="margin:2px 0 0; font-size:10px; font-weight:600; color:#9FE0A6;">Avisos da coordenação</p>
+            </div>
+            <div style="padding:14px; display:flex; flex-direction:column; gap:10px; background:#EBF8EE;">
+              <div style="background:#fff; border-radius:16px; padding:14px; box-shadow:0 2px 8px rgba(15,33,24,0.06);">
+                <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Badge" variant="primary" size="sm" hint-size="76px,18px">NOVO AVISO</x-import>
+                <p style="margin:9px 0 0; font-size:12px; font-weight:800; color:#0F2118;">Aula reagendada para 28/11</p>
+                <p style="margin:4px 0 0; font-size:10px; line-height:1.45; font-weight:500; color:#707D70;">A aula será no ambulatório do Hospital Universitário.</p>
+                <p style="margin:8px 0 0; font-size:8px; font-weight:700; color:#B3BAB3;">quinta-feira, 23 de julho · 03:02</p>
+              </div>
+              <div style="background:#fff; border-radius:16px; padding:14px; box-shadow:0 2px 8px rgba(15,33,24,0.06);">
+                <p style="margin:0; font-size:12px; font-weight:800; color:#0F2118;">Aula de 10/08 remarcada</p>
+                <p style="margin:4px 0 0; font-size:10px; line-height:1.45; font-weight:500; color:#707D70;">Nova data publicada no Mural do rodízio.</p>
+                <p style="margin:8px 0 0; font-size:8px; font-weight:700; color:#B3BAB3;">quarta-feira, 22 de julho · 23:59</p>
+              </div>
+              <div style="background:#0F2118; border-radius:16px; padding:13px;">
+                <p style="margin:0; font-size:9px; font-weight:800; letter-spacing:0.07em; color:#72D27E;">CANAL COM A COORDENAÇÃO</p>
+                <p style="margin:6px 0 0; font-size:11px; line-height:1.45; font-weight:600; color:#fff;">Pode. Já ajustei a escala — a nova data está no seu Mural.</p>
+                <p style="margin:7px 0 0; font-size:8px; font-weight:700; color:#6B8E72;">07:12 · registrado no histórico</p>
+              </div>
+            </div>
+            <div style="background:#fff; border-top:1px solid rgba(15,33,24,0.07); padding:10px 12px; display:flex; justify-content:space-between; font-size:8px; font-weight:700; color:#929E92;">
+              <span>Início</span><span>Escala</span><span>Check-in</span><span>Perfil</span><span style="color:#38B82C;">Mural</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding:120px 24px; background:#EBF8EE;">
+    <div style="max-width:860px; margin:0 auto;">
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); text-align:center;">
+        <h2 style="margin:0; font-size:clamp(32px,4.2vw,54px); line-height:1.05; font-weight:800; letter-spacing:-0.03em; color:#0F2118; text-wrap:balance;">Perguntas diretas,<br>respostas honestas.</h2>
+      </div>
+      <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease .08s, transform .7s cubic-bezier(0.22,1,0.36,1) .08s; margin-top:48px; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 2px 10px rgba(15,33,24,0.05);">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+          <div style="border-bottom:1px solid rgba(15,33,24,0.07);">
+            <div onClick="{{ f.toggle }}" style="display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px 28px; cursor:pointer;" style-hover="background:#F5F8F5">
+              <p style="margin:0; font-size:17px; font-weight:800; letter-spacing:-0.015em; color:#0F2118;">{{ f.q }}</p>
+              <span style="{{ f.iconStyle }}">+</span>
+            </div>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0; padding:0 28px 26px; max-width:660px; font-size:15px; line-height:1.65; font-weight:500; color:#556055; text-wrap:pretty;">{{ f.a }}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" style="background:#0F2118; color:#fff; padding:130px 24px;">
+    <div data-reveal="1" style="opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(0.22,1,0.36,1); max-width:820px; margin:0 auto; text-align:center;">
+      <p style="margin:0 0 18px; font-size:13px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:#38B82C;">Vamos conversar</p>
+      <h2 style="margin:0; font-size:clamp(36px,5.2vw,68px); line-height:1.02; font-weight:800; letter-spacing:-0.035em; color:#fff; text-wrap:balance;">Sua instituição no seu máximo desempenho.</h2>
+      <p style="margin:24px auto 0; max-width:600px; font-size:19px; line-height:1.55; font-weight:500; color:#BFCFC3; text-wrap:pretty;">Uma reunião técnica de 30 minutos com a coordenação e a TI é suficiente para mapear o que pode ser organizado, automatizado e auditado a partir do próximo semestre.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:36px;">
+        <a href="mailto:suporte@cactuscompany.com.br?subject=Reuni%C3%A3o%20t%C3%A9cnica%20%E2%80%94%20Cactus%20Company">
+          <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Button" size="xl" hint-size="220px,54px">Agendar reunião técnica</x-import>
+        </a>
+        <a href="https://wa.me/5566996194231">
+          <x-import component-from-global-scope="CactusDesignSystem_7d7c0b.Button" size="xl" variant="outline" hint-size="150px,54px">WhatsApp</x-import>
+        </a>
+      </div>
+      <p style="margin:26px 0 0; font-size:14px; font-weight:600; color:#6B8E72;">suporte@cactuscompany.com.br · (66) 99619-4231 · Cuiabá · MT · Brasil</p>
+    </div>
+  </section>
+
+  <footer style="background:#0A1710; color:#95AE9B; padding:56px 24px 40px;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px;">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <img src="assets/cactus-icon.png" alt="Cactus Company" style="width:30px; height:30px; border-radius:8px; display:block;">
+          <span style="font-weight:800; font-size:16px; color:#fff; letter-spacing:-0.01em;">Cactus Company</span>
+        </div>
+        <p style="margin:0; max-width:300px; font-size:13px; line-height:1.6; font-weight:500;">Startup brasileira de tecnologia para o mercado educacional. Gestão institucional completa, aplicativos, sistemas web e automação com IA.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 12px; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#477551;">Empresa</p>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:13px; font-weight:600;">
+          <a href="#servicos" style="color:#95AE9B;" style-hover="color:#fff">Serviços</a>
+          <a href="#plataforma" style="color:#95AE9B;" style-hover="color:#fff">Plataforma</a>
+          <a href="#contato" style="color:#95AE9B;" style-hover="color:#fff">Contato</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 12px; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#477551;">Produto</p>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:13px; font-weight:600;">
+          <a href="#produto" style="color:#95AE9B;" style-hover="color:#fff">Frequência Internato</a>
+          <a href="#seguranca" style="color:#95AE9B;" style-hover="color:#fff">Segurança</a>
+          <a href="#ia" style="color:#95AE9B;" style-hover="color:#fff">Inteligência</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin:0 0 12px; font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#477551;">Contato</p>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:13px; font-weight:600;">
+          <a href="mailto:suporte@cactuscompany.com.br" style="color:#95AE9B;" style-hover="color:#fff">suporte@cactuscompany.com.br</a>
+          <a href="tel:+5566996194231" style="color:#95AE9B;" style-hover="color:#fff">(66) 99619-4231</a>
+          <span>Cuiabá · MT · Brasil</span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1180px; margin:40px auto 0; padding-top:22px; border-top:1px solid rgba(159,224,166,0.12); font-size:12px; font-weight:600; color:#477551;">
+      © 2026 GV TECNOLOGIA LTDA · CNPJ 65.923.667/0001-01 · cactuscompany.com.br
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { step: 0, open: 0, modalOpen: true };
+
+  componentDidMount() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+    const scan = () => document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+    scan();
+    this._t = [setTimeout(scan, 400), setTimeout(scan, 1200), setTimeout(scan, 2600)];
+    this._io = io;
+    const onScroll = () => {
+      if (window.scrollY > 30) {
+        const st = document.querySelector('[data-hero-stage]');
+        if (st) st.classList.add('cc-devices-in');
+        window.removeEventListener('scroll', onScroll);
+      }
+    };
+    this._onScroll = onScroll;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    this._auto = setInterval(() => {
+      if (this._paused) return;
+      this.setState((s) => ({ step: (s.step + 1) % 4 }));
+    }, 3200);
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    (this._t || []).forEach(clearTimeout);
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    clearInterval(this._auto);
+  }
+
+  renderVals() {
+    const STEPS = [
+      { title: 'O aluno abre o plantão', body: 'Ele toca em Fazer check-in dentro da janela de horário da atividade.' },
+      { title: 'O aparelho confirma a identidade', body: 'Biometria local, feita pelo sistema operacional. Nada sai do telefone.' },
+      { title: 'O servidor valida e decide', body: 'Local e janela de horário são conferidos no servidor — nunca no app.' },
+      { title: 'Registro imutável', body: 'Presença gravada em trilha append-only, visível pela coordenação em tempo real.' },
+    ];
+    const PHONE = [
+      { badge: 'CHECK-IN DISPONÍVEL', v: 'presente', title: 'Centro obstétrico — manhã', sub: '07:30 · Hospital Universitário · janela até 19:30', cta: 'Fazer check-in', ctaBg: '#38B82C', ctaFg: '#fff', foot: 'Toque para registrar sua presença' },
+      { badge: 'IDENTIDADE', v: 'info', title: 'Confirmando identidade…', sub: 'Biometria feita pelo próprio aparelho.', cta: 'Aguarde', ctaBg: '#EAECEA', ctaFg: '#707D70', foot: 'Nada é enviado à plataforma' },
+      { badge: 'SERVIDOR', v: 'warning', title: 'Validando no servidor…', sub: 'Local e janela de horário — a decisão é do servidor.', cta: 'Validando', ctaBg: '#EAECEA', ctaFg: '#707D70', foot: 'Funciona mesmo sem internet' },
+      { badge: 'PRESENTE', v: 'presente', title: 'Presença registrada!', sub: 'Centro obstétrico — manhã · 07:31', cta: 'Registro imutável', ctaBg: '#0F2118', ctaFg: '#9FE0A6', foot: 'Visível pela coordenação agora' },
+    ];
+    const CAPS = [
+      { t: 'Frequência', d: 'Validada no servidor, configurável, com abono e justificativa.' },
+      { t: 'Escala e cronograma', d: 'Gerador interativo que desvia de feriados e das férias dos professores.' },
+      { t: 'Preceptoria', d: 'Conflitos detectados automaticamente e remanejo confirmado em lote.' },
+      { t: 'Avaliação', d: 'Critérios por rodízio, lançamento pelo app e notas visíveis ao aluno.' },
+      { t: 'Observabilidade', d: 'Painéis por papel e alertas de aluno abaixo do mínimo exigido.' },
+      { t: 'Comunicação', d: 'Mural por público e canal direto com registro — fora do WhatsApp pessoal.' },
+      { t: 'Cadastro automático', d: 'Usuários entram via integração; a coordenação só escolhe as atividades.' },
+      { t: 'Alertas no painel', d: 'Falta próxima do limite sinalizada antes de virar reprovação.' },
+      { t: 'Pendências sinalizadas', d: 'Rematrícula em aberto e situação do aluno, direto no painel.' },
+    ];
+    const FAQ = [
+      { q: 'E se o usuário tentar burlar o GPS?', a: 'O aplicativo não decide nada: local e janela de horário são validados no servidor, a sessão é única por dispositivo e a troca de aparelho fica registrada em auditoria. Sem local válido dentro da janela, não há registro.' },
+      { q: 'Como fica a LGPD e a biometria?', a: 'A confirmação biométrica é feita pelo próprio aparelho, pelo sistema operacional — nenhum dado biométrico é coletado, transmitido ou armazenado pela plataforma. A localização é coletada só no instante do check-in, nunca em segundo plano. Os dados são hospedados no Brasil (São Paulo), com isolamento por instituição.' },
+      { q: 'Integra com o sistema acadêmico que já usamos?', a: 'Sim — fazemos a integração automática com os sistemas que a instituição já utiliza. Os usuários são cadastrados sozinhos no portal e a coordenação apenas escolhe as atividades de cada um. O desenho técnico é definido com a TI na reunião de implantação; a exportação em CSV/Excel (PT-BR) também está disponível.' },
+      { q: 'E se não houver sinal dentro do hospital?', a: 'É possível registrar mesmo sem internet. O registro é capturado no aparelho, com data, hora e local, e é validado pelo servidor assim que a conexão retorna — a decisão final continua sendo do servidor, sobre o mesmo registro imutável.' },
+      { q: 'Quanto tempo leva para entrar no ar?', a: 'A implantação é planejada para ser consistente e organizada, com treinamento dos professores e coordenadores que vão utilizar o sistema. Um prazo mais acurado é estabelecido após a reunião de implantação. Em média, estimamos de 60 a 90 dias até o sistema estar em plena conformidade com a visão da instituição.' },
+    ];
+
+    const step = this.state.step;
+    const p = PHONE[step];
+
+    return {
+      modalOpen: this.state.modalOpen,
+      closeModal: () => this.setState({ modalOpen: false }),
+      stopClick: (e) => e.stopPropagation(),
+      goEnamed: () => {
+        this.setState({ modalOpen: false });
+        setTimeout(() => {
+          const el = document.getElementById('enamed');
+          if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 40, behavior: 'smooth' });
+        }, 80);
+      },
+      steps: STEPS.map((s, i) => {
+        const on = i === step;
+        return {
+          n: String(i + 1),
+          title: s.title,
+          body: s.body,
+          select: () => { this._paused = true; this.setState({ step: i }); },
+          rowStyle: 'display:flex; gap:16px; align-items:flex-start; padding:16px 18px; border-radius:16px; cursor:pointer; transition:background .2s ease, box-shadow .2s ease; background:' + (on ? '#fff' : 'transparent') + '; box-shadow:' + (on ? '0 6px 22px -10px rgba(15,33,24,0.28)' : 'none'),
+          numStyle: 'flex-shrink:0; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; transition:background .2s ease, color .2s ease; background:' + (on ? '#38B82C' : '#C7EDCB') + '; color:' + (on ? '#fff' : '#248B1A'),
+        };
+      }),
+      phoneBadge: p.badge,
+      phoneBadgeVariant: p.v,
+      phoneTitle: p.title,
+      phoneSub: p.sub,
+      phoneCta: p.cta,
+      phoneCtaStyle: 'margin-top:14px; border-radius:9999px; padding:11px 0; font-size:12px; font-weight:800; transition:background .25s ease, color .25s ease; background:' + p.ctaBg + '; color:' + p.ctaFg,
+      phoneFoot: p.foot,
+      capabilities: CAPS,
+      faqs: FAQ.map((f, i) => {
+        const on = i === this.state.open;
+        return {
+          q: f.q,
+          a: f.a,
+          open: on,
+          toggle: () => this.setState((s) => ({ open: s.open === i ? -1 : i })),
+          iconStyle: 'flex-shrink:0; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:700; background:#EAF8EC; color:#248B1A; transition:transform .25s cubic-bezier(0.34,1.56,0.64,1); transform:rotate(' + (on ? '45deg' : '0deg') + ')',
+        };
+      }),
+    };
+  }
+}
+</script>
+</body>
+</html>

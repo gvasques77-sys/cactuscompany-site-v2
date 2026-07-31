@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/sobre",
     "/produtos",
+    "/raio-x-enamed",
     "/contato",
     "/politica-de-privacidade",
     "/politica-de-cookies",

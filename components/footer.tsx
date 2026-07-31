@@ -15,8 +15,8 @@ export function Footer() {
               <strong>{company.brand}</strong>
             </div>
             <p>
-              Aplicativos, sistemas web e produtos digitais para empresas que precisam de
-              confiabilidade, design e operação.
+              Inteligência institucional para transformar dados acadêmicos em diagnóstico,
+              prioridade e melhoria contínua.
             </p>
             <div className="footer-badges">
               <a href={company.appStore} target="_blank" rel="noopener" className="footer-badge">
@@ -34,13 +34,14 @@ export function Footer() {
             <div className="footer-col">
               <span className="ct">Empresa</span>
               <Link href="/#empresa">Sobre</Link>
-              <Link href="/#solucoes">Soluções</Link>
+              <Link href="/#ecossistema">Ecossistema</Link>
               <Link href="/contato">Contato</Link>
             </div>
             <div className="footer-col">
               <span className="ct">Produto</span>
+              <Link href="/#raio-x">Raio-X ENAMED</Link>
               <Link href="/produtos">Frequência Internato</Link>
-              <Link href="/produtos#seguranca">Segurança</Link>
+              <Link href="/#seguranca">Segurança</Link>
               <Link href="/politica-de-privacidade">Política de privacidade</Link>
               <Link href="/politica-de-cookies">Política de cookies</Link>
               <CookiePreferencesButton />

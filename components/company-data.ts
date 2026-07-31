@@ -4,8 +4,8 @@ export const company = {
   cnpj: "65.923.667/0001-01",
   domain: "cactuscompany.com.br",
   email: "suporte@cactuscompany.com.br",
-  phone: "(66) 99619-4231",
-  phoneIntl: "+5566996194231",
+  phone: "(66) 99952-2244",
+  phoneIntl: "+5566999522244",
   location: "Cuiabá, Mato Grosso, Brasil",
   appStore:
     "https://apps.apple.com/br/app/frequencia-internato/id6785627123",
@@ -14,11 +14,11 @@ export const company = {
 };
 
 export const navItems = [
+  { href: "/#raio-x", label: "Raio-X ENAMED" },
+  { href: "/#inteligencia", label: "Inteligência de dados" },
+  { href: "/#ecossistema", label: "Ecossistema" },
+  { href: "/#seguranca", label: "Segurança" },
   { href: "/#empresa", label: "Empresa" },
-  { href: "/#solucoes", label: "Soluções" },
-  { href: "/produtos", label: "Frequência Internato" },
-  { href: "/produtos#seguranca", label: "Segurança" },
-  { href: "/contato", label: "Contato" },
 ];
 
 const demoSubject = encodeURIComponent("Demonstração — Frequência Internato");
@@ -28,9 +28,16 @@ const demoBody = encodeURIComponent(
 
 export const demoMailto = `mailto:${company.email}?subject=${demoSubject}&body=${demoBody}`;
 
+const intelligenceSubject = encodeURIComponent("Diagnóstico institucional — Raio-X ENAMED");
+const intelligenceBody = encodeURIComponent(
+  "Olá! Gostaria de conhecer o Raio-X ENAMED e entender como transformar os dados do nosso curso em diagnóstico e planos de ação.\n\nInstituição:\nCargo:\nNúmero aproximado de alunos:\nMelhor dia/horário:\nTelefone/WhatsApp:"
+);
+
+export const intelligenceMailto = `mailto:${company.email}?subject=${intelligenceSubject}&body=${intelligenceBody}`;
+
 export const waLink = `https://wa.me/${company.phoneIntl.replace(
   "+",
   ""
 )}?text=${encodeURIComponent(
-  "Olá! Vim pelo site e gostaria de saber mais sobre o Frequência Internato."
+  "Olá! Vim pelo site e gostaria de solicitar um diagnóstico institucional do Raio-X ENAMED."
 )}`;

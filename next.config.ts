@@ -14,16 +14,15 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return {
-      beforeFiles: [
-        {
-          source: "/",
-          destination: "/site-institucional/index.html",
-        },
-      ],
+      beforeFiles: [],
       afterFiles: [
         {
           source: "/proposta-nilton-lins",
           destination: "/proposta-nilton-lins/index.html",
+        },
+        {
+          source: "/raio-x-enamed",
+          destination: "/raio-x-enamed/index.html",
         },
       ],
       fallback: [],

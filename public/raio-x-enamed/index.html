@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raio-X ENAMED | Cactus Company</title>
+<meta name="description" content="Demonstração do Raio-X ENAMED, a plataforma de inteligência institucional da Cactus Company.">
+<link rel="icon" type="image/png" href="./assets/cactus-icon.png">
+<link rel="apple-touch-icon" href="./assets/cactus-icon.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; -webkit-font-smoothing:antialiased; }
+    #raiox a { color:#0E8C7F; text-decoration-color:#9FD9D2; }
+    #raiox a:hover { color:#06403B; }
+    input, select, button { font-family:inherit; }
+    ::-webkit-scrollbar { width:10px; height:10px; }
+    ::-webkit-scrollbar-thumb { background:#C9D8D4; border-radius:99px; border:3px solid transparent; background-clip:content-box; }
+    @keyframes rxin { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+    @keyframes rxmodal { from { opacity:0; transform:translateY(18px) scale(0.985); } to { opacity:1; transform:none; } }
+    @keyframes rxtoast { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+    @media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } }
+  </style>
+</helmet>
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#06403B"></rect><path d="M22 68l14-16 12 9 15-25 15 12" stroke="#3FD8C4" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="78" cy="48" r="6" fill="#F2C230"></circle></svg>
+</template>
+
+<div id="raiox" style="display:flex; height:840px; min-height:640px; width:1280px; overflow:hidden; contain:paint; background:#EAF1EF; font-family:'Manrope',system-ui,sans-serif; color:#101828;">
+
+  <aside style="flex:none; width:238px; background:#06403B; color:#ffffff; display:flex; flex-direction:column; overflow:hidden;">
+    <div style="padding:20px 20px 16px; display:flex; align-items:center; gap:11px; border-bottom:1px solid rgba(185,231,225,0.16);">
+      <img src="assets/cactus-icon.png" alt="Cactus Company" style="width:34px; height:34px; border-radius:9px; flex:none;">
+      <div style="min-width:0;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px; line-height:1.15;">Raio-X ENAMED</div>
+        <div style="font-size:10.5px; color:#8FCFC5; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ instituicao }}</div>
+      </div>
+    </div>
+
+    <nav style="padding:14px 12px; display:flex; flex-direction:column; gap:3px;">
+      <sc-for list="{{ navItens }}" as="it" hint-placeholder-count="5">
+        <div onClick="{{ it.ir }}" role="button" tabindex="0" style="display:flex; align-items:center; gap:11px; padding:10px 12px; border-radius:10px; cursor:pointer; font-size:13.5px; font-weight:600; transition:background 140ms ease, color 140ms ease; background:{{ it.bg }}; color:{{ it.fg }};" style-hover="background:rgba(255,255,255,0.09);">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none; opacity:0.9;" aria-hidden="true"><path d="{{ it.d }}"></path></svg>
+          <span style="flex:1; min-width:0;">{{ it.label }}</span>
+          <sc-if value="{{ it.contagem }}"><span style="flex:none; font-size:10.5px; font-weight:700; padding:2px 7px; border-radius:99px; background:rgba(242,194,48,0.22); color:#F2C230;">{{ it.contagem }}</span></sc-if>
+        </div>
+      </sc-for>
+    </nav>
+
+    <div style="margin:6px 12px 0; padding:13px 14px; border-radius:12px; background:rgba(255,255,255,0.06); border:1px solid rgba(185,231,225,0.16);">
+      <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#3FD8C4;">Projeção ENAMED</div>
+      <div style="display:flex; align-items:baseline; gap:7px; margin-top:7px;">
+        <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:28px; line-height:1;">{{ projInst }}</span>
+        <span style="font-size:11px; color:#8FCFC5;">/ 100 · média institucional</span>
+      </div>
+      <div style="height:6px; border-radius:99px; background:rgba(255,255,255,0.14); margin-top:10px; overflow:hidden;">
+        <div style="height:100%; border-radius:99px; background:linear-gradient(90deg,#0E8C7F,#3FD8C4); width:{{ projInstPct }};"></div>
+      </div>
+      <div style="font-size:11px; line-height:1.5; color:#B9E7E1; margin-top:9px;">{{ projInstNota }}</div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div style="padding:14px 16px 16px; border-top:1px solid rgba(185,231,225,0.16); display:flex; align-items:center; gap:10px;">
+      <span style="flex:none; width:32px; height:32px; border-radius:50%; background:#0E8C7F; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:12.5px;">CM</span>
+      <div style="min-width:0;">
+        <div style="font-size:12.5px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Coordenação de Medicina</div>
+        <div style="font-size:10.5px; color:#8FCFC5;">acesso completo</div>
+      </div>
+    </div>
+  </aside>
+
+  <div style="flex:1; min-width:0; display:flex; flex-direction:column;">
+
+    <header style="flex:none; height:62px; background:#ffffff; border-bottom:1px solid #DCE7E4; display:flex; align-items:center; gap:16px; padding:0 26px;">
+      <div style="min-width:0;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; color:#0F2118; line-height:1.2;">{{ tituloView }}</div>
+        <div style="font-size:11.5px; color:#7A8C87; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ subtituloView }}</div>
+      </div>
+      <div style="flex:1;"></div>
+      <div style="display:flex; align-items:center; gap:8px; background:#F2F7F6; border:1px solid #DCE7E4; border-radius:10px; padding:8px 12px; width:280px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7A8C87" stroke-width="2" stroke-linecap="round" style="flex:none;" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input value="{{ busca }}" onChange="{{ setBusca }}" placeholder="Buscar aluno, turma ou matéria" style="flex:1; min-width:0; border:none; outline:none; background:transparent; font-size:13px; color:#0F2118;">
+      </div>
+      <select value="{{ periodoLetivo }}" onChange="{{ setPeriodoLetivo }}" style="border:1px solid #DCE7E4; background:#ffffff; border-radius:10px; padding:9px 11px; font-size:12.5px; color:#0F2118; outline:none; cursor:pointer;">
+        <option value="2026.1">Período 2026.1</option>
+        <option value="2025.2">Período 2025.2</option>
+        <option value="2025.1">Período 2025.1</option>
+      </select>
+      <span style="flex:none; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#8A6A00; background:#FCF3DC; border-radius:99px; padding:5px 11px; white-space:nowrap;">Dados ilustrativos</span>
+    </header>
+
+    <main style="flex:1; overflow:auto; padding:22px 26px 44px;">
+      <div style="max-width:1420px; margin:0 auto;">
+
+        <sc-if value="{{ vGeral }}" hint-placeholder-val="{{ true }}">
+          <div style="animation:rxin 260ms ease-out both;">
+            <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:14px;">
+              <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="5">
+                <div style="background:#ffffff; border:1px solid #DCE7E4; border-radius:14px; padding:15px 17px 16px;">
+                  <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:#7A8C87;">{{ k.label }}</div>
+                  <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:30px; line-height:1.1; margin-top:8px; color:{{ k.cor }};">{{ k.valor }}</div>
+                  <div style="font-size:11.5px; line-height:1.45; color:#7A8C87; margin-top:4px;">{{ k.sub }}</div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="display:grid; grid-template-columns:minmax(0,1.55fr) minmax(0,1fr); gap:16px; margin-top:16px;">
+              <div style="background:#ffffff; border:1px solid #DCE7E4; border-radius:16px; padding:18px 20px 14px;">
+                <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px;">
+                  <div>
+                    <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118;">Média institucional por período</div>
+                    <div style="font-size:11.5px; color:#7A8C87; margin-top:2px;">Do 1º semestre ao internato · todas as turmas ativas</div>
+                  </div>
+                  <div style="display:flex; gap:14px; font-size:11px; color:#475467;">
+                    <span style="display:flex; align-items:center; gap:6px;"><span style="width:16px; height:3px; border-radius:2px; background:#0E8C7F;"></span>média geral</span>
+                    <span style="display:flex; align-items:center; gap:6px;"><span style="width:16px; height:3px; border-radius:2px; background:#C0564D;"></span>quartil inferior</span>
+                  </div>
+                </div>
+                <svg viewBox="0 0 660 250" style="width:100%; height:auto; display:block; margin-top:10px;" role="img" aria-label="Evolução da média institucional por período">
+                  <g stroke="#EEF3F1" stroke-width="1">
+                    <line x1="42" y1="26" x2="644" y2="26"></line>
+                    <line x1="42" y1="80" x2="644" y2="80"></line>
+                    <line x1="42" y1="134" x2="644" y2="134"></line>
+                    <line x1="42" y1="188" x2="644" y2="188"></line>
+                  </g>
+                  <g font-size="10" fill="#98A2B3" font-family="Manrope,sans-serif" text-anchor="end">
+                    <text x="34" y="30">10</text><text x="34" y="84">8,5</text><text x="34" y="138">7</text><text x="34" y="192">5,5</text>
+                  </g>
+                  {{ eixoInstEls }}
+                  <polygon points="{{ areaInst }}" fill="#0E8C7F" opacity="0.07"></polygon>
+                  <polyline points="{{ ptsQuartil }}" fill="none" stroke="#C0564D" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <polyline points="{{ ptsInst }}" fill="none" stroke="#0E8C7F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <sc-for list="{{ dotsInst }}" as="p" hint-placeholder-count="12">
+                    <circle cx="{{ p.x }}" cy="{{ p.y }}" r="3.6" fill="#ffffff" stroke="#0E8C7F" stroke-width="2.2"></circle>
+                  </sc-for>
+                </svg>
+                <div style="display:flex; gap:10px; align-items:flex-start; background:#F2F7F6; border-radius:11px; padding:11px 14px; margin-top:6px;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0E8C7F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px;" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5"></path><path d="M12 16h.01"></path></svg>
+                  <span style="font-size:12.5px; line-height:1.55; color:#475467;">{{ leituraInst }}</span>
+                </div>
+              </div>
+
+              <div style="background:#ffffff; border:1px solid #DCE7E4; border-radius:16px; padding:18px 20px 20px;">
+                <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118;">Média por turma</div>
+                <div style="font-size:11.5px; color:#7A8C87; margin-top:2px;">Clique para abrir o raio-x da turma</div>
+                <div style="display:grid; gap:9px; margin-top:14px;">
+                  <sc-for list="{{ barrasTurma }}" as="b" hint-placeholder-count="8">
+                    <div onClick="{{ b.abrir }}" role="button" tabindex="0" style="display:grid; grid-template-columns:74px minmax(0,1fr) 66px; gap:11px; align-items:center; padding:5px 7px; border-radius:9px; cursor:pointer; transition:background 130ms ease;" style-hover="background:#F2F7F6;">
+                      <span style="font-size:12px; font-weight:700; color:#0F2118; white-space:nowrap;">{{ b.nome }}</span>
+                      <span style="height:9px; border-radius:99px; background:#EEF3F1; overflow:hidden; display:block;"><span style="display:block; height:100%; border-radius:99px; background:{{ b.cor }}; width:{{ b.pct }};"></span></span>
+                      <span style="display:flex; align-items:center; justify-content:flex-end; gap:6px; font-size:12px; font-weight:700; color:#0F2118;">{{ b.media }}<span style="font-size:10px; font-weight:700; color:{{ b.deltaCor }};">{{ b.delta }}</span></span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.55fr); gap:16px; margin-top:16px;">
+              <div style="background:#ffffff; border:1px solid #DCE7E4; border-radius:16px; padding:18px 20px 20px;">
+                <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118;">Áreas do ENAMED · institucional</div>
+                <div style="font-size:11.5px; color:#7A8C87; margin-top:2px;">Média ponderada de todas as turmas</div>
+                <div style="display:grid; gap:11px; margin-top:15px;">
+                  <sc-for list="{{ rankMaterias }}" as="m" hint-placeholder-count="5">
+                    <div onClick="{{ m.abrir }}" role="button" tabindex="0" style="cursor:pointer; padding:4px 6px; border-radius:9px; transition:background 130ms ease;" style-hover="background:#F2F7F6;">
+                      <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
+                        <span style="font-size:12.5px; color:#344054;">{{ m.nome }}</span>
+                        <span style="font-size:12.5px; font-weight:700; color:{{ m.cor }};">{{ m.media }}</span>
+                      </div>
+                      <span style="display:block; height:8px; border-radius:99px; background:#EEF3F1; margin-top:6px; overflow:hidden;"><span style="display:block; height:100%; border-radius:99px; background:{{ m.cor }}; width:{{ m.pct }};"></span></span>
+                      <div style="font-size:11px; color:#98A2B3; margin-top:5px;">{{ m.nota }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="background:#ffffff; border:1px solid #DCE7E4; border-radius:16px; padding:18px 20px 20px;">
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+                  <div>
+                    <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118;">Intervenções prioritárias</div>
+                    <div style="font-size:11.5px; color:#7A8C87; margin-top:2px;">Geradas pela análise · ordenadas por impacto na nota</div>
+                  </div>
+                  <div onClick="{{ irIntervencoes }}" role="button" tabindex="0" style="font-size:12px; font-weight:700; color:#0E8C7F; cursor:pointer; white-space:nowrap;">Ver todas</div>
+                </div>
+                <div style="display:grid; gap:11px; margin-top:15px;">
+                  <sc-for list="{{ alertasTopo }}" as="c" hint-placeholder-count="3">
+                    <div style="border:1px solid #E4EDEA; border-left:3px solid {{ c.acento }}; border-radius:12px; padding:13px 15px;">
+                      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                        <span style="font-size:9.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:{{ c.acento }}; background:{{ c.acentoBg }}; border-radius:99px; padding:3px 8px;">{{ c.escopoLabel }}</span>
+                        <span style="font-size:13px; font-weight:700; color:#0F2118;">{{ c.titulo }}</span>
+                        <span style="flex:1;"></span>
+                        <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:99px; background:{{ c.statusBg }}; color:{{ c.statusFg }}; white-space:nowrap;">{{ c.statusLabel }}</span>
+                      </div>
+                      <div style="font-size:12px; line-height:1.6; color:#667085; margin-top:7px;">{{ c.causa }}</div>
+                      <div style="display:flex; align-items:center; gap:12px; margin-top:11px; flex-wrap:wrap;">
+                        <button onClick="{{ c.agir }}" style="border:none; cursor:pointer; background:#0E8C7F; color:#ffffff; font-size:12px; font-weight:700; padding:8px 14px; border-radius:99px; transition:filter 120ms ease, transform 120ms ease;" style-hover="filter:brightness(1.08); transform:translateY(-1px);" style-active="transform:scale(0.97);">{{ c.acaoLabel }}</button>
+                        <span style="font-size:11.5px; color:#7A8C87;">{{ c.impacto }} · {{ c.prazo }}</span>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ vTurmas }}">
+          <div style="animation:rxin 260ms ease-out both;">
+            <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px;">
+              <sc-for list="{{ cardsTurma }}" as="t" hint-placeholder-count="8">
+                <div onClick="{{ t.abrir }}" role="button" tabindex="0" style="background:#ffffff; border:1px solid #DCE7E4; border-radius:16px; padding:17px 18px 16px; cursor:pointer; transition:transform 140ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 140ms ease, border-color 140ms ease;" style-hover="transform:translateY(-2px); box-shadow:0 12px 28px rgba(15,33,24,0.10); border-color:#B7D6CE;">
+                  <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+                    <div>
+                      <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:16px; color:#0F2118;">{{ t.nome }}</div>
+                      <div style="font-size:11.5px; color:#7A8C87; margin-top:2px;">{{ t.periodo }} · {{ t.fase }}</div>
+                    </div>
+                    <span style="font-size:9.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:4px 9px; border-radius:99px; background:{{ t.riscoBg }}; color:{{ t.riscoFg }}; white-space:nowrap;">{{ t.riscoLabel }}</span>
+                  </div>
+                  <div style="display:flex; align-items:baseline; gap:8px; margin-top:13px;">
+                    <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:32px; line-height:1; color:{{ t.cor }};">{{ t.media }}</span>
+                    <span style="font-size:12px; font-weight:700; color:{{ t.deltaCor }};">{{ t.delta }}</span>
+                  </div>
+                  <svg viewBox="0 0 190 44" style="width:100%; height:38px; display:block; margin-top:8px;" aria-hidden="true">
+                    <polyline points="{{ t.spark }}" fill="none" stroke="{{ t.cor }}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                    <circle cx="{{ t.sparkX }}" cy="{{ t.sparkY }}" r="3.2" fill="{{ t.cor }}"></circle>
+                  </svg>
+                  <div style="display:flex; gap:14px; border-top:1px solid #EEF3F1; padding-top:11px; margin-top:6px;">
+                    <div><div style="font-size:10.5px; color:#98A2B3;">Alunos</div><div style="font-size:13px; font-weight:700; color:#0F2118;">{{ t.alunos }}</div></div>
+                    <div><div style="font-size:10.5px; color:#98A2B3;">Em risco</div><div style="font-size:13px; font-weight:700; color:{{ t.criticosCor }};">{{ t.criticos }}</div></div>
+                    <div><div style="font-size:10.5px; color:#98A2B3;">Área frágil</div><div style="font-size:13px; font-weight:700; color:#0F2118;">{{ t.pior }}</div></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ vMaterias }}">
+          <div style="animation:rxin 260ms ease-out both;">
+            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+              <sc-for list="{{ chipsTurma }}" as="c" hint-placeholder-count="8">
+                <div onClick="{{ c.ir }}" role="button" tabindex="0" style="padding:7px 14px; border-radius:99px; cursor:pointer; font-size:12.5px; font-weight:700; border:1px solid {{ c.bd }}; background:{{ c.bg }}; color:{{ c.fg }}; transition:all 140ms ease;">{{ c.label }}</div>
+              </sc-for>
+            </div>
+
+            <div style="display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:16px;">
+              <div style="background:#ffffff; border:1px solid #DCE7E4; border-radius:16px; padding:18px 20px 20px;">
+                <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+                  <div>
+                    <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118;">{{ turmaNome }} · aproveitamento por área e por prova</div>
+                    <div style="font-size:11.5px; color:#7A8C87; margin-top:2px;">{{ turmaSub }}</div>
+                  </div>
+                  <div style="display:flex; gap:12px; font-size:10.5px; color:#667085;">
+                    <span style="display:flex; align-items:center; gap:5px;"><span style="width:10px; height:10px; border-radius:3px; background:#0E8C7F;"></span>bom</span>
+                    <span style="display:flex; align-items:center; gap:5px;"><span style="width:10px; height:10px; border-radius:3px; background:#E9B10A;"></span>atenção</span>
+                    <span style="display:flex; align-items:center; gap:5px;"><span style="width:10px; height:10px; border-radius:3px; background:#C0564D;"></span>crítico</span>
+                  </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:210px repeat(6,minmax(0,1fr)) 62px; gap:7px; margin:16px 0 7px; font-size:10px; font-weight:700; letter-spacing:0.06em; color:#98A2B3; text-align:center;">
+                  <span></span><span>N1</span><span>N2</span><span>N3</span><span>N4</span><span>N5</span><span>N6</span><span style="text-align:right;">MÉDIA</span>
+                </div>
+                <div style="display:grid; gap:7px;">
+                  <sc-for list="{{ heat }}" as="m" hint-placeholder-count="5">
+                    <div onClick="{{ m.abrir }}" role="button" tabindex="0" style="display:grid; grid-template-columns:210px repeat(6,minmax(0,1fr)) 62px; gap:7px; align-items:center; cursor:pointer; padding:5px 6px; margin:0 -6px; border-radius:10px; background:{{ m.rowBg }}; transition:background 130ms ease;" style-hover="background:#F2F7F6;">
+                      <span style="display:flex; align-items:center; gap:7px; font-size:12.5px; font-weight:{{ m.peso }}; color:{{ m.nomeCor }}; min-width:0;"><span style="flex:none; width:6px; height:22px; border-radius:3px; background:{{ m.cor }};"></span><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ m.nome }}</span></span>
+                      <sc-for list="{{ m.cells }}" as="c" hint-placeholder-count="6">
+                        <span style="display:flex; align-items:center; justify-content:center; height:34px; border-radius:8px; font-size:12px; font-weight:700; background:{{ c.bg }}; color:{{ c.fg }};">{{ c.v }}</span>
+                      </sc-for>
+                      <span style="display:flex; align-items:center; justify-content:flex-end; gap:5px; font-size:13px; font-weight:700; color:{{ m.cor }};">{{ m.media }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+
+                <div style="display:flex; gap:10px; align-items:flex-start; background:#FCF3DC; border-radius:11px; padding:12px 15px; margin-top:16px;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8A6A00" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px;" aria-hidden="true"><path d="M10.3 3.6L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.6a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                  <span style="font-size:12.5px; line-height:1.6; color:#5F4A00;">{{ leituraTurma }}</span>
+                </div>
+              </div>
+
+              <div style="display:flex; flex-direction:column; gap:16px; min-width:0;">
+                <div style="background:#ffffff; border:1px solid #DCE7E4; border-radius:16px; padding:18px 20px 20px;">
+                  <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118;">{{ tituloDetalheMateria }}</div>
+                  <div style="font-size:11.5px; color:#7A8C87; margin-top:2px;">{{ subDetalheMateria }}</div>
+                  <div style="display:grid; gap:6px; margin-top:14px;">
+                    <sc-for list="{{ alunosMateria }}" as="a" hint-placeholder-count="6">
+                      <div onClick="{{ a.abrir }}" role="button" tabindex="0" style="display:grid; grid-template-columns:26px minmax(0,1fr) 52px 46px; gap:10px; align-items:center; padding:7px 8px; border-radius:9px; cursor:pointer; transition:background 130ms ease;" style-hover="background:#F2F7F6;">
+                        <span style="width:26px; height:26px; border-radius:50%; background:{{ a.avBg }}; color:{{ a.avFg }}; display:flex; align-items:center; justify-content:center; font-size:10.5px; font-weight:700;">{{ a.iniciais }}</span>
+                        <span style="font-size:12.5px; color:#344054; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ a.nome }}</span>
+                        <span style="font-size:12.5px; font-weight:700; color:{{ a.cor }}; text-align:right;">{{ a.nota }}</span>
+                        <span style="font-size:10.5px; font-weight:700; color:{{ a.tendCor }}; text-align:right;">{{ a.tend }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+
+                <div style="background:#ffffff; border:1px solid #DCE7E4; border-radius:16px; padding:18px 20px 20px;">
+                  <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15px; color:#0F2118;">Sugestões para esta turma</div>
+                  <div style="display:grid; gap:11px; margin-top:14px;">
+                    <sc-for list="{{ sugestoesTurma }}" as="c" hint-placeholder-count="2">
+                      <div style="border:1px solid #E4EDEA; border-left:3px solid {{ c.acento }}; border-radius:12px; padding:13px 15px;">
+                        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                          <span style="font-size:13px; font-weight:700; color:#0F2118;">{{ c.titulo }}</span>
+                          <span style="flex:1;"></span>
+                          <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:99px; background:{{ c.statusBg }}; color:{{ c.statusFg }}; white-space:nowrap;">{{ c.statusLabel }}</span>
+                        </div>
+                        <div style="font-size:12px; line-height:1.6; color:#667085; margin-top:7px;">{{ c.causa }}</div>
+                        <div style="display:flex; align-items:center; gap:12px; margin-top:11px; flex-wrap:wrap;">
+                          <button onClick="{{ c.agir }}" style="border:none; cursor:pointer; background:#0E8C7F; color:#ffffff; font-size:12px; font-weight:700; padding:8px 14px; border-radius:99px; transition:filter 120ms ease, transform 120ms ease;" style-hover="filter:brightness(1.08); transform:translateY(-1px);" style-active="transform:scale(0.97);">{{ c.acaoLabel }}</button>
+                          <span style="font-size:11.5px; color:#7A8C87;">{{ c.impacto }}</span>
+                        </div>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ vAlunos }}">
+          <div style="animation:rxin 260ms ease-out both;">
+            <div style="background:#ffffff; border:1px solid #DCE7E4; border-radius:16px; padding:16px 20px 8px;">
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                <select value="{{ turmaFiltro }}" onChange="{{ setTurmaFiltro }}" style="border:1px solid #DCE7E4; background:#ffffff; border-radius:9px; padding:8px 11px; font-size:12.5px; color:#0F2118; outline:none; cursor:pointer;">
+                  <sc-for list="{{ opcoesTurma }}" as="o" hint-placeholder-count="9">
+                    <option value="{{ o.v }}">{{ o.label }}</option>
+                  </sc-for>
+                </select>
+                <select value="{{ materiaFiltro }}" onChange="{{ setMateriaFiltro }}" style="border:1px solid #DCE7E4; background:#ffffff; border-radius:9px; padding:8px 11px; font-size:12.5px; color:#0F2118; outline:none; cursor:pointer;">
+                  <sc-for list="{{ opcoesMateria }}" as="o" hint-placeholder-count="6">
+                    <option value="{{ o.v }}">{{ o.label }}</option>
+                  </sc-for>
+                </select>
+                <div style="display:flex; gap:6px; background:#F2F7F6; border-radius:99px; padding:4px;">
+                  <sc-for list="{{ chipsRisco }}" as="c" hint-placeholder-count="4">
+                    <div onClick="{{ c.ir }}" role="button" tabindex="0" style="padding:6px 13px; border-radius:99px; cursor:pointer; font-size:12px; font-weight:700; background:{{ c.bg }}; color:{{ c.fg }}; transition:all 140ms ease;">{{ c.label }}</div>
+                  </sc-for>
+                </div>
+                <span style="flex:1;"></span>
+                <span style="font-size:12px; color:#7A8C87;">{{ contagemAlunos }}</span>
+              </div>
+
+              <div style="display:grid; grid-template-columns:minmax(0,2.1fr) 92px 88px 88px 96px 120px 104px; gap:12px; padding:14px 6px 9px; margin-top:12px; border-bottom:1px solid #EEF3F1; font-size:10px; font-weight:700; letter-spacing:0.07em; color:#98A2B3;">
+                <span>ALUNO</span><span>TURMA</span><span style="text-align:right;">MÉDIA</span><span style="text-align:right;">FREQ.</span><span style="text-align:right;">SIMULADO</span><span style="text-align:center;">ÁREA FRÁGIL</span><span style="text-align:right;">SITUAÇÃO</span>
+              </div>
+              <div>
+                <sc-for list="{{ linhasAluno }}" as="a" hint-placeholder-count="10">
+                  <div onClick="{{ a.abrir }}" role="button" tabindex="0" style="display:grid; grid-template-columns:minmax(0,2.1fr) 92px 88px 88px 96px 120px 104px; gap:12px; align-items:center; padding:10px 6px; border-bottom:1px solid #F4F8F7; cursor:pointer; transition:background 130ms ease;" style-hover="background:#F2F7F6;">
+                    <span style="display:flex; align-items:center; gap:10px; min-width:0;">
+                      <span style="flex:none; width:30px; height:30px; border-radius:50%; background:{{ a.avBg }}; color:{{ a.avFg }}; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700;">{{ a.iniciais }}</span>
+                      <span style="min-width:0;">
+                        <span style="display:block; font-size:13px; font-weight:600; color:#0F2118; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ a.nome }}</span>
+                        <span style="display:block; font-size:10.5px; color:#98A2B3;">{{ a.matricula }}</span>
+                      </span>
+                    </span>
+                    <span style="font-size:12px; color:#475467;">{{ a.turma }}</span>
+                    <span style="font-size:13px; font-weight:700; color:{{ a.cor }}; text-align:right;">{{ a.media }}</span>
+                    <span style="font-size:12.5px; color:{{ a.freqCor }}; text-align:right;">{{ a.freq }}</span>
+                    <span style="font-size:12.5px; font-weight:600; color:#344054; text-align:right;">{{ a.simulado }}</span>
+                    <span style="font-size:11px; text-align:center; color:{{ a.piorCor }}; font-weight:600;">{{ a.pior }}</span>
+                    <span style="display:flex; justify-content:flex-end;"><span style="font-size:10px; font-weight:700; padding:4px 10px; border-radius:99px; background:{{ a.riscoBg }}; color:{{ a.riscoFg }}; white-space:nowrap;">{{ a.riscoLabel }}</span></span>
+                  </div>
+                </sc-for>
+              </div>
+              <sc-if value="{{ semAlunos }}">
+                <div style="padding:44px 0 48px; text-align:center; font-size:13px; color:#98A2B3;">Nenhum aluno encontrado. Ajuste os filtros.</div>
+              </sc-if>
+              <div style="height:12px;"></div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ vInterv }}">
+          <div style="animation:rxin 260ms ease-out both;">
+            <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:14px;">
+              <sc-for list="{{ chipsEscopo }}" as="c" hint-placeholder-count="4">
+                <div onClick="{{ c.ir }}" role="button" tabindex="0" style="padding:7px 14px; border-radius:99px; cursor:pointer; font-size:12.5px; font-weight:700; border:1px solid {{ c.bd }}; background:{{ c.bg }}; color:{{ c.fg }}; transition:all 140ms ease;">{{ c.label }}</div>
+              </sc-for>
+              <span style="flex:1;"></span>
+              <span style="font-size:12px; color:#7A8C87;">{{ contagemInterv }}</span>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px;">
+              <sc-for list="{{ cardsInterv }}" as="c" hint-placeholder-count="6">
+                <div style="background:#ffffff; border:1px solid #DCE7E4; border-top:3px solid {{ c.acento }}; border-radius:14px; padding:16px 18px 17px; display:flex; flex-direction:column;">
+                  <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <span style="font-size:9.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:{{ c.acento }}; background:{{ c.acentoBg }}; border-radius:99px; padding:3px 8px;">{{ c.escopoLabel }}</span>
+                    <span style="flex:1;"></span>
+                    <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:99px; background:{{ c.statusBg }}; color:{{ c.statusFg }}; white-space:nowrap;">{{ c.statusLabel }}</span>
+                  </div>
+                  <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14.5px; line-height:1.3; color:#0F2118; margin-top:10px; text-wrap:pretty;">{{ c.titulo }}</div>
+                  <div style="font-size:12px; line-height:1.6; color:#667085; margin-top:7px;">{{ c.causa }}</div>
+                  <div style="display:flex; gap:10px; margin-top:12px; padding-top:11px; border-top:1px solid #EEF3F1;">
+                    <div style="flex:1;"><div style="font-size:10px; color:#98A2B3;">Impacto estimado</div><div style="font-size:12.5px; font-weight:700; color:#0E8C7F; margin-top:2px;">{{ c.impacto }}</div></div>
+                    <div style="flex:1;"><div style="font-size:10px; color:#98A2B3;">Janela</div><div style="font-size:12.5px; font-weight:700; color:#0F2118; margin-top:2px;">{{ c.prazo }}</div></div>
+                  </div>
+                  <div style="flex:1;"></div>
+                  <div style="display:flex; gap:9px; margin-top:14px;">
+                    <button onClick="{{ c.agir }}" style="flex:1; border:none; cursor:pointer; background:#0E8C7F; color:#ffffff; font-size:12px; font-weight:700; padding:9px 12px; border-radius:99px; transition:filter 120ms ease, transform 120ms ease;" style-hover="filter:brightness(1.08); transform:translateY(-1px);" style-active="transform:scale(0.97);">{{ c.acaoLabel }}</button>
+                    <sc-if value="{{ c.temAluno }}">
+                      <button onClick="{{ c.verAluno }}" style="border:1px solid #DCE7E4; cursor:pointer; background:#ffffff; color:#0F2118; font-size:12px; font-weight:700; padding:9px 13px; border-radius:99px; transition:background 120ms ease;" style-hover="background:#F2F7F6;">Ver aluno</button>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+      </div>
+    </main>
+  </div>
+
+  <sc-if value="{{ alunoAberto }}">
+    <div onClick="{{ fecharAluno }}" style="position:fixed; inset:0; background:rgba(6,32,26,0.55); backdrop-filter:blur(2px); z-index:40; display:flex; align-items:center; justify-content:center; padding:32px;">
+      <div onClick="{{ pararProp }}" style="width:min(1040px,100%); max-height:100%; overflow:auto; background:#ffffff; border-radius:20px; box-shadow:0 40px 90px rgba(0,0,0,0.42); animation:rxmodal 220ms cubic-bezier(0.2,0.7,0.2,1) both;">
+        <div style="display:flex; align-items:flex-start; gap:16px; padding:22px 26px 18px; background:#06403B; color:#ffffff; border-radius:20px 20px 0 0;">
+          <span style="flex:none; width:52px; height:52px; border-radius:50%; background:{{ al.avBg }}; color:{{ al.avFg }}; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:700;">{{ al.iniciais }}</span>
+          <div style="min-width:0; flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:21px;">{{ al.nome }}</span>
+              <span style="font-size:10px; font-weight:700; padding:4px 10px; border-radius:99px; background:{{ al.riscoBg }}; color:{{ al.riscoFg }};">{{ al.riscoLabel }}</span>
+            </div>
+            <div style="font-size:12.5px; color:#B9E7E1; margin-top:4px;">{{ al.turma }} · {{ al.periodo }} · matrícula {{ al.matricula }} · {{ al.fase }}</div>
+          </div>
+          <div style="display:flex; gap:22px; text-align:right;">
+            <div><div style="font-size:10px; color:#8FCFC5; letter-spacing:0.06em;">MÉDIA</div><div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:21px;">{{ al.media }}</div></div>
+            <div><div style="font-size:10px; color:#8FCFC5; letter-spacing:0.06em;">FREQUÊNCIA</div><div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:21px;">{{ al.freq }}</div></div>
+            <div><div style="font-size:10px; color:#8FCFC5; letter-spacing:0.06em;">PROJEÇÃO</div><div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:21px; color:#3FD8C4;">{{ al.projecao }}</div></div>
+          </div>
+          <div onClick="{{ fecharAluno }}" role="button" tabindex="0" style="flex:none; width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:background 130ms ease;" style-hover="background:rgba(255,255,255,0.22);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></svg>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:2px; padding:0 26px; background:#06403B;">
+          <sc-for list="{{ abas }}" as="t" hint-placeholder-count="5">
+            <div onClick="{{ t.ir }}" role="button" tabindex="0" style="padding:11px 16px; border-radius:10px 10px 0 0; cursor:pointer; font-size:12.5px; font-weight:700; background:{{ t.bg }}; color:{{ t.fg }}; transition:background 140ms ease, color 140ms ease;">{{ t.label }}</div>
+          </sc-for>
+        </div>
+
+        <div style="padding:22px 26px 26px; background:#ffffff; border-radius:0 0 20px 20px;">
+
+          <sc-if value="{{ tabDesempenho }}">
+            <div style="display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:20px;">
+              <div>
+                <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:#7A8C87;">EVOLUÇÃO DA MÉDIA POR SEMESTRE</div>
+                <svg viewBox="0 0 560 230" style="width:100%; height:auto; display:block; margin-top:8px;" role="img" aria-label="Evolução da média do aluno por semestre">
+                  <g stroke="#EEF3F1" stroke-width="1">
+                    <line x1="38" y1="24" x2="546" y2="24"></line>
+                    <line x1="38" y1="86" x2="546" y2="86"></line>
+                    <line x1="38" y1="148" x2="546" y2="148"></line>
+                    <line x1="38" y1="186" x2="546" y2="186"></line>
+                  </g>
+                  <g font-size="10" fill="#98A2B3" font-family="Manrope,sans-serif" text-anchor="end">
+                    <text x="30" y="28">10</text><text x="30" y="90">8</text><text x="30" y="152">6</text><text x="30" y="190">4,8</text>
+                  </g>
+                  <polyline points="{{ al.ptsTurma }}" fill="none" stroke="#C6D6D1" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <polyline points="{{ al.ptsAluno }}" fill="none" stroke="#0E8C7F" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                  <sc-for list="{{ al.dots }}" as="p" hint-placeholder-count="8">
+                    <circle cx="{{ p.x }}" cy="{{ p.y }}" r="3.6" fill="#ffffff" stroke="{{ p.cor }}" stroke-width="2.2"></circle>
+                  </sc-for>
+                  {{ al.eixoEls }}
+                </svg>
+                <div style="display:flex; gap:16px; font-size:11px; color:#475467; margin-top:2px;">
+                  <span style="display:flex; align-items:center; gap:6px;"><span style="width:16px; height:3px; border-radius:2px; background:#0E8C7F;"></span>{{ al.primeiroNome }}</span>
+                  <span style="display:flex; align-items:center; gap:6px;"><span style="width:16px; height:3px; border-radius:2px; background:#C6D6D1;"></span>média da turma</span>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:#7A8C87;">PERFIL POR ÁREA DO ENAMED</div>
+                <div style="display:flex; gap:14px; align-items:center; margin-top:6px;">
+                  <svg viewBox="-48 0 316 210" style="width:246px; height:164px; flex:none; margin-left:-17px;" role="img" aria-label="Radar de desempenho por área">
+                    <sc-for list="{{ al.radarGrid }}" as="g" hint-placeholder-count="4">
+                      <polygon points="{{ g.pts }}" fill="none" stroke="#EEF3F1" stroke-width="1"></polygon>
+                    </sc-for>
+                    <sc-for list="{{ al.radarEixos }}" as="e" hint-placeholder-count="5">
+                      <line x1="110" y1="102" x2="{{ e.x }}" y2="{{ e.y }}" stroke="#EEF3F1" stroke-width="1"></line>
+                    </sc-for>
+                    <polygon points="{{ al.radarTurma }}" fill="#C6D6D1" fill-opacity="0.30" stroke="#C6D6D1" stroke-width="1.6"></polygon>
+                    <polygon points="{{ al.radarAluno }}" fill="#0E8C7F" fill-opacity="0.20" stroke="#0E8C7F" stroke-width="2.2" stroke-linejoin="round"></polygon>
+                    {{ al.radarLabelEls }}
+                  </svg>
+                  <div style="flex:1; min-width:0; display:grid; gap:8px;">
+                    <sc-for list="{{ al.barras }}" as="b" hint-placeholder-count="5">
+                      <div>
+                        <div style="display:flex; justify-content:space-between; gap:8px; font-size:11.5px; color:#475467;"><span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ b.curto }}</span><span style="font-weight:700; color:{{ b.cor }};">{{ b.v }}</span></div>
+                        <span style="display:block; height:7px; border-radius:99px; background:#EEF3F1; margin-top:4px; overflow:hidden;"><span style="display:block; height:100%; border-radius:99px; background:{{ b.cor }}; width:{{ b.pct }};"></span></span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex; gap:10px; align-items:flex-start; background:#F2F7F6; border-radius:12px; padding:13px 16px; margin-top:18px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E8C7F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none; margin-top:2px;" aria-hidden="true"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"></path></svg>
+              <span style="font-size:12.5px; line-height:1.6; color:#344054;">{{ al.leitura }}</span>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ tabFrequencia }}">
+            <div style="display:grid; grid-template-columns:230px minmax(0,1fr); gap:22px;">
+              <div style="border:1px solid #DCE7E4; border-radius:14px; padding:18px; text-align:center;">
+                <svg viewBox="0 0 160 160" style="width:150px; height:150px;" role="img" aria-label="Percentual de presença">
+                  <circle cx="80" cy="80" r="62" fill="none" stroke="#EEF3F1" stroke-width="15"></circle>
+                  <circle cx="80" cy="80" r="62" fill="none" stroke="{{ al.freqCor }}" stroke-width="15" stroke-linecap="round" stroke-dasharray="{{ al.freqDash }}" transform="rotate(-90 80 80)"></circle>
+                  {{ al.freqTextoEl }}
+                  {{ al.freqLegendaEl }}
+                </svg>
+                <div style="font-size:11.5px; line-height:1.6; color:#667085; margin-top:4px;">Limite institucional de faltas: <strong style="color:#0F2118;">25%</strong> da carga por rodízio.</div>
+              </div>
+              <div>
+                <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;">
+                  <sc-for list="{{ al.freqKpis }}" as="k" hint-placeholder-count="4">
+                    <div style="border:1px solid #DCE7E4; border-radius:12px; padding:13px 15px;">
+                      <div style="font-size:10.5px; color:#98A2B3;">{{ k.label }}</div>
+                      <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px; color:{{ k.cor }}; margin-top:4px;">{{ k.v }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:#7A8C87; margin:18px 0 8px;">{{ al.rodTitulo }}</div>
+                <div style="display:grid; gap:7px;">
+                  <sc-for list="{{ al.rodizios }}" as="r" hint-placeholder-count="5">
+                    <div style="display:grid; grid-template-columns:minmax(0,1.2fr) 118px minmax(0,1fr) 72px; gap:12px; align-items:center; padding:9px 12px; border:1px solid #EEF3F1; border-radius:10px;">
+                      <span style="font-size:12.5px; font-weight:600; color:#0F2118; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{{ r.nome }}</span>
+                      <span style="font-size:11.5px; color:#7A8C87;">{{ r.cenario }}</span>
+                      <span style="height:8px; border-radius:99px; background:#EEF3F1; overflow:hidden; display:block;"><span style="display:block; height:100%; border-radius:99px; background:{{ r.cor }}; width:{{ r.pct }};"></span></span>
+                      <span style="font-size:12px; font-weight:700; color:{{ r.cor }}; text-align:right;">{{ r.presenca }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ tabProjecao }}">
+            <div style="display:grid; grid-template-columns:300px minmax(0,1fr); gap:22px; align-items:start;">
+              <div style="border:1px solid #DCE7E4; border-radius:14px; padding:18px 20px 20px; text-align:center;">
+                <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:#7A8C87;">PROJEÇÃO ENAMED</div>
+                <svg viewBox="0 0 220 130" style="width:100%; height:auto; margin-top:6px;" role="img" aria-label="Projeção de nota no ENAMED">
+                  <path d="M22 112a88 88 0 0 1 176 0" fill="none" stroke="#EEF3F1" stroke-width="16" stroke-linecap="round"></path>
+                  <path d="M22 112a88 88 0 0 1 176 0" fill="none" stroke="{{ al.projCor }}" stroke-width="16" stroke-linecap="round" stroke-dasharray="{{ al.projDash }}"></path>
+                  {{ al.projTextoEl }}
+                  <text x="110" y="122" text-anchor="middle" font-size="10.5" fill="#7A8C87" font-family="Manrope,sans-serif">projeção sobre 100 pontos</text>
+                </svg>
+                <div style="display:flex; justify-content:space-between; gap:10px; border-top:1px solid #EEF3F1; padding-top:13px; margin-top:10px; text-align:left;">
+                  <div><div style="font-size:10.5px; color:#98A2B3;">Último simulado</div><div style="font-size:15px; font-weight:700; color:#0F2118;">{{ al.simulado }}</div></div>
+                  <div><div style="font-size:10.5px; color:#98A2B3;">Corte de referência</div><div style="font-size:15px; font-weight:700; color:#0F2118;">62</div></div>
+                  <div><div style="font-size:10.5px; color:#98A2B3;">Com plano</div><div style="font-size:15px; font-weight:700; color:#0E8C7F;">{{ al.projComPlano }}</div></div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:#7A8C87;">HISTÓRICO DE SIMULADOS</div>
+                <div style="display:grid; gap:8px; margin-top:10px;">
+                  <sc-for list="{{ al.simulados }}" as="s" hint-placeholder-count="4">
+                    <div style="display:grid; grid-template-columns:120px minmax(0,1fr) 58px; gap:12px; align-items:center;">
+                      <span style="font-size:12px; color:#475467;">{{ s.label }}</span>
+                      <span style="height:12px; border-radius:99px; background:#EEF3F1; overflow:hidden; display:block;"><span style="display:block; height:100%; border-radius:99px; background:{{ s.cor }}; width:{{ s.pct }};"></span></span>
+                      <span style="font-size:12.5px; font-weight:700; color:{{ s.cor }}; text-align:right;">{{ s.v }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+                <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:#7A8C87; margin:20px 0 8px;">O QUE MAIS PESA NA PROJEÇÃO</div>
+                <div style="display:grid; gap:8px;">
+                  <sc-for list="{{ al.fatores }}" as="f" hint-placeholder-count="3">
+                    <div style="display:flex; align-items:center; gap:10px; border:1px solid #EEF3F1; border-radius:10px; padding:10px 13px;">
+                      <span style="flex:none; width:8px; height:8px; border-radius:50%; background:{{ f.cor }};"></span>
+                      <span style="flex:1; font-size:12.5px; color:#344054;">{{ f.texto }}</span>
+                      <span style="font-size:12px; font-weight:700; color:{{ f.cor }};">{{ f.peso }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ tabIntervencoes }}">
+            <div style="display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:20px; align-items:start;">
+              <div>
+                <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:#7A8C87;">SUGESTÕES PARA ESTE ALUNO</div>
+                <div style="display:grid; gap:11px; margin-top:10px;">
+                  <sc-for list="{{ al.sugestoes }}" as="c" hint-placeholder-count="2">
+                    <div style="border:1px solid #E4EDEA; border-left:3px solid {{ c.acento }}; border-radius:12px; padding:14px 16px;">
+                      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                        <span style="font-size:13.5px; font-weight:700; color:#0F2118;">{{ c.titulo }}</span>
+                        <span style="flex:1;"></span>
+                        <span style="font-size:10px; font-weight:700; padding:3px 9px; border-radius:99px; background:{{ c.statusBg }}; color:{{ c.statusFg }};">{{ c.statusLabel }}</span>
+                      </div>
+                      <div style="font-size:12.5px; line-height:1.6; color:#667085; margin-top:7px;">{{ c.causa }}</div>
+                      <div style="display:flex; align-items:center; gap:12px; margin-top:12px; flex-wrap:wrap;">
+                        <button onClick="{{ c.agir }}" style="border:none; cursor:pointer; background:#0E8C7F; color:#ffffff; font-size:12px; font-weight:700; padding:9px 15px; border-radius:99px; transition:filter 120ms ease, transform 120ms ease;" style-hover="filter:brightness(1.08); transform:translateY(-1px);" style-active="transform:scale(0.97);">{{ c.acaoLabel }}</button>
+                        <span style="font-size:11.5px; color:#7A8C87;">{{ c.impacto }} · {{ c.prazo }}</span>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:11px; font-weight:700; letter-spacing:0.07em; color:#7A8C87;">HISTÓRICO</div>
+                <div style="display:grid; gap:0; margin-top:12px;">
+                  <sc-for list="{{ al.historico }}" as="h" hint-placeholder-count="4">
+                    <div style="display:grid; grid-template-columns:14px minmax(0,1fr); gap:11px;">
+                      <div style="display:flex; flex-direction:column; align-items:center;">
+                        <span style="width:9px; height:9px; border-radius:50%; background:{{ h.cor }}; margin-top:4px;"></span>
+                        <span style="flex:1; width:1px; background:#E4EDEA;"></span>
+                      </div>
+                      <div style="padding-bottom:16px;">
+                        <div style="font-size:10.5px; color:#98A2B3;">{{ h.data }}</div>
+                        <div style="font-size:12.5px; font-weight:600; color:#0F2118; margin-top:2px;">{{ h.titulo }}</div>
+                        <div style="font-size:11.5px; line-height:1.55; color:#7A8C87; margin-top:3px;">{{ h.detalhe }}</div>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ tabPreceptor }}">
+            <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;">
+              <sc-for list="{{ al.preceptores }}" as="p" hint-placeholder-count="2">
+                <div style="border:1px solid #DCE7E4; border-radius:14px; padding:18px 20px;">
+                  <div style="display:flex; align-items:center; gap:13px;">
+                    <span style="flex:none; width:44px; height:44px; border-radius:50%; background:#EEF9F7; color:#0B6B60; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px;">{{ p.iniciais }}</span>
+                    <div style="min-width:0;">
+                      <div style="font-size:14px; font-weight:700; color:#0F2118;">{{ p.nome }}</div>
+                      <div style="font-size:11.5px; color:#7A8C87; margin-top:2px;">{{ p.papel }}</div>
+                    </div>
+                  </div>
+                  <div style="display:grid; gap:7px; margin-top:14px; padding-top:13px; border-top:1px solid #EEF3F1;">
+                    <div style="display:flex; justify-content:space-between; gap:10px; font-size:12px;"><span style="color:#7A8C87;">Cenário</span><span style="color:#0F2118; font-weight:600;">{{ p.cenario }}</span></div>
+                    <div style="display:flex; justify-content:space-between; gap:10px; font-size:12px;"><span style="color:#7A8C87;">E-mail</span><span style="color:#0F2118; font-weight:600;">{{ p.email }}</span></div>
+                    <div style="display:flex; justify-content:space-between; gap:10px; font-size:12px;"><span style="color:#7A8C87;">Telefone</span><span style="color:#0F2118; font-weight:600;">{{ p.tel }}</span></div>
+                    <div style="display:flex; justify-content:space-between; gap:10px; font-size:12px;"><span style="color:#7A8C87;">Última avaliação</span><span style="color:{{ p.notaCor }}; font-weight:700;">{{ p.nota }}</span></div>
+                  </div>
+                  <div style="font-size:12px; line-height:1.6; color:#667085; background:#F2F7F6; border-radius:10px; padding:11px 13px; margin-top:13px;">{{ p.parecer }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ toast }}">
+    <div style="position:fixed; right:26px; bottom:24px; z-index:60; display:flex; align-items:center; gap:11px; background:#0F2118; color:#ffffff; border-radius:12px; padding:13px 18px; box-shadow:0 18px 40px rgba(0,0,0,0.32); animation:rxtoast 220ms ease-out both; max-width:420px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3FD8C4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+      <span style="font-size:13px; line-height:1.5;">{{ toast }}</span>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1512,&quot;height&quot;:940},&quot;instituicao&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;IDOMED FAPAN&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Instituição&quot;},&quot;limiteRisco&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:6.2,&quot;min&quot;:5,&quot;max&quot;:8,&quot;step&quot;:0.1,&quot;unit&quot;:&quot;nota&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Regras de risco&quot;},&quot;alunosPorTurma&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:14,&quot;min&quot;:8,&quot;max&quot;:26,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Regras de risco&quot;}}">
+class Component extends DCLogic {
+  state = {
+    view: 'geral', turmaSel: 30, materiaSel: null,
+    busca: '', turmaFiltro: 'todas', materiaFiltro: 'todas', risco: 'todos',
+    escopo: 'todos', aluno: null, tab: 'desempenho', status: {}, toast: null,
+    periodoLetivo: '2026.1'
+  };
+
+  componentWillUnmount() { clearTimeout(this._tt); }
+
+  // ---------- utilidades ----------
+  rng(seed) { let a = seed >>> 0; return function () { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  n1(v) { return (Math.round(v * 10) / 10).toFixed(1).replace('.', ','); }
+  cl(v, a, b) { return Math.max(a, Math.min(b, v)); }
+  corNota(v) { const L = this.limite; return v >= 7.6 ? '#0E8C7F' : v >= 6.9 ? '#62B49B' : v >= L ? '#E9B10A' : '#C0564D'; }
+  tintNota(v) { const L = this.limite; return v >= 7.6 ? { bg: '#DDF0EB', fg: '#0B6B60' } : v >= 6.9 ? { bg: '#EAF5F1', fg: '#3D7D6C' } : v >= L ? { bg: '#FCF3DC', fg: '#8A6A00' } : { bg: '#FBECEA', fg: '#A3352B' }; }
+  get limite() { return Number(this.props.limiteRisco ?? 6.2); }
+  riscoInfo(r) {
+    if (r === 'critico') return { label: 'Crítico', bg: '#FBECEA', fg: '#A3352B', cor: '#C0564D' };
+    if (r === 'atencao') return { label: 'Atenção', bg: '#FCF3DC', fg: '#8A6A00', cor: '#E9B10A' };
+    return { label: 'Estável', bg: '#DDF0EB', fg: '#0B6B60', cor: '#0E8C7F' };
+  }
+  iniciais(nome) { const p = nome.split(' '); return (p[0][0] + p[p.length - 1][0]).toUpperCase(); }
+
+  // ---------- base de dados ----------
+  get D() { if (!this._D || this._Dl !== this.limite || this._Dn !== (this.props.alunosPorTurma ?? 14)) { this._Dl = this.limite; this._Dn = this.props.alunosPorTurma ?? 14; this._D = this.build(); } return this._D; }
+
+  build() {
+    const R = this.rng(90210);
+    const PN = ['Ana', 'Beatriz', 'Camila', 'Daniel', 'Eduardo', 'Fernanda', 'Gabriel', 'Helena', 'Igor', 'Juliana', 'Kaique', 'Larissa', 'Marcelo', 'Natália', 'Otávio', 'Paula', 'Rafael', 'Sabrina', 'Thiago', 'Vanessa', 'Bruno', 'Carolina', 'Diego', 'Elisa', 'Felipe', 'Giovana', 'Henrique', 'Isabela', 'João', 'Karina', 'Lucas', 'Mariana', 'Nícolas', 'Olívia', 'Pedro', 'Renata', 'Samuel', 'Tatiane', 'Vitor', 'Yasmin'];
+    const SN = ['Silva', 'Souza', 'Oliveira', 'Costa', 'Almeida', 'Ribeiro', 'Carvalho', 'Teixeira', 'Barbosa', 'Nogueira', 'Fontes', 'Macedo', 'Rezende', 'Prado', 'Andrade', 'Correia', 'Duarte', 'Moraes', 'Peixoto', 'Siqueira', 'Tavares', 'Vasques', 'Xavier', 'Bittencourt', 'Camargo', 'Dantas', 'Esteves', 'Falcão', 'Guedes', 'Lacerda'];
+    const MAT = [
+      { id: 'cm', nome: 'Clínica Médica', curto: 'Clínica', cenario: 'Hosp. Regional', prec: { nome: 'Dr. Ricardo Vasques', esp: 'Clínica Médica', cenario: 'Hosp. Regional · Ala B', email: 'ricardo.vasques@fapan.edu.br', tel: '(65) 99612-4408' } },
+      { id: 'cir', nome: 'Cirurgia', curto: 'Cirurgia', cenario: 'Centro Cirúrgico', prec: { nome: 'Dr. Sérgio Bittencourt', esp: 'Cirurgia', cenario: 'Centro Cirúrgico · Bloco 2', email: 'sergio.bittencourt@fapan.edu.br', tel: '(65) 99433-7781' } },
+      { id: 'ped', nome: 'Pediatria', curto: 'Pediatria', cenario: 'Hosp. Infantil', prec: { nome: 'Dra. Marina Sampaio', esp: 'Pediatria', cenario: 'Hosp. Infantil · Enfermaria', email: 'marina.sampaio@fapan.edu.br', tel: '(65) 99871-2210' } },
+      { id: 'go', nome: 'Ginecologia e Obstetrícia', curto: 'GO', cenario: 'Maternidade Municipal', prec: { nome: 'Dra. Cláudia Rezende', esp: 'Ginecologia e Obstetrícia', cenario: 'Maternidade Municipal', email: 'claudia.rezende@fapan.edu.br', tel: '(65) 99280-5512' } },
+      { id: 'msc', nome: 'Med. Preventiva e Saúde Coletiva', curto: 'Preventiva', cenario: 'UBS Centro-Sul', prec: { nome: 'Dr. Paulo Andrade', esp: 'Saúde Coletiva', cenario: 'UBS Centro-Sul', email: 'paulo.andrade@fapan.edu.br', tel: '(65) 99145-9036' } }
+    ];
+    const baseTurma = { 24: 8.1, 25: 7.8, 26: 7.2, 27: 6.9, 28: 7.6, 29: 8.3, 30: 6.4, 31: 7.9 };
+    const driftTurma = { 24: 0.05, 25: 0.03, 26: -0.04, 27: -0.09, 28: 0.02, 29: 0.07, 30: -0.16, 31: 0.06 };
+    const nPorTurma = Math.round(this.props.alunosPorTurma ?? 14);
+
+    const turmas = [];
+    const alunos = [];
+    const usados = {};
+    let seq = 0;
+
+    for (let t = 24; t <= 31; t++) {
+      const periodo = 12 - (t - 24);
+      const fase = periodo >= 9 ? 'Internato' : periodo >= 5 ? 'Ciclo clínico' : 'Ciclo básico';
+      const rt = this.rng(1000 + t);
+      const base = baseTurma[t];
+      const drift = driftTurma[t];
+
+      // efeito de período: a entrada no internato (9º) derruba o rendimento e a recuperação é lenta
+      const pe = (p) => p >= 11 ? -0.34 : p >= 9 ? -0.78 : p === 8 ? -0.26 : 0;
+      const serie = [];
+      for (let p = 1; p <= periodo; p++) serie.push(this.cl(base - drift * (periodo - p) + (pe(p) - pe(periodo)) + (rt() - 0.5) * 0.42, 5.2, 9.5));
+      const media = serie[serie.length - 1];
+      const delta = media - serie[Math.max(0, serie.length - 4)];
+
+      const offsets = {};
+      MAT.forEach((m, i) => { offsets[m.id] = (rt() - 0.5) * 1.1 - (i === 2 && t === 30 ? 1.4 : 0) - (i === 1 && t === 27 ? 1.1 : 0) - (i === 4 && t === 26 ? 0.9 : 0); });
+
+      const provas = {};
+      MAT.forEach((m) => {
+        const mb = this.cl(media + offsets[m.id], 4.6, 9.6);
+        const tend = offsets[m.id] < -0.7 ? -0.22 : (rt() - 0.4) * 0.12;
+        provas[m.id] = [];
+        for (let p = 0; p < 6; p++) provas[m.id].push(this.cl(mb + tend * (p - 2.5) + (rt() - 0.5) * 0.5, 4.2, 9.8));
+      });
+
+      const lista = [];
+      for (let i = 0; i < nPorTurma; i++) {
+        const ra = this.rng(t * 997 + i * 131 + 7);
+        let nome = PN[Math.floor(ra() * PN.length)] + ' ' + SN[Math.floor(ra() * SN.length)] + (ra() > 0.55 ? ' ' + SN[Math.floor(ra() * SN.length)] : '');
+        while (usados[nome]) nome = nome + ' ' + SN[Math.floor(ra() * SN.length)];
+        usados[nome] = true;
+        const desvio = (ra() - 0.5) * 2.3;
+        const notas = {};
+        MAT.forEach((m) => {
+          const mb = this.cl(provas[m.id].reduce((s, v) => s + v, 0) / 6 + desvio * 0.8, 3.8, 9.9);
+          const tend = desvio < -0.8 ? -0.28 : (ra() - 0.45) * 0.18;
+          notas[m.id] = [];
+          for (let p = 0; p < 6; p++) notas[m.id].push(this.cl(mb + tend * (p - 2.5) + (ra() - 0.5) * 0.62, 3.2, 10));
+        });
+        const medias = {};
+        MAT.forEach((m) => { medias[m.id] = notas[m.id].reduce((s, v) => s + v, 0) / 6; });
+        const mediaA = MAT.reduce((s, m) => s + medias[m.id], 0) / MAT.length;
+        const inicio = MAT.reduce((s, m) => s + notas[m.id][0] + notas[m.id][1], 0) / (MAT.length * 2);
+        const fim = MAT.reduce((s, m) => s + notas[m.id][4] + notas[m.id][5], 0) / (MAT.length * 2);
+        const dif = fim - inicio;
+        const tendencia = dif > 0.28 ? 'subindo' : dif < -0.28 ? 'em queda' : 'estável';
+        const presenca = Math.round(this.cl(96 + (ra() - 0.55) * 22 + (desvio < -1 ? -6 : 0), 68, 100));
+        const cargaTotal = periodo >= 9 ? 720 : 480;
+        const faltas = Math.round((100 - presenca) / 100 * cargaTotal / 6);
+        const just = Math.round(faltas * (0.3 + ra() * 0.5));
+        const simulado = Math.round(this.cl(11 + mediaA * 8.4 + (ra() - 0.5) * 11, 28, 97));
+        const projecao = Math.round(this.cl(simulado + dif * 6 + (presenca - 90) * 0.15, 28, 98));
+        const pior = MAT.slice().sort((a, b) => medias[a.id] - medias[b.id])[0];
+        const risco = (mediaA < this.limite || presenca < 78) ? 'critico' : (mediaA < 7.0 || tendencia === 'em queda' || presenca < 85) ? 'atencao' : 'ok';
+        const serieA = serie.map((v, k) => this.cl(v + desvio * 0.75 + (ra() - 0.5) * 0.4 + (k === serie.length - 1 ? dif * 0.4 : 0), 4.4, 9.9));
+        serieA[serieA.length - 1] = mediaA;
+        const p1 = pior.prec;
+        const p2 = MAT[(MAT.indexOf(pior) + 2) % MAT.length].prec;
+        const a = {
+          id: 'a' + (++seq), nome, turma: t, periodo, fase, matricula: (2026 - Math.floor(periodo / 2)) + '' + String(1000 + seq).slice(1),
+          notas, medias, media: mediaA, tendencia, dif, presenca, faltas, just, cargaTotal, simulado, projecao, pior, risco, serie: serieA,
+          preceptores: [p1, p2], seedNum: ra()
+        };
+        lista.push(a); alunos.push(a);
+      }
+      lista.sort((a, b) => a.media - b.media);
+
+      const mediasMat = {};
+      MAT.forEach((m) => { mediasMat[m.id] = lista.reduce((s, a) => s + a.medias[m.id], 0) / lista.length; });
+      const piorMat = MAT.slice().sort((a, b) => mediasMat[a.id] - mediasMat[b.id])[0];
+      const criticos = lista.filter((a) => a.risco === 'critico').length;
+      const mediaReal = lista.reduce((s, a) => s + a.media, 0) / lista.length;
+      turmas.push({ id: t, nome: 'Turma ' + t, periodo, fase, serie, media: mediaReal, delta, provas, mediasMat, piorMat, criticos, alunos: lista, risco: mediaReal < this.limite + 0.4 ? 'critico' : mediaReal < 7.2 ? 'atencao' : 'ok' });
+    }
+
+    const inst = [];
+    const maxP = 12;
+    for (let p = 1; p <= maxP; p++) {
+      const vals = turmas.filter((t) => t.serie.length >= p).map((t) => t.serie[p - 1]);
+      inst.push(vals.reduce((s, v) => s + v, 0) / vals.length);
+    }
+    const q1 = inst.map((v, i) => v - 1.15 - i * 0.02);
+
+    const sug = this.buildSugestoes(turmas, alunos, MAT);
+    return { MAT, turmas, alunos, inst, q1, sug };
+  }
+
+  buildSugestoes(turmas, alunos, MAT) {
+    const out = [];
+    turmas.forEach((t) => {
+      const pior = t.piorMat;
+      const mv = t.mediasMat[pior.id];
+      if (mv < 7.1) {
+        const abaixo = t.alunos.filter((a) => a.medias[pior.id] < 6.5).length;
+        out.push({
+          id: 'm' + t.id + pior.id, escopo: 'materia', turma: t.id, materia: pior.id, prioridade: mv < 6.2 ? 'alta' : 'media',
+          titulo: 'Reforço dirigido em ' + pior.curto + ' — Turma ' + t.id,
+          causa: 'Média de ' + this.n1(mv) + ' na área, ' + this.n1(t.provas[pior.id][0] - t.provas[pior.id][5]) + ' ponto de queda entre N1 e N6. ' + abaixo + ' de ' + t.alunos.length + ' alunos abaixo de 6,5.',
+          acoes: ['Abrir monitoria semanal', 'Marcar como concluída', 'Reabrir plano'],
+          impacto: '+0,7 na média projetada', prazo: 'próximas 3 semanas'
+        });
+      }
+      if (t.media < 7.0) {
+        out.push({
+          id: 't' + t.id, escopo: 'turma', turma: t.id, prioridade: t.media < 6.6 ? 'alta' : 'media',
+          titulo: 'Plano de recuperação — Turma ' + t.id,
+          causa: 'Média de ' + this.n1(t.media) + ' no ' + t.periodo + 'º período, ' + this.n1(Math.abs(t.delta)) + ' ponto ' + (t.delta < 0 ? 'abaixo' : 'acima') + ' do registrado três semestres atrás. ' + t.criticos + ' alunos em situação crítica.',
+          acoes: ['Convocar conselho de turma', 'Marcar como concluída', 'Reabrir plano'],
+          impacto: '+1,1 na média projetada', prazo: 'até o fim do bimestre'
+        });
+      }
+    });
+    alunos.slice().sort((a, b) => (a.media - a.dif * 2) - (b.media - b.dif * 2)).slice(0, 12).forEach((a) => {
+      out.push({
+        id: 'a' + a.id, escopo: 'aluno', turma: a.turma, alunoId: a.id, prioridade: a.risco === 'critico' ? 'alta' : 'media',
+        titulo: 'Plano individual — ' + a.nome,
+        causa: 'Média de ' + this.n1(a.media) + ' com ' + (a.dif < 0 ? 'queda de ' + this.n1(Math.abs(a.dif)) + ' ponto' : 'oscilação') + ' em ' + a.pior.curto + '. Presença de ' + a.presenca + '% e ' + a.faltas + ' faltas ' + (a.periodo >= 9 ? 'no rodízio atual' : 'nas atividades práticas') + '.',
+        acoes: ['Enviar plano ao aluno', 'Marcar como concluída', 'Reabrir plano'],
+        impacto: '+' + (a.risco === 'critico' ? '9' : '5') + ' pts na projeção ENAMED', prazo: 'nos próximos 15 dias'
+      });
+    });
+    const ordem = { alta: 0, media: 1 };
+    out.sort((a, b) => ordem[a.prioridade] - ordem[b.prioridade]);
+    return out;
+  }
+
+  // ---------- interação ----------
+  ir(view) { return () => this.setState({ view, materiaSel: view === 'materias' ? this.state.materiaSel : null }); }
+  abrirTurma(id) { return () => this.setState({ view: 'materias', turmaSel: id, materiaSel: null }); }
+  abrirMateria(mid) { return () => this.setState({ materiaSel: this.state.materiaSel === mid ? null : mid }); }
+  abrirAluno(id) { return () => this.setState({ aluno: id, tab: 'desempenho' }); }
+  fechar = () => this.setState({ aluno: null });
+  toast(t) { clearTimeout(this._tt); this.setState({ toast: t }); this._tt = setTimeout(() => this.setState({ toast: null }), 3400); }
+  statusDe(id) { return this.state.status[id] || 'sugerida'; }
+  agir(c) {
+    return () => {
+      const at = this.statusDe(c.id);
+      const prox = at === 'sugerida' ? 'andamento' : at === 'andamento' ? 'concluida' : 'sugerida';
+      this.setState({ status: { ...this.state.status, [c.id]: prox } });
+      this.toast(prox === 'andamento' ? c.acoes[0] + ' · registrado. Coordenação e preceptor notificados.' : prox === 'concluida' ? 'Intervenção concluída e registrada no histórico.' : 'Intervenção reaberta.');
+    };
+  }
+  statusInfo(s) {
+    if (s === 'andamento') return { label: 'Em andamento', bg: '#E4F0FB', fg: '#1A5E8C' };
+    if (s === 'concluida') return { label: 'Concluída', bg: '#DDF0EB', fg: '#0B6B60' };
+    return { label: 'Sugerida', bg: '#FCF3DC', fg: '#8A6A00' };
+  }
+  cardVM(c) {
+    const s = this.statusDe(c.id); const si = this.statusInfo(s);
+    const acento = c.prioridade === 'alta' ? '#C0564D' : '#E9B10A';
+    const acentoBg = c.prioridade === 'alta' ? '#FBECEA' : '#FCF3DC';
+    return {
+      titulo: c.titulo, causa: c.causa, impacto: c.impacto, prazo: c.prazo, acento, acentoBg,
+      escopoLabel: c.escopo === 'aluno' ? 'Aluno' : c.escopo === 'materia' ? 'Área' : 'Turma',
+      statusLabel: si.label, statusBg: si.bg, statusFg: si.fg,
+      acaoLabel: s === 'sugerida' ? c.acoes[0] : s === 'andamento' ? c.acoes[1] : c.acoes[2],
+      agir: this.agir(c), temAluno: !!c.alunoId, verAluno: c.alunoId ? this.abrirAluno(c.alunoId) : null
+    };
+  }
+
+  // ---------- gráficos ----------
+  linha(vals, box) {
+    const { x0, x1, y0, y1, min, max } = box;
+    const n = vals.length;
+    const px = (i) => x0 + (n <= 1 ? 0 : i * (x1 - x0) / (n - 1));
+    const py = (v) => y0 + (max - v) / (max - min) * (y1 - y0);
+    const pontos = vals.map((v, i) => ({ x: +px(i).toFixed(1), y: +py(v).toFixed(1) }));
+    return { pts: pontos.map((p) => p.x + ',' + p.y).join(' '), pontos, px, py };
+  }
+  txt(key, props, valor) { return React.createElement('text', { key, fontFamily: 'Manrope,sans-serif', ...props }, valor); }
+  radar(vals, cx, cy, r) {
+    return vals.map((v, i) => {
+      const a = (-90 + i * (360 / vals.length)) * Math.PI / 180;
+      const rr = r * this.cl(v / 10, 0.08, 1);
+      return (cx + rr * Math.cos(a)).toFixed(1) + ',' + (cy + rr * Math.sin(a)).toFixed(1);
+    }).join(' ');
+  }
+
+  renderVals() {
+    const D = this.D, S = this.state, MAT = D.MAT;
+    const instituicao = this.props.instituicao ?? 'IDOMED FAPAN';
+    const totalAlunos = D.alunos.length;
+    const criticos = D.alunos.filter((a) => a.risco === 'critico').length;
+    const atencao = D.alunos.filter((a) => a.risco === 'atencao').length;
+    const mediaGeral = D.alunos.reduce((s, a) => s + a.media, 0) / totalAlunos;
+    const projInst = Math.round(D.alunos.reduce((s, a) => s + a.projecao, 0) / totalAlunos);
+    const abaixoCorte = D.alunos.filter((a) => a.projecao < 62).length;
+
+    const v = {
+      instituicao, busca: S.busca, periodoLetivo: S.periodoLetivo,
+      setBusca: (e) => this.setState({ busca: e.target.value, view: e.target.value ? 'alunos' : S.view }),
+      setPeriodoLetivo: (e) => this.setState({ periodoLetivo: e.target.value }),
+      projInst: projInst, projInstPct: projInst + '%',
+      projInstNota: abaixoCorte === 1 ? '1 aluno projetado abaixo do corte de referência (62).' : abaixoCorte + ' alunos projetados abaixo do corte de referência (62).',
+      vGeral: S.view === 'geral', vTurmas: S.view === 'turmas', vMaterias: S.view === 'materias', vAlunos: S.view === 'alunos', vInterv: S.view === 'intervencoes',
+      irIntervencoes: this.ir('intervencoes'), fecharAluno: this.fechar, pararProp: (e) => e.stopPropagation(),
+      toast: S.toast
+    };
+
+    const pendentes = D.sug.filter((c) => this.statusDe(c.id) !== 'concluida').length;
+    v.navItens = [
+      { id: 'geral', label: 'Visão geral', d: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z' },
+      { id: 'turmas', label: 'Turmas', d: 'M3 21V9l9-6 9 6v12M3 21h18M9 21v-6h6v6' },
+      { id: 'materias', label: 'Áreas do ENAMED', d: 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z' },
+      { id: 'alunos', label: 'Alunos', d: 'M12 3L2 8l10 5 10-5-10-5zM6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5' },
+      { id: 'intervencoes', label: 'Intervenções', d: 'M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z', contagem: pendentes }
+    ].map((it) => ({ ...it, ir: this.ir(it.id), bg: S.view === it.id ? 'rgba(63,216,196,0.16)' : 'transparent', fg: S.view === it.id ? '#3FD8C4' : '#CFE8E3' }));
+
+    const titulos = {
+      geral: ['Visão geral', 'Oito turmas ativas · ' + totalAlunos + ' alunos · dados do sistema acadêmico'],
+      turmas: ['Turmas', 'Média, tendência e alunos em risco por turma'],
+      materias: ['Áreas do ENAMED', 'Aproveitamento por área e por prova, turma a turma'],
+      alunos: ['Alunos', 'Busca, filtros e abertura do prontuário acadêmico'],
+      intervencoes: ['Intervenções', 'Recomendações geradas pela análise de desempenho']
+    };
+    v.tituloView = titulos[S.view][0];
+    v.subtituloView = titulos[S.view][1];
+
+    // ----- visão geral -----
+    v.kpis = [
+      { label: 'Média institucional', valor: this.n1(mediaGeral), sub: 'todas as turmas ativas', cor: this.corNota(mediaGeral) },
+      { label: 'Alunos monitorados', valor: totalAlunos, sub: '8 turmas · 24 a 31', cor: '#0F2118' },
+      { label: 'Em situação crítica', valor: criticos, sub: 'abaixo de ' + this.n1(this.limite) + ' ou com frequência baixa', cor: '#C0564D' },
+      { label: 'Em atenção', valor: atencao, sub: 'tendência de queda no semestre', cor: '#E9B10A' },
+      { label: 'Intervenções abertas', valor: pendentes, sub: 'sugeridas ou em andamento', cor: '#0E8C7F' }
+    ];
+    const boxI = { x0: 42, x1: 644, y0: 26, y1: 188, min: 5.5, max: 10 };
+    const li = this.linha(D.inst, boxI); const lq = this.linha(D.q1, boxI);
+    v.ptsInst = li.pts; v.ptsQuartil = lq.pts; v.dotsInst = li.pontos;
+    v.areaInst = li.pts + ' 644,188 42,188';
+    v.eixoInstEls = D.inst.map((_, i) => this.txt('ei' + i, { x: +li.px(i).toFixed(1), y: 222, textAnchor: 'middle', fontSize: 10, fill: '#98A2B3' }, (i + 1) + 'º'));
+    const minIdx = D.inst.indexOf(Math.min.apply(null, D.inst));
+    const antes = D.inst[Math.max(0, minIdx - 1)];
+    const queda = antes - D.inst[minIdx];
+    const noMin = D.turmas.filter((t) => t.serie.length >= minIdx + 1).sort((a, b) => a.serie[minIdx] - b.serie[minIdx])[0];
+    v.leituraInst = 'O piso do curso é o ' + (minIdx + 1) + 'º período: média ' + this.n1(D.inst[minIdx]) + (queda > 0.05 ? ', ' + this.n1(queda) + ' ponto abaixo do ' + minIdx + 'º' : '') + (minIdx + 1 >= 9 ? ' — exatamente a entrada no internato' : '') + '. Quem mais puxa o conjunto para baixo nesse ponto é a Turma ' + noMin.id + ' (' + this.n1(noMin.serie[minIdx]) + '). É esse degrau que o ENAMED cobra.';
+
+    v.barrasTurma = D.turmas.slice().sort((a, b) => b.media - a.media).map((t) => ({
+      nome: t.nome, media: this.n1(t.media), pct: Math.round(this.cl((t.media - 4.5) / 5.5, 0.05, 1) * 100) + '%',
+      cor: this.corNota(t.media), delta: (t.delta >= 0 ? '+' : '−') + this.n1(Math.abs(t.delta)),
+      deltaCor: t.delta >= 0 ? '#0E8C7F' : '#C0564D', abrir: this.abrirTurma(t.id)
+    }));
+
+    const instMat = MAT.map((m) => {
+      const md = D.turmas.reduce((s, t) => s + t.mediasMat[m.id], 0) / D.turmas.length;
+      const piorT = D.turmas.slice().sort((a, b) => a.mediasMat[m.id] - b.mediasMat[m.id])[0];
+      return {
+        nome: m.nome, media: this.n1(md), pct: Math.round(this.cl((md - 4.5) / 5.5, 0.05, 1) * 100) + '%', cor: this.corNota(md),
+        nota: 'Pior desempenho: Turma ' + piorT.id + ' (' + this.n1(piorT.mediasMat[m.id]) + ')',
+        abrir: () => this.setState({ view: 'materias', turmaSel: piorT.id, materiaSel: m.id })
+      };
+    }).sort((a, b) => parseFloat(a.media.replace(',', '.')) - parseFloat(b.media.replace(',', '.')));
+    v.rankMaterias = instMat;
+    v.alertasTopo = D.sug.slice(0, 3).map((c) => this.cardVM(c));
+
+    // ----- turmas -----
+    v.cardsTurma = D.turmas.map((t) => {
+      const ln = this.linha(t.serie, { x0: 6, x1: 184, y0: 6, y1: 38, min: 5.2, max: 9.6 });
+      const ri = this.riscoInfo(t.risco);
+      const last = ln.pontos[ln.pontos.length - 1];
+      return {
+        nome: t.nome, periodo: t.periodo + 'º período', fase: t.fase, alunos: t.alunos.length,
+        media: this.n1(t.media), cor: this.corNota(t.media),
+        delta: (t.delta >= 0 ? '+' : '−') + this.n1(Math.abs(t.delta)) + ' em 3 sem.',
+        deltaCor: t.delta >= 0 ? '#0E8C7F' : '#C0564D',
+        riscoLabel: ri.label, riscoBg: ri.bg, riscoFg: ri.fg,
+        criticos: t.criticos, criticosCor: t.criticos > 2 ? '#C0564D' : '#0F2118',
+        pior: t.piorMat.curto, spark: ln.pts, sparkX: last.x, sparkY: last.y, abrir: this.abrirTurma(t.id)
+      };
+    });
+
+    // ----- áreas / heatmap -----
+    const T = D.turmas.find((t) => t.id === S.turmaSel) || D.turmas[0];
+    v.chipsTurma = D.turmas.map((t) => ({
+      label: t.nome, ir: this.abrirTurma(t.id),
+      bg: t.id === T.id ? '#06403B' : '#ffffff', fg: t.id === T.id ? '#ffffff' : '#475467', bd: t.id === T.id ? '#06403B' : '#DCE7E4'
+    }));
+    v.turmaNome = T.nome;
+    v.turmaSub = T.periodo + 'º período · ' + T.fase + ' · ' + T.alunos.length + ' alunos · média ' + this.n1(T.media);
+    v.heat = MAT.map((m) => {
+      const md = T.mediasMat[m.id];
+      const ativa = S.materiaSel === m.id;
+      return {
+        nome: m.nome, media: this.n1(md), cor: this.corNota(md),
+        nomeCor: md < this.limite ? '#A3352B' : '#344054', peso: ativa || md < this.limite ? '700' : '500',
+        rowBg: ativa ? '#F2F7F6' : 'transparent', abrir: this.abrirMateria(m.id),
+        cells: T.provas[m.id].map((val) => { const t2 = this.tintNota(val); return { v: this.n1(val), bg: t2.bg, fg: t2.fg }; })
+      };
+    });
+    const piorArea = T.piorMat;
+    v.leituraTurma = piorArea.curto + ' é a área mais frágil da ' + T.nome + ': média ' + this.n1(T.mediasMat[piorArea.id]) + ' e ' + T.alunos.filter((a) => a.medias[piorArea.id] < 6.5).length + ' alunos abaixo de 6,5. A queda aparece já em N3 — três provas antes do fechamento do semestre.';
+
+    const matSel = MAT.find((m) => m.id === S.materiaSel) || piorArea;
+    v.tituloDetalheMateria = matSel.curto + ' · alunos da ' + T.nome;
+    v.subDetalheMateria = S.materiaSel ? 'Ordenado da menor para a maior nota · clique para abrir o aluno' : 'Área mais frágil da turma · clique em outra linha do quadro para trocar';
+    v.alunosMateria = T.alunos.slice().sort((a, b) => a.medias[matSel.id] - b.medias[matSel.id]).slice(0, 8).map((a) => {
+      const ri = this.riscoInfo(a.risco);
+      return {
+        nome: a.nome, iniciais: this.iniciais(a.nome), avBg: ri.bg, avFg: ri.fg,
+        nota: this.n1(a.medias[matSel.id]), cor: this.corNota(a.medias[matSel.id]),
+        tend: a.dif > 0.28 ? '▲' : a.dif < -0.28 ? '▼' : '—',
+        tendCor: a.dif > 0.28 ? '#0E8C7F' : a.dif < -0.28 ? '#C0564D' : '#98A2B3',
+        abrir: this.abrirAluno(a.id)
+      };
+    });
+    v.sugestoesTurma = D.sug.filter((c) => c.turma === T.id).slice(0, 3).map((c) => this.cardVM(c));
+
+    // ----- alunos -----
+    v.opcoesTurma = [{ v: 'todas', label: 'Todas as turmas' }].concat(D.turmas.map((t) => ({ v: String(t.id), label: t.nome })));
+    v.opcoesMateria = [{ v: 'todas', label: 'Todas as áreas' }].concat(MAT.map((m) => ({ v: m.id, label: m.nome })));
+    v.turmaFiltro = S.turmaFiltro; v.materiaFiltro = S.materiaFiltro;
+    v.setTurmaFiltro = (e) => this.setState({ turmaFiltro: e.target.value });
+    v.setMateriaFiltro = (e) => this.setState({ materiaFiltro: e.target.value });
+    v.chipsRisco = [['todos', 'Todos'], ['critico', 'Críticos'], ['atencao', 'Atenção'], ['ok', 'Estáveis']].map(([id, label]) => ({
+      label, ir: () => this.setState({ risco: id }),
+      bg: S.risco === id ? '#ffffff' : 'transparent', fg: S.risco === id ? '#0F2118' : '#7A8C87'
+    }));
+    const q = S.busca.trim().toLowerCase();
+    const filtrados = D.alunos.filter((a) => {
+      if (S.turmaFiltro !== 'todas' && String(a.turma) !== S.turmaFiltro) return false;
+      if (S.risco !== 'todos' && a.risco !== S.risco) return false;
+      if (S.materiaFiltro !== 'todas' && a.medias[S.materiaFiltro] >= 7.0) return false;
+      if (q && !(a.nome.toLowerCase().includes(q) || a.matricula.includes(q) || ('turma ' + a.turma).includes(q) || MAT.some((m) => m.nome.toLowerCase().includes(q) && a.medias[m.id] < 7))) return false;
+      return true;
+    }).sort((a, b) => a.media - b.media);
+    v.contagemAlunos = filtrados.length + ' de ' + totalAlunos + ' alunos';
+    v.semAlunos = filtrados.length === 0;
+    v.linhasAluno = filtrados.slice(0, 40).map((a) => {
+      const ri = this.riscoInfo(a.risco);
+      return {
+        nome: a.nome, iniciais: this.iniciais(a.nome), matricula: a.matricula, turma: 'Turma ' + a.turma,
+        media: this.n1(a.media), cor: this.corNota(a.media),
+        freq: a.presenca + '%', freqCor: a.presenca < 80 ? '#C0564D' : a.presenca < 88 ? '#8A6A00' : '#475467',
+        simulado: a.simulado + '/100', pior: a.pior.curto, piorCor: this.corNota(a.medias[a.pior.id]),
+        riscoLabel: ri.label, riscoBg: ri.bg, riscoFg: ri.fg, avBg: ri.bg, avFg: ri.fg, abrir: this.abrirAluno(a.id)
+      };
+    });
+
+    // ----- intervenções -----
+    v.chipsEscopo = [['todos', 'Todas'], ['turma', 'Por turma'], ['materia', 'Por área'], ['aluno', 'Por aluno']].map(([id, label]) => ({
+      label, ir: () => this.setState({ escopo: id }),
+      bg: S.escopo === id ? '#06403B' : '#ffffff', fg: S.escopo === id ? '#ffffff' : '#475467', bd: S.escopo === id ? '#06403B' : '#DCE7E4'
+    }));
+    const sugF = D.sug.filter((c) => S.escopo === 'todos' || c.escopo === S.escopo);
+    const nConc = sugF.filter((c) => this.statusDe(c.id) === 'concluida').length;
+    v.contagemInterv = sugF.length + (sugF.length === 1 ? ' recomendação · ' : ' recomendações · ') + (nConc === 1 ? '1 concluída' : nConc + ' concluídas');
+    v.cardsInterv = sugF.map((c) => this.cardVM(c));
+
+    // ----- modal do aluno -----
+    v.alunoAberto = !!S.aluno;
+    if (S.aluno) {
+      const a = D.alunos.find((x) => x.id === S.aluno);
+      const T2 = D.turmas.find((t) => t.id === a.turma);
+      const ri = this.riscoInfo(a.risco);
+      const boxA = { x0: 38, x1: 546, y0: 24, y1: 186, min: 4.8, max: 10 };
+      const la = this.linha(a.serie, boxA); const lt = this.linha(T2.serie, boxA);
+      const rvals = MAT.map((m) => a.medias[m.id]);
+      const tvals = MAT.map((m) => T2.mediasMat[m.id]);
+      const cx = 110, cy = 102, rr = 74;
+      const cargaRod = Math.round(a.cargaTotal / 6);
+      const rodNomes = MAT.map((m) => ({ nome: m.curto, cenario: m.cenario }));
+
+      v.abas = [['desempenho', 'Desempenho'], ['frequencia', 'Frequência'], ['projecao', 'Projeção ENAMED'], ['intervencoes', 'Intervenções'], ['preceptor', 'Preceptoria']].map(([id, label]) => ({
+        label, ir: () => this.setState({ tab: id }),
+        bg: S.tab === id ? '#ffffff' : 'rgba(255,255,255,0.08)', fg: S.tab === id ? '#0F2118' : '#B9E7E1'
+      }));
+      v.tabDesempenho = S.tab === 'desempenho'; v.tabFrequencia = S.tab === 'frequencia';
+      v.tabProjecao = S.tab === 'projecao'; v.tabIntervencoes = S.tab === 'intervencoes'; v.tabPreceptor = S.tab === 'preceptor';
+
+      const dash = (pct, circ) => (circ * pct / 100).toFixed(1) + ' ' + circ.toFixed(1);
+      v.al = {
+        nome: a.nome, primeiroNome: a.nome.split(' ')[0], iniciais: this.iniciais(a.nome), avBg: '#ffffff', avFg: '#06403B',
+        turma: 'Turma ' + a.turma, periodo: a.periodo + 'º período', fase: a.fase, matricula: a.matricula,
+        media: this.n1(a.media), freq: a.presenca + '%', projecao: a.projecao, simulado: a.simulado,
+        riscoLabel: ri.label, riscoBg: ri.bg, riscoFg: ri.fg,
+        ptsAluno: la.pts, ptsTurma: lt.pts, dots: la.pontos.map((p) => ({ x: p.x, y: p.y, cor: '#0E8C7F' })),
+        eixoEls: a.serie.map((_, i) => this.txt('ea' + i, { x: +la.px(i).toFixed(1), y: 212, textAnchor: 'middle', fontSize: 10, fill: '#98A2B3' }, (i + 1) + 'º')),
+        freqTextoEl: this.txt('fq', { x: 80, y: 76, textAnchor: 'middle', fontSize: 30, fontWeight: 700, fill: '#0F2118', fontFamily: "'Space Grotesk',sans-serif" }, a.presenca + '%'),
+        freqLegendaEl: this.txt('fl', { x: 80, y: 96, textAnchor: 'middle', fontSize: 10.5, fill: '#7A8C87' }, a.periodo >= 9 ? 'presença no internato' : 'presença nas práticas'),
+        rodTitulo: a.periodo >= 9 ? 'RODÍZIOS DO INTERNATO' : 'ATIVIDADES PRÁTICAS DO CICLO CLÍNICO',
+        projTextoEl: this.txt('pj', { x: 110, y: 100, textAnchor: 'middle', fontSize: 38, fontWeight: 700, fill: '#0F2118', fontFamily: "'Space Grotesk',sans-serif" }, a.projecao),
+        radarAluno: this.radar(rvals, cx, cy, rr), radarTurma: this.radar(tvals, cx, cy, rr),
+        radarGrid: [0.25, 0.5, 0.75, 1].map((f) => ({ pts: this.radar(MAT.map(() => 10 * f), cx, cy, rr) })),
+        radarEixos: MAT.map((_, i) => { const ang = (-90 + i * 72) * Math.PI / 180; return { x: (cx + rr * Math.cos(ang)).toFixed(1), y: (cy + rr * Math.sin(ang)).toFixed(1) }; }),
+        radarLabelEls: MAT.map((m, i) => {
+          const ang = (-90 + i * 72) * Math.PI / 180; const x = cx + (rr + 16) * Math.cos(ang); const y = cy + (rr + 16) * Math.sin(ang) + 3;
+          return this.txt('rl' + i, { x: +x.toFixed(1), y: +y.toFixed(1), textAnchor: Math.abs(Math.cos(ang)) < 0.2 ? 'middle' : (Math.cos(ang) > 0 ? 'start' : 'end'), fontSize: 9.5, fontWeight: 700, fill: '#7A8C87' }, m.curto);
+        }),
+        barras: MAT.map((m) => ({ curto: m.curto, v: this.n1(a.medias[m.id]), pct: Math.round(this.cl(a.medias[m.id] / 10, 0.05, 1) * 100) + '%', cor: this.corNota(a.medias[m.id]) })),
+        leitura: a.pior.curto + ' é a área que mais pesa contra ' + a.nome.split(' ')[0] + ': ' + this.n1(a.medias[a.pior.id]) + ' contra ' + this.n1(T2.mediasMat[a.pior.id]) + ' da turma. ' + (a.dif < -0.28 ? 'A curva cai desde N3, o que costuma anteceder reprovação por média.' : a.dif > 0.28 ? 'A curva reage nas duas últimas provas — o reforço aplicado está funcionando.' : 'A curva está estável, sem sinal de recuperação espontânea.'),
+        freqCor: a.presenca < 80 ? '#C0564D' : a.presenca < 88 ? '#E9B10A' : '#0E8C7F',
+        freqDash: dash(a.presenca, 2 * Math.PI * 62),
+        freqKpis: [
+          { label: 'Faltas', v: a.faltas + 'h', cor: a.faltas > 40 ? '#C0564D' : '#0F2118' },
+          { label: 'Justificadas', v: a.just + 'h', cor: '#0F2118' },
+          { label: 'Carga cumprida', v: (a.cargaTotal - a.faltas) + 'h', cor: '#0F2118' },
+          { label: 'Margem até o limite', v: Math.max(0, Math.round(a.cargaTotal * 0.25) - a.faltas) + 'h', cor: (Math.round(a.cargaTotal * 0.25) - a.faltas) < 20 ? '#C0564D' : '#0E8C7F' }
+        ],
+        rodizios: rodNomes.map((r, i) => {
+          const p = Math.round(this.cl(a.presenca + (i - 2) * 3 + (a.seedNum * 10 % 5) - 2, 62, 100));
+          return { nome: r.nome, cenario: r.cenario, presenca: p + '%', pct: p + '%', cor: p < 80 ? '#C0564D' : p < 88 ? '#E9B10A' : '#0E8C7F' };
+        }),
+        projCor: a.projecao < 62 ? '#C0564D' : a.projecao < 75 ? '#E9B10A' : '#0E8C7F',
+        projDash: dash(a.projecao, Math.PI * 88),
+        projComPlano: Math.min(98, a.projecao + (a.risco === 'critico' ? 9 : 5)),
+        simulados: ['Simulado 1 · mar', 'Simulado 2 · mai', 'Simulado 3 · ago', 'Simulado 4 · out'].map((label, i) => {
+          const val = i === 3 ? a.simulado : Math.round(this.cl(a.simulado - a.dif * (3 - i) * 3 - (3 - i) * 1.4, 25, 98));
+          return { label, v: val, pct: val + '%', cor: val < 62 ? '#C0564D' : val < 75 ? '#E9B10A' : '#0E8C7F' };
+        }),
+        fatores: [
+          { texto: 'Desempenho em ' + a.pior.curto + ' abaixo da turma', peso: '38%', cor: '#C0564D' },
+          { texto: 'Tendência das três últimas provas', peso: '27%', cor: a.dif < 0 ? '#E9B10A' : '#0E8C7F' },
+          { texto: 'Frequência e continuidade no rodízio', peso: '21%', cor: a.presenca < 85 ? '#E9B10A' : '#0E8C7F' },
+          { texto: 'Histórico do ciclo básico', peso: '14%', cor: '#0E8C7F' }
+        ],
+        sugestoes: D.sug.filter((c) => c.alunoId === a.id || (c.escopo === 'materia' && c.turma === a.turma && a.medias[c.materia] < 7)).slice(0, 3).map((c) => this.cardVM(c)),
+        historico: [
+          { data: '12 mar 2026', titulo: 'Monitoria de ' + a.pior.curto, detalhe: 'Encaminhado pela coordenação após queda em N2. Frequência de 80% nos encontros.', cor: '#0E8C7F' },
+          { data: '28 abr 2026', titulo: 'Conversa com preceptor', detalhe: a.preceptores[0].nome + ' registrou parecer no rodízio de ' + a.pior.curto + '.', cor: '#0E8C7F' },
+          { data: '09 jun 2026', titulo: 'Alerta automático de frequência', detalhe: 'Presença atingiu ' + a.presenca + '% no rodízio; coordenação notificada.', cor: a.presenca < 85 ? '#E9B10A' : '#0E8C7F' },
+          { data: '21 jul 2026', titulo: 'Plano individual gerado', detalhe: 'Recomendação em aberto na fila da coordenação.', cor: '#C0564D' }
+        ],
+        preceptores: a.preceptores.map((p, i) => ({
+          nome: p.nome, iniciais: this.iniciais(p.nome.replace(/^Dr[a]?\.\s*/, '')), papel: i === 0 ? 'Preceptor responsável · ' + p.esp : 'Preceptor de apoio · ' + p.esp,
+          cenario: p.cenario, email: p.email, tel: p.tel,
+          nota: this.n1(this.cl(a.media + (i === 0 ? 0.3 : -0.2), 3, 10)), notaCor: this.corNota(a.media),
+          parecer: i === 0
+            ? 'Participa das discussões de caso, mas apresenta insegurança no raciocínio clínico sob pressão. Recomenda reforço prático em ' + a.pior.curto + '.'
+            : 'Pontual e presente nas atividades do cenário. Evolução compatível com o esperado para o período.'
+        }))
+      };
+    } else {
+      v.al = {};
+    }
+
+    return v;
+  }
+}
+</script>
+</body>
+</html>

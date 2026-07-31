@@ -26,17 +26,17 @@ const sans = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cactuscompany.com.br"),
   title: {
-    default: "Cactus Company | Software para empresas",
+    default: "Cactus Company | Inteligência institucional para o ENAMED",
     template: "%s | Cactus Company",
   },
   description:
-    "Cactus Company, marca operada pela GV TECNOLOGIA LTDA, desenvolve aplicativos, sistemas web e produtos digitais para empresas.",
+    "Transforme avaliações, simulados, frequência e histórico acadêmico em diagnóstico, prioridades e planos de ação para elevar a qualidade do curso de Medicina.",
   applicationName: "Cactus Company",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Cactus Company | Software para empresas",
+    title: "Cactus Company | Inteligência institucional para o ENAMED",
     description:
-      "Empresa brasileira de tecnologia especializada em aplicativos, sistemas web e produtos digitais.",
+      "Dados acadêmicos transformados em diagnóstico, prioridade e ação para cursos de Medicina.",
     url: "https://cactuscompany.com.br",
     siteName: "Cactus Company",
     locale: "pt_BR",

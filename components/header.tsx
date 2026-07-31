@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CactusMark } from "@/components/cactus-mark";
-import { company, navItems, demoMailto } from "@/components/company-data";
+import { company, navItems, intelligenceMailto } from "@/components/company-data";
 
 export function Header() {
   return (
@@ -12,7 +12,7 @@ export function Header() {
           </span>
           <span>
             <strong>{company.brand}</strong>
-            <small>software studio</small>
+            <small>inteligência institucional</small>
           </span>
         </Link>
 
@@ -22,8 +22,8 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <a href={demoMailto} className="header-cta" data-magnetic style={{ marginLeft: 10 }}>
-            Agendar demonstração
+          <a href={intelligenceMailto} className="header-cta" data-magnetic style={{ marginLeft: 10 }}>
+            Solicitar diagnóstico
           </a>
         </nav>
       </div>

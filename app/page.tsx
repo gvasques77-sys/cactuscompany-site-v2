@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { CinematicLoop } from "@/components/cinematic-loop";
 import { company, intelligenceMailto } from "@/components/company-data";
 import { ArrowRight, Shield } from "@/components/icons";
 import { RaioxDemo } from "@/components/raiox-demo";
@@ -97,6 +99,63 @@ const securityItems = [
   "Coleta mínima e finalidade definida",
 ];
 
+const productStories = [
+  {
+    label: "Visão institucional",
+    title: "Uma nota. Uma população. Uma prioridade.",
+    text: "A coordenação enxerga o desempenho do curso, quem já alcançou o corte e onde uma intervenção rende mais.",
+    image: "/images/raio-x/institutional-overview.png",
+    alt: "Visão institucional do Raio-X ENAMED com nota média, alunos no corte e prioridades de ação",
+    width: 2364,
+    height: 1608,
+  },
+  {
+    label: "Leitura transversal",
+    title: "Acerto, persistência, sobreposição.",
+    text: "Três sinais transformam uma lacuna dispersa em um grupo de reforço com critério.",
+    image: "/images/raio-x/diagnostic-indices.png",
+    alt: "Painel do Raio-X ENAMED com índices diagnósticos e concentração de lacunas por tema e turma",
+    width: 2360,
+    height: 1604,
+  },
+  {
+    label: "Intervenção precisa",
+    title: "O mesmo tema. Casos diferentes.",
+    text: "A sobreposição separa quem precisa de um encontro pontual de quem exige acompanhamento individual.",
+    image: "/images/raio-x/intervention-composition.png",
+    alt: "Composição de um grupo de reforço por aluno, turma, distância do corte e outras revisões",
+    width: 1028,
+    height: 788,
+  },
+  {
+    label: "Ciclo fechado",
+    title: "Ação que prova efeito.",
+    text: "A plataforma compara o mesmo grupo, no mesmo tema, antes e depois do reforço.",
+    image: "/images/raio-x/closed-loop.png",
+    alt: "Resultado de um ciclo de intervenção comparando o desempenho antes e depois do reforço",
+    width: 880,
+    height: 610,
+  },
+  {
+    label: "Memória acadêmica",
+    title: "Histórico que separa padrão de ruído.",
+    text: "Quatro semestres de evidência distinguem uma prova ruim de uma fragilidade recorrente.",
+    image: "/images/raio-x/student-history.png",
+    alt: "Pontos fortes e frágeis históricos de um aluno no Raio-X ENAMED",
+    width: 1962,
+    height: 666,
+  },
+  {
+    label: "Raio-X individual",
+    title: "Do curso ao indivíduo.",
+    text: "A coordenação chega ao nome, à trajetória e à próxima ação sem perder o contexto institucional.",
+    image: "/images/raio-x/student-record.png",
+    alt: "Ficha individual do aluno com trajetória, alertas e revisões temáticas",
+    width: 2366,
+    height: 1524,
+  },
+];
+
 export default function Home() {
   return (
     <div className="intelligence-home">
@@ -142,7 +201,7 @@ export default function Home() {
                 Abrir painel <span aria-hidden="true">↗</span>
               </a>
             </div>
-            <RaioxDemo className="hero-demo" interactive={false} />
+            <CinematicLoop />
             <div className="xray-scan" aria-hidden="true">
               <span />
             </div>
@@ -251,6 +310,45 @@ export default function Home() {
               de acompanhamento — não previsões oficiais de nota.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="product-stories" aria-labelledby="product-stories-title">
+        <div className="container-shell product-stories-intro" data-animate="fade-up">
+          <p className="system-label dark-label">A inteligência em movimento</p>
+          <h2 id="product-stories-title">Do sinal institucional à ação sobre cada aluno.</h2>
+          <p>
+            O Raio-X não entrega mais um relatório. Ele preserva a linha de raciocínio que transforma
+            evidência em decisão — e decisão em resultado verificável.
+          </p>
+        </div>
+
+        <div className="product-story-list">
+          {productStories.map((story, index) => (
+            <article className="product-story" data-story key={story.label}>
+              <div className="product-story-copy">
+                <div className="product-story-index" aria-hidden="true">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <i />
+                  <span>06</span>
+                </div>
+                <p className="product-story-label">{story.label}</p>
+                <h3>{story.title}</h3>
+                <p className="product-story-text">{story.text}</p>
+              </div>
+              <figure className="product-story-media" data-story-media>
+                <Image
+                  src={story.image}
+                  alt={story.alt}
+                  width={story.width}
+                  height={story.height}
+                  quality={92}
+                  loading="eager"
+                  sizes="(max-width: 900px) 100vw, 68vw"
+                />
+              </figure>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -26,15 +26,25 @@ export function Header() {
             Solicitar diagnóstico
           </a>
         </nav>
-      </div>
 
-      <nav className="mobile-nav" aria-label="Navegação principal mobile">
-        {navItems.map((item) => (
-          <Link key={item.href} href={item.href}>
-            {item.label}
-          </Link>
-        ))}
-      </nav>
+        <details className="mobile-menu">
+          <summary>
+            <span>Menu</span>
+            <i aria-hidden="true">+</i>
+          </summary>
+          <nav aria-label="Navegação principal mobile">
+            {navItems.map((item, index) => (
+              <Link key={item.href} href={item.href}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {item.label}
+              </Link>
+            ))}
+            <a href={intelligenceMailto} className="mobile-menu-cta">
+              Solicitar diagnóstico
+            </a>
+          </nav>
+        </details>
+      </div>
     </header>
   );
 }

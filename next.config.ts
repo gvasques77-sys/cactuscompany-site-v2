@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   outputFileTracingRoot: process.cwd(),
   reactStrictMode: true,
+  images: {
+    qualities: [75, 92],
+  },
   async redirects() {
     return [
       {

@@ -112,6 +112,70 @@ export function SiteMotion() {
         });
       });
 
+      gsap.utils.toArray<HTMLElement>("[data-story]").forEach((story) => {
+        const copy = story.querySelector<HTMLElement>(".product-story-copy");
+        const media = story.querySelector<HTMLElement>("[data-story-media]");
+        const image = media?.querySelector<HTMLElement>("img");
+        const progress = story.querySelector<HTMLElement>(".product-story-index i");
+
+        if (copy) {
+          gsap.from(copy, {
+            autoAlpha: 0,
+            y: 42,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: { trigger: story, start: "top 72%", once: true },
+          });
+        }
+
+        if (media) {
+          gsap.fromTo(
+            media,
+            { clipPath: "inset(7% 7% 7% 7%)" },
+            {
+              clipPath: "inset(0% 0% 0% 0%)",
+              ease: "none",
+              scrollTrigger: {
+                trigger: story,
+                start: "top 88%",
+                end: "top 34%",
+                scrub: 0.7,
+              },
+            }
+          );
+        }
+
+        if (image) {
+          gsap.fromTo(
+            image,
+            { scale: 1.055 },
+            {
+              scale: 1,
+              ease: "none",
+              scrollTrigger: {
+                trigger: story,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 0.8,
+              },
+            }
+          );
+        }
+
+        if (progress) {
+          gsap.to(progress, {
+            scaleX: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: story,
+              start: "top 75%",
+              end: "center 45%",
+              scrub: 0.5,
+            },
+          });
+        }
+      });
+
       if (finePointer) {
         gsap.utils.toArray<HTMLElement>("[data-magnetic]").forEach((item) => {
           const moveX = gsap.quickTo(item, "x", { duration: 0.45, ease: "power3" });

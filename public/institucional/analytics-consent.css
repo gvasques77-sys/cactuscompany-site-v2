@@ -1,0 +1,255 @@
+.cactus-cookie-consent[hidden] {
+  display: none !important;
+}
+
+.cactus-cookie-consent {
+  position: fixed;
+  z-index: 180;
+  right: 20px;
+  bottom: 104px;
+  left: 20px;
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 22px;
+  border: 1px solid rgba(124, 224, 107, 0.28);
+  border-radius: 22px;
+  color: #e8f7ea;
+  background: rgba(8, 22, 14, 0.96);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.cactus-cookie-consent__view {
+  display: grid;
+  gap: 18px;
+}
+
+.cactus-cookie-consent__view[hidden] {
+  display: none;
+}
+
+.cactus-cookie-consent__kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #c9e86b;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.cactus-cookie-consent__kicker::before {
+  width: 18px;
+  height: 1px;
+  content: "";
+  background: currentColor;
+}
+
+.cactus-cookie-consent h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+.cactus-cookie-consent p {
+  max-width: 62ch;
+  margin: 0;
+  color: rgba(232, 247, 234, 0.64);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.cactus-cookie-consent p a {
+  color: #c9e86b;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cactus-cookie-consent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cactus-cookie-button,
+.cactus-cookie-preferences {
+  appearance: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.cactus-cookie-button {
+  min-height: 42px;
+  padding: 11px 16px;
+  border: 1px solid rgba(232, 247, 234, 0.18);
+  border-radius: 999px;
+  color: #e8f7ea;
+  background: rgba(232, 247, 234, 0.04);
+  font-size: 11.5px;
+  font-weight: 850;
+  letter-spacing: 0.035em;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.cactus-cookie-button:hover {
+  border-color: rgba(201, 232, 107, 0.58);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.cactus-cookie-button--primary {
+  border-color: #c9e86b;
+  color: #08160e;
+  background: #c9e86b;
+}
+
+.cactus-cookie-button--primary:hover {
+  border-color: #fff;
+  color: #08160e;
+  background: #fff;
+}
+
+.cactus-cookie-button--quiet {
+  border-color: transparent;
+  color: rgba(232, 247, 234, 0.58);
+  background: transparent;
+}
+
+.cactus-cookie-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 0;
+  border-top: 1px solid rgba(124, 224, 107, 0.14);
+}
+
+.cactus-cookie-option strong,
+.cactus-cookie-option span {
+  display: block;
+}
+
+.cactus-cookie-option strong {
+  color: #fff;
+  font-size: 13px;
+}
+
+.cactus-cookie-option span {
+  margin-top: 4px;
+  color: rgba(232, 247, 234, 0.5);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.cactus-cookie-option__status {
+  flex: none;
+  color: #c9e86b !important;
+  font-size: 9px !important;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cactus-cookie-switch {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  flex: none;
+}
+
+.cactus-cookie-switch input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.cactus-cookie-switch span {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border: 1px solid rgba(232, 247, 234, 0.22);
+  border-radius: 999px;
+  background: rgba(232, 247, 234, 0.08);
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.cactus-cookie-switch span::after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  content: "";
+  background: rgba(232, 247, 234, 0.66);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.cactus-cookie-switch input:checked + span {
+  border-color: #c9e86b;
+  background: #c9e86b;
+}
+
+.cactus-cookie-switch input:checked + span::after {
+  background: #08160e;
+  transform: translateX(20px);
+}
+
+.cactus-cookie-button:focus-visible,
+.cactus-cookie-preferences:focus-visible,
+.cactus-cookie-switch input:focus-visible + span {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.cactus-cookie-preferences {
+  padding: 0;
+  color: rgba(232, 247, 234, 0.5);
+  background: transparent;
+  font-size: 12.5px;
+}
+
+.cactus-cookie-preferences:hover {
+  color: #c9e86b;
+}
+
+@media (max-width: 700px) {
+  .cactus-cookie-consent {
+    right: 14px;
+    bottom: 118px;
+    left: 14px;
+    width: auto;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .cactus-cookie-option {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .cactus-cookie-consent__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .cactus-cookie-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cactus-cookie-button,
+  .cactus-cookie-switch span,
+  .cactus-cookie-switch span::after {
+    transition: none;
+  }
+}

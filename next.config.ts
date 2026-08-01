@@ -17,7 +17,12 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return {
-      beforeFiles: [],
+      beforeFiles: [
+        {
+          source: "/",
+          destination: "/institucional/index.html",
+        },
+      ],
       afterFiles: [
         {
           source: "/proposta-nilton-lins",
